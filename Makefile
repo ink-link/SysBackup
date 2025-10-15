@@ -3,7 +3,6 @@
 # ==============================================================================
 CC = g++
 CFLAGS = -std=c++17 -Wall -Wextra -pedantic
-# O C++17 é necessário para manipulação de arquivos (std::filesystem)
 TEST_EXECUTABLE = testa_backup
 TEST_CPP = testa_backup.cpp
 SRC_CPP = backup.cpp
@@ -11,7 +10,6 @@ HEADER = backup.hpp
 CATCH_SRC = catch_amalgamated.cpp
 CATCH_HEADER = catch_amalgamated.hpp
 
-# Lista de todos os arquivos objeto
 OBJS = $(SRC_CPP:.cpp=.o) $(TEST_CPP:.cpp=.o) $(CATCH_SRC:.cpp=.o)
 
 .PHONY: all compile test cpplint cppcheck gcov debug valgrind doc clean
