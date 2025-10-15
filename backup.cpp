@@ -8,6 +8,15 @@
 namespace fs = std::filesystem;
 
 ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string& destino) {
+    // Assertiva de entrada minima
+    assert(!origem.empty() && "A string de origem nao pode ser vazia.");
+    assert(!destino.empty() && "A string de destino nao pode ser vazia.");
+    
+    // Se a origem nao existe, retorna erro, e os proximos passos sao ignorados.
+    if (!fs::exists(origem)) {
+        return ERRO_ARQUIVO_ORIGEM_NAO_EXISTE;
+    }
+    
     // CASO DE DECISAO 2: HD existe (sim), PD nao existe (nao) -> ACAO: COPIAR
     if (!fs::exists(destino)) {
         try {
