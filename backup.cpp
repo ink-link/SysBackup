@@ -11,18 +11,28 @@ auto get_file_time(const std::string& path) {
     return fs::last_write_time(path);
 }
 
+// ==============================================================================
+// FUNÇÃO DE LEITURA DE PARÂMETROS
+// ==============================================================================
+
 /**
- * @brief Implementa a logica de decisao e copia para um unico arquivo.
- * * @details Esta funcao avalia as condicoes de existencia e data entre origem (HD) e destino (Pen-drive)
- * para decidir se o arquivo deve ser copiado, atualizado ou ignorado.
- * * @param origem Caminho completo do arquivo de origem (HD).
- * @param destino Caminho completo para o arquivo de destino (Pen-drive).
- * @return ResultadoBackup Codigo de sucesso ou erro (0, 1, -1, -2, etc.).
- * * @pre A string 'origem' e 'destino' nao devem ser vazias.
- * @pre O caminho da origem e destino devem ser sintaticamente validos.
- * * @post Se a funcao retornar SUCESSO, o arquivo deve existir em 'destino' e ter o mesmo
- * conteudo e a data de modificacao deve ser maior ou igual a data de origem.
+ * @brief Le o arquivo de parametros para determinar quais arquivos devem ser processados.
+ * @details Implementa a logica para abrir e ler o arquivo de parametros.
+ * @param nome_arquivo_parm Nome e caminho do arquivo de parametros (ex: "Backup.parm").
+ * @param arquivos_para_processar Vetor que recebera a lista de arquivos.
+ * @return ResultadoBackup Codigo de sucesso ou erro (ERRO_ARQUIVO_PARAMETROS_AUSENTE).
+ * @pre O nome do arquivo de parametros nao deve ser uma string vazia.
+ * @post Se SUCESSO, o vetor 'arquivos_para_processar' contem caminhos validos.
  */
+ResultadoBackup le_arquivo_parametros(const std::string& nome_arquivo_parm, 
+                                     std::vector<std::string>& arquivos_para_processar) {
+    // Assertiva de entrada
+    assert(!nome_arquivo_parm.empty() && "O nome do arquivo de parametros nao pode ser vazio.");
+                                        (void)arquivos_para_processar;
+    // IMPLEMENTAÇÃO MÍNIMA (Dummy) PARA EVITAR ERRO DE LINKAGEM.
+    // RETORNA SUCESSO (0) PARA GARANTIR A FALHA DO TESTE (VERMELHO), POIS O TESTE ESPERA -5.
+    return SUCESSO;
+}
 
 ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string& destino, Operacao operacao) {
     // Assertiva de entrada minima

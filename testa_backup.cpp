@@ -344,7 +344,7 @@ TEST_CASE("Caso de Decisao 13: ERRO (Arquivo ausente em HD e PD) na Restauracao"
 }
 
 // ==============================================================================
-// TESTE 13: IGNORAR (CASO DE DECISÃO 7: HD nao existe, PD existe)
+// TESTE 11: IGNORAR (CASO DE DECISÃO 7: HD nao existe, PD existe)
 // ==============================================================================
 
 TEST_CASE("Caso de Decisao 7: IGNORAR (HD ausente, PD presente)", "[backup][ignorar][final]") {
@@ -374,4 +374,23 @@ TEST_CASE("Caso de Decisao 7: IGNORAR (HD ausente, PD presente)", "[backup][igno
     std::string linha;
     std::getline(ifs, linha);
     REQUIRE(linha == conteudo_original);
+}
+
+// ==============================================================================
+// TESTE 14: ERRO - ARQUIVO DE PARAMETROS AUSENTE (CASO DE DECISÃO 1)
+// ==============================================================================
+
+TEST_CASE("Caso de Decisao 1: ERRO - Backup.parm ausente", "[parametros][erro]") {
+    std::string test_name = "test_caso_1_parm_ausente";
+    setup_test_env(test_name); 
+
+    const std::string nome_arquivo_parm = test_name + "/Backup.parm";
+    std::vector<std::string> lista_arquivos;
+    
+    fs::remove(nome_arquivo_parm); 
+    
+    ResultadoBackup resultado = le_arquivo_parametros(nome_arquivo_parm, lista_arquivos);
+    
+    REQUIRE(resultado == ERRO_ARQUIVO_PARAMETROS_AUSENTE);
+    REQUIRE(lista_arquivos.empty() == true);
 }
