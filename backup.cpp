@@ -232,4 +232,51 @@ ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string&
 ResultadoBackup executa_backup_restauracao(const std::string& nome_arquivo_parm,
                                             const std::string& caminho_origem_base,
                                             const std::string& caminho_destino_base,
-                                            Operacao operacao) {return IGNORAR;}
+                                            Operacao operacao) {
+    // Assertiva de entrada
+    assert(!nome_arquivo_parm.empty());
+    assert(!caminho_origem_base.empty());
+    assert(!caminho_destino_base.empty());
+
+    std::vector<std::string> arquivos_a_processar;
+
+    // 1. LEITURA DO ARQUIVO DE PARAMETROS (Trata o Caso 1 - IMPOSSIVEL)
+    ResultadoBackup leitura_resultado = le_arquivo_parametros(nome_arquivo_parm, arquivos_a_processar);
+    
+    if (leitura_resultado != SUCESSO) {
+        return leitura_resultado; // Retorna ERRO_ARQUIVO_PARAMETROS_AUSENTE (Caso 1)
+    }
+
+    // 2. ORQUESTRAÇÃO E EXECUÇÃO
+    for (const auto& arquivo : arquivos_a_processar) {
+        // Constrói os caminhos absolutos
+        std::string origem_path = caminho_origem_base + "/" + arquivo;
+        std::string destino_path = caminho_destino_base + "/" + arquivo;
+        
+        // --- CORREÇÃO: CRIAÇÃO DE SUBPASTAS RECURSIVAS ---
+        try {
+            // Extrai o caminho do diretório de destino (ex: test_case_destino/documentos)
+            fs::path destino_dir = fs::path(destino_path).parent_path();
+            // Cria os diretórios recursivamente no destino, se não existirem
+            if (!fs::exists(destino_dir)) {
+                fs::create_directories(destino_dir);
+            }
+        } catch (const fs::filesystem_error& e) {
+            std::cerr << "Erro ao criar diretorios: " << e.what() << std::endl;
+            return ERRO_GERAL; // Retorna um erro critico se nao conseguir criar o diretorio
+        }
+
+        // Chama a funcao de decisao e copia para cada arquivo
+        ResultadoBackup item_resultado = faz_backup_arquivo(origem_path, destino_path, operacao);
+        
+        // Se um erro critico (diferente de IGNORAR ou SUCESSO) ocorrer, o sistema deve parar.
+        if (item_resultado != SUCESSO && item_resultado != IGNORAR) {
+            return item_resultado; 
+        }
+    }
+
+    // 3. Assertiva de Saida
+    assert(leitura_resultado == SUCESSO);
+    
+    return SUCESSO;
+}
