@@ -95,6 +95,19 @@ ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string&
     // B. LOGICA DE RESTAURACAO (PD -> HD) - OPERACAO: RESTAURACAO (Caso 9)
     // ==============================================================================
     if (operacao == RESTAURACAO) {
+
+        // CASO DE DECISÃO 11: PD existe, HD NAO existe -> ACAO: COPIAR (Restauração Simples)
+        if (!fs::exists(destino)) {
+            try {
+                fs::copy(origem, destino, fs::copy_options::overwrite_existing);
+                assert(fs::exists(destino) && "Arquivo de destino (HD) nao foi criado na restauracao simples.");
+                return SUCESSO;
+            } catch (const fs::filesystem_error& e) {
+                std::cerr << "Erro de copia (Caso 11): " << e.what() << std::endl;
+                return ERRO_GERAL;
+            }
+        }
+        
         // Logica para Restauraçao (PD -> HD):
         if (fs::exists(destino)) {
             try {
