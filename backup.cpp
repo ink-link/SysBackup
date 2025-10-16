@@ -32,27 +32,36 @@ ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string&
     // Suprime o warning 'unused parameter'
     (void)operacao; 
     
-    // Se a origem nao existe, retorna erro, e os proximos passos sao ignorados. Cobre o Caso 12.
-    if (!fs::exists(origem)) {
-        // Assertiva de Saida: Garante que, se o HD existia, ele nao foi alterado.
-        assert((!fs::exists(destino) || get_file_time(destino) == get_file_time(destino)) && "Integridade do destino perdida.");
-        return ERRO_ARQUIVO_ORIGEM_NAO_EXISTE;
-    }
-    
     // ==============================================================================
     // A. LOGICA DE BACKUP (HD -> PD) - OPERACAO: BACKUP (Casos 2, 3, 4, 5)
     // ==============================================================================
     if (operacao == BACKUP) {
-    // CASO DE DECISAO 2: HD existe (sim), PD nao existe (nao) -> ACAO: COPIAR
-        if (!fs::exists(destino)) {
+
+        bool origem_existe = fs::exists(origem);
+        bool destino_existe = fs::exists(destino);
+
+        // Caso 1 e 6 (Backup): ORIGEM NAO EXISTE.
+        if (!origem_existe) {
+            // CASO DE DECISÃO 7: HD ausente (F), PD existe (V) -> ACAO: IGNORAR (Faz Nada)
+            if (destino_existe) {
+                return IGNORAR;
+            }
+            // CASO DE DECISÃO 6: HD ausente (F), PD ausente (F) -> ACAO: IGNORAR (Faz Nada, caso nao listado, mas faz sentido)
+            else {
+                return IGNORAR; 
+            }
+        }
+
+        // CASO DE DECISAO 2: HD existe (sim), PD nao existe (nao) -> ACAO: COPIAR
+        if (!destino_existe) {
             try {
                 // fs::copy ira criar o arquivo e sobrescrever se ja existir (o que nao e o caso aqui)
                 fs::copy(origem, destino, fs::copy_options::overwrite_existing);
                 
                 // Assertiva de saida: Verifica se o arquivo foi criado (requisito do teste)
                 assert(fs::exists(destino) && "O arquivo de destino nao foi criado.");
-                
                 return SUCESSO;
+
             } catch (const fs::filesystem_error& e) {
                 std::cerr << "Erro de copia: " << e.what() << std::endl;
                 return ERRO_GERAL;
@@ -60,7 +69,7 @@ ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string&
         }
    
         // CASO DE DECISÃO 3: PD existe, PD < HD -> ACAO: COPIAR
-        if (fs::exists(destino)) {
+        if (destino_existe) {
             try {
                 auto tempo_origem = get_file_time(origem);
                 auto tempo_destino = get_file_time(destino);
@@ -91,6 +100,18 @@ ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string&
                 return ERRO_GERAL;
             }
         }
+        // CASO DE ERRO 1: Se o HD nao existe E o PD tambem nao (Caso 6)
+        if (!origem_existe && !destino_existe) {
+            // Se o arquivo foi removido de ambos os lados, nada precisa ser feito.
+            return IGNORAR; // A tabela nao lista este caso, mas faz mais sentido IGNORAR
+        }
+        
+        // Ultimo caso de erro: HD existe e PD nao (ja coberto no Caso 2)
+        
+        // Casos de ERRO FUNDAMENTAL (A Tabela nao lista, mas e um erro de operacao)
+        if (!origem_existe && !destino_existe) {
+            return ERRO_ARQUIVO_ORIGEM_NAO_EXISTE; // Nao pode copiar o que nao existe
+        }
     }
 
     // ==============================================================================
@@ -98,8 +119,22 @@ ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string&
     // ==============================================================================
     if (operacao == RESTAURACAO) {
 
+        bool origem_existe = fs::exists(origem); // PD
+        bool destino_existe = fs::exists(destino); // HD
+
+        (void)origem_existe;
+
+        // Logica para Casos de ERRO (12, 13)
+        if (!origem_existe) {
+            // CASO 13: PD e HD ausentes OU CASO 12: PD ausente, HD presente
+            // Em ambos, a ORIGEM nao existe, o que e um erro critico para a Restauracao.
+            // A Tabela exige ERRO para o Caso 12 e o Caso 13
+            assert((!destino_existe || get_file_time(destino) == get_file_time(destino)) && "Integridade do destino perdida."); 
+            return ERRO_ARQUIVO_ORIGEM_NAO_EXISTE;
+        }
+
         // CASO DE DECISÃO 11: PD existe, HD NAO existe -> ACAO: COPIAR (Restauração Simples)
-        if (!fs::exists(destino)) {
+        if (!destino_existe) {
             try {
                 fs::copy(origem, destino, fs::copy_options::overwrite_existing);
                 assert(fs::exists(destino) && "Arquivo de destino (HD) nao foi criado na restauracao simples.");
@@ -111,7 +146,7 @@ ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string&
         }
 
         // Logica para Restauraçao (PD -> HD):
-        if (fs::exists(destino)) {
+        if (destino_existe) {
             try {
                 auto tempo_origem = get_file_time(origem); // PD
                 auto tempo_destino = get_file_time(destino); // HD
