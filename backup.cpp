@@ -68,15 +68,14 @@ ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string&
             }
             
             // CASO DE DECISÃO 5: PD > HD -> ACAO: ERRO (Destino mais novo)
-            if (tempo_destino > tempo_origem) {
+            else if (tempo_destino > tempo_origem) {
                 // Se o PD é mais novo que o HD, a regra de espelhamento exige ERRO.
                 return ERRO_ARQUIVO_DESTINO_MAIS_NOVO; 
             }
 
             // CASO DE DECISÃO 4: PD == HD -> ACAO: IGNORAR (Datas Iguais)
-            if (tempo_destino == tempo_origem) {
+            else {
                 // Retorno explicito para o caso onde as datas sao identicas (Coluna 4)
-                // Nao e necessaria copia.
                 return IGNORAR; 
             }
 
