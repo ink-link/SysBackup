@@ -28,6 +28,8 @@ ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string&
     // Assertiva de entrada minima
     assert(!origem.empty() && "A string de origem nao pode ser vazia.");
     assert(!destino.empty() && "A string de destino nao pode ser vazia.");
+
+    // Suprime o warning 'unused parameter'
     (void)operacao; 
     
     // Se a origem nao existe, retorna erro, e os proximos passos sao ignorados.
@@ -35,55 +37,88 @@ ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string&
         return ERRO_ARQUIVO_ORIGEM_NAO_EXISTE;
     }
     
+    // ==============================================================================
+    // A. LOGICA DE BACKUP (HD -> PD) - OPERACAO: BACKUP (Casos 2, 3, 4, 5)
+    // ==============================================================================
+    if (operacao == BACKUP) {
     // CASO DE DECISAO 2: HD existe (sim), PD nao existe (nao) -> ACAO: COPIAR
-    if (!fs::exists(destino)) {
-        try {
-            // fs::copy ira criar o arquivo e sobrescrever se ja existir (o que nao e o caso aqui)
-            fs::copy(origem, destino, fs::copy_options::overwrite_existing);
-            
-            // Assertiva de saida: Verifica se o arquivo foi criado (requisito do teste)
-            assert(fs::exists(destino) && "O arquivo de destino nao foi criado.");
-            
-            return SUCESSO;
-        } catch (const fs::filesystem_error& e) {
-            std::cerr << "Erro de copia: " << e.what() << std::endl;
-            return ERRO_GERAL;
-        }
-    }
-   
-    // CASO DE DECISÃO 3: PD existe, PD < HD -> ACAO: COPIAR
-    if (fs::exists(destino)) {
-        try {
-            auto tempo_origem = get_file_time(origem);
-            auto tempo_destino = get_file_time(destino);
-            
-            // Verifica se o arquivo do Pen-drive (destino) e mais antigo que o HD (origem)
-            if (tempo_destino < tempo_origem) {
-                // Se o PD e mais antigo, copia e sobrescreve (Atualizacao)
+        if (!fs::exists(destino)) {
+            try {
+                // fs::copy ira criar o arquivo e sobrescrever se ja existir (o que nao e o caso aqui)
                 fs::copy(origem, destino, fs::copy_options::overwrite_existing);
-
-                // Assertiva de saida: A data do destino deve ser igual ou superior a origem
-                assert(get_file_time(destino) >= tempo_origem && "A data de destino nao foi atualizada.");
+                
+                // Assertiva de saida: Verifica se o arquivo foi criado (requisito do teste)
+                assert(fs::exists(destino) && "O arquivo de destino nao foi criado.");
                 
                 return SUCESSO;
+            } catch (const fs::filesystem_error& e) {
+                std::cerr << "Erro de copia: " << e.what() << std::endl;
+                return ERRO_GERAL;
             }
-            
-            // CASO DE DECISÃO 5: PD > HD -> ACAO: ERRO (Destino mais novo)
-            else if (tempo_destino > tempo_origem) {
-                // Se o PD é mais novo que o HD, a regra de espelhamento exige ERRO.
-                return ERRO_ARQUIVO_DESTINO_MAIS_NOVO; 
-            }
+        }
+   
+        // CASO DE DECISÃO 3: PD existe, PD < HD -> ACAO: COPIAR
+        if (fs::exists(destino)) {
+            try {
+                auto tempo_origem = get_file_time(origem);
+                auto tempo_destino = get_file_time(destino);
+                
+                // Verifica se o arquivo do Pen-drive (destino) e mais antigo que o HD (origem)
+                if (tempo_destino < tempo_origem) {
+                    // Se o PD e mais antigo, copia e sobrescreve (Atualizacao)
+                    fs::copy(origem, destino, fs::copy_options::overwrite_existing);
 
-            // CASO DE DECISÃO 4: PD == HD -> ACAO: IGNORAR (Datas Iguais)
-            else {
-                // Retorno explicito para o caso onde as datas sao identicas (Coluna 4)
-                return IGNORAR; 
-            }
+                    // Assertiva de saida: A data do destino deve ser igual ou superior a origem
+                    assert(get_file_time(destino) >= tempo_origem && "A data de destino nao foi atualizada.");
+                    
+                    return SUCESSO;
+                }
+                
+                // CASO DE DECISÃO 4: PD == HD -> ACAO: IGNORAR (Datas Iguais)
+                else if (tempo_destino == tempo_origem) {
+                    return IGNORAR; 
+                }
+                
+                // CASO DE DECISÃO 5: PD > HD -> ACAO: ERRO
+                else { // tempo_destino > tempo_origem
+                    return ERRO_ARQUIVO_DESTINO_MAIS_NOVO;
+                }
 
-        } catch (const fs::filesystem_error& e) {
-            std::cerr << "Erro de comparacao/copia (Caso 3): " << e.what() << std::endl;
-            return ERRO_GERAL;
+            } catch (const fs::filesystem_error& e) {
+                std::cerr << "Erro de comparacao/copia (Caso 3): " << e.what() << std::endl;
+                return ERRO_GERAL;
+            }
         }
     }
+
+    // ==============================================================================
+    // B. LOGICA DE RESTAURACAO (PD -> HD) - OPERACAO: RESTAURACAO (Caso 9)
+    // ==============================================================================
+    if (operacao == RESTAURACAO) {
+        // Logica para Restauraçao (PD -> HD):
+        if (fs::exists(destino)) {
+            try {
+                auto tempo_origem = get_file_time(origem); // PD
+                auto tempo_destino = get_file_time(destino); // HD
+
+                // CASO DE DECISÃO 9: HD existe, PD existe, PD > HD -> ACAO: COPIAR (Restauracao)
+                if (tempo_origem > tempo_destino) {
+                    fs::copy(origem, destino, fs::copy_options::overwrite_existing);
+
+                    // Assertiva de saida
+                    assert(get_file_time(destino) >= tempo_origem && "A data do HD nao foi atualizada na restauracao.");
+                    
+                    return SUCESSO;
+                }
+                
+                // Se PD e mais antigo ou igual, a logica sera tratada nos proximos testes (10, 11, 12).
+                
+            } catch (const fs::filesystem_error& e) {
+                std::cerr << "Erro de comparacao/copia (Caso 9 Restaura): " << e.what() << std::endl;
+                return ERRO_GERAL;
+            }
+        }
+    }
+
     return IGNORAR; 
 }
