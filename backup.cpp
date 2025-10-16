@@ -104,10 +104,12 @@ ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string&
                 // CASO DE DECISÃO 8: PD < HD -> ACAO: ERRO (PD mais antigo que HD)
                 if (tempo_origem < tempo_destino) {
                     // O arquivo de origem (PD) é mais antigo, o destino (HD) é mais novo.
-                    // A regra da tabela exige ERRO.
+                    assert(fs::exists(destino) && "HD nao deve ter sido removido.");
+                    assert(get_file_time(destino) == tempo_destino && "Data do HD nao deve ser alterada.");
+                    
                     return ERRO_ARQUIVO_ORIGEM_MAIS_ANTIGO;
                 }
-                
+
                 // CASO DE DECISÃO 9: HD existe, PD existe, PD > HD -> ACAO: COPIAR (Restauracao)
                 if (tempo_origem > tempo_destino) {
                     fs::copy(origem, destino, fs::copy_options::overwrite_existing);

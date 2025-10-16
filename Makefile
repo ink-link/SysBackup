@@ -90,4 +90,4 @@ doc:
 # ==============================================================================
 
 clean:
-	rm -f *.o *.exe *.gc* $(TEST_EXECUTABLE) a.out valgrind.rpt html/* latex/*
+	rm -f *.o *.exe *.gc* $(TEST_EXECUTABLE) a.out valgrind.rpt html/* latex/* rm -rf test_case_*
