@@ -66,6 +66,14 @@ ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string&
                 
                 return SUCESSO;
             }
+            
+            // CASO DE DECISÃO 4: PD == HD -> ACAO: IGNORAR (Datas Iguais)
+            if (tempo_destino == tempo_origem) {
+                // Retorno explicito para o caso onde as datas sao identicas (Coluna 4)
+                // Nao e necessaria copia.
+                return IGNORAR; 
+            }
+
         } catch (const fs::filesystem_error& e) {
             std::cerr << "Erro de comparacao/copia (Caso 3): " << e.what() << std::endl;
             return ERRO_GERAL;
