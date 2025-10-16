@@ -7,6 +7,10 @@
 
 namespace fs = std::filesystem;
 
+auto get_file_time(const std::string& path) {
+    return fs::last_write_time(path);
+}
+
 ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string& destino) {
     // Assertiva de entrada minima
     assert(!origem.empty() && "A string de origem nao pode ser vazia.");
@@ -32,6 +36,27 @@ ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string&
             return ERRO_GERAL;
         }
     }
-    
+   
+    // CASO DE DECISÃO 3: PD existe, PD < HD -> ACAO: COPIAR
+    if (fs::exists(destino)) {
+        try {
+            auto tempo_origem = get_file_time(origem);
+            auto tempo_destino = get_file_time(destino);
+            
+            // Verifica se o arquivo do Pen-drive (destino) e mais antigo que o HD (origem)
+            if (tempo_destino < tempo_origem) {
+                // Se o PD e mais antigo, copia e sobrescreve (Atualizacao)
+                fs::copy(origem, destino, fs::copy_options::overwrite_existing);
+
+                // Assertiva de saida: A data do destino deve ser igual ou superior a origem
+                assert(get_file_time(destino) >= tempo_origem && "A data de destino nao foi atualizada.");
+                
+                return SUCESSO;
+            }
+        } catch (const fs::filesystem_error& e) {
+            std::cerr << "Erro de comparacao/copia (Caso 3): " << e.what() << std::endl;
+            return ERRO_GERAL;
+        }
+    }
     return IGNORAR; 
 }
