@@ -11,6 +11,19 @@ auto get_file_time(const std::string& path) {
     return fs::last_write_time(path);
 }
 
+/**
+ * @brief Implementa a logica de decisao e copia para um unico arquivo.
+ * * @details Esta funcao avalia as condicoes de existencia e data entre origem (HD) e destino (Pen-drive)
+ * para decidir se o arquivo deve ser copiado, atualizado ou ignorado.
+ * * @param origem Caminho completo do arquivo de origem (HD).
+ * @param destino Caminho completo para o arquivo de destino (Pen-drive).
+ * @return ResultadoBackup Codigo de sucesso ou erro (0, 1, -1, -2, etc.).
+ * * @pre A string 'origem' e 'destino' nao devem ser vazias.
+ * @pre O caminho da origem e destino devem ser sintaticamente validos.
+ * * @post Se a funcao retornar SUCESSO, o arquivo deve existir em 'destino' e ter o mesmo
+ * conteudo e a data de modificacao deve ser maior ou igual a data de origem.
+ */
+
 ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string& destino) {
     // Assertiva de entrada minima
     assert(!origem.empty() && "A string de origem nao pode ser vazia.");

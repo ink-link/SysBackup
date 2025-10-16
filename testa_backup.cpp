@@ -87,3 +87,36 @@ TEST_CASE("Caso de Decisao 3: Atualiza Backup (PD mais antigo que HD)", "[backup
     std::getline(ifs, linha);
     REQUIRE(linha == "Novo Conteudo");
 }
+
+// ==============================================================================
+// TESTE 4: IGNORAR ATUALIZACAO (CASO DE DECISÃO 4: Datas Iguais)
+// ==============================================================================
+
+TEST_CASE("Caso de Decisao 4: Ignora Backup (Datas Iguais)", "[backup][ignorar][data]") {
+    const std::string test_name = "test_case_4_equal";
+    setup_test_env(test_name); // Assume-se que esta funcao limpa e cria os dirs
+
+    const std::string origem_dir = test_name + "_origem";
+    const std::string destino_dir = test_name + "_destino";
+    const std::string arquivo_nome = "ignorar_igual.txt";
+
+    const std::string origem_path = origem_dir + "/" + arquivo_nome;
+    const std::string destino_path = destino_dir + "/" + arquivo_nome;
+    const std::string conteudo_original = "Conteudo inalterado";
+    
+    create_file(origem_path, conteudo_original);
+    create_file(destino_path, conteudo_original);
+    
+    auto tempo_atual = fs::file_time_type::clock::now();
+    set_file_time(origem_path, tempo_atual);
+    set_file_time(destino_path, tempo_atual); // Define a mesma data
+    
+    ResultadoBackup resultado = faz_backup_arquivo(origem_path, destino_path);
+    
+    REQUIRE(resultado == IGNORAR);
+    
+    std::ifstream ifs(destino_path);
+    std::string linha;
+    std::getline(ifs, linha);
+    REQUIRE(linha == conteudo_original);
+}
