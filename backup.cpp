@@ -28,14 +28,34 @@ ResultadoBackup le_arquivo_parametros(const std::string& nome_arquivo_parm,
                                      std::vector<std::string>& arquivos_para_processar) {
     // Assertiva de entrada
     assert(!nome_arquivo_parm.empty() && "O nome do arquivo de parametros nao pode ser vazio.");
-    (void)arquivos_para_processar; // Suprime o warning 'unused parameter'                             
+                               
     // Implementacao para o Caso de Decisao 1 (ERRO: Backup.parm ausente)
     if (!fs::exists(nome_arquivo_parm)) {
         // Assertiva de saida: O arquivo deve estar ausente se o erro e lancado.
         assert(!fs::exists(nome_arquivo_parm));
         return ERRO_ARQUIVO_PARAMETROS_AUSENTE;
     }
-    return SUCESSO;
+    
+    // Lógica para o TESTE DE SUCESSO
+    std::ifstream arquivo_parm(nome_arquivo_parm);
+    std::string linha;
+
+    if (arquivo_parm.is_open()) {
+        while (std::getline(arquivo_parm, linha)) {
+            // Remove espaços em branco do início e fim da linha (boas praticas)
+            // Para simplicidade, apenas adiciona a linha lida
+            if (!linha.empty()) {
+                arquivos_para_processar.push_back(linha);
+            }
+        }
+        arquivo_parm.close();
+        
+        // Assertiva de Saida: Se retornou SUCESSO, o vetor deve ter sido preenchido
+        assert(!arquivos_para_processar.empty() && "Vetor deve ser preenchido se o arquivo existe.");
+        
+        return SUCESSO;
+    }
+    
 }
 
 ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string& destino, Operacao operacao) {
