@@ -1,0 +1,21 @@
+### Projeto de Sistema de Backup (SysBackup)
+
+Este projeto implementa uma funcao C++ que permite o backup ou restauracao de um arquivo de texto entre dois diretorios,
+representados como o "HD" e o "PenDrive" (PD). Ele verifica a existencia e condicoes dos arquivos, como data de modificacao,
+e entao determina o que deve ser feito, de acordo com a tabela de decisao fornecida em aula.
+
+
+### Como Compilar e Executar
+
+Abra o terminal na raiz do projeto e execute o comando make test.
+Isso irá compilar os arquivos backup.cpp e testa_backup.cpp, e rodar os testes automáticos.
+
+Para limpar todos os resultados dos testes e backups da compilacao, rode make clean no terminal
+
+
+### Observacoes
+
+O commit do caso 12 foi feito com o nome incorreto, foi engano da minha parte. 
+O teste ja estava passando sem implementacoes adicionais, por isso parti direto para a refatoracao.
+O nome do commit deveria ser "Adiciona teste passando: Caso de Decisao 12 (ERRO - PD inexistente na restauracao)", 
+mas nao consegui muda-lo depois de ja ter feito o  push.
