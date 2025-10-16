@@ -28,9 +28,12 @@ ResultadoBackup le_arquivo_parametros(const std::string& nome_arquivo_parm,
                                      std::vector<std::string>& arquivos_para_processar) {
     // Assertiva de entrada
     assert(!nome_arquivo_parm.empty() && "O nome do arquivo de parametros nao pode ser vazio.");
-                                        (void)arquivos_para_processar;
-    // IMPLEMENTAÇÃO MÍNIMA (Dummy) PARA EVITAR ERRO DE LINKAGEM.
-    // RETORNA SUCESSO (0) PARA GARANTIR A FALHA DO TESTE (VERMELHO), POIS O TESTE ESPERA -5.
+    (void)arquivos_para_processar; // Suprime o warning 'unused parameter'                             
+    // Implementacao para o Caso de Decisao 1 (ERRO: Backup.parm ausente)
+    if (!fs::exists(nome_arquivo_parm)) {
+        // Retorna o erro exigido pela Coluna 1 da Tabela de Decisao (IMPOSSIVEL/ERRO)
+        return ERRO_ARQUIVO_PARAMETROS_AUSENTE;
+    }
     return SUCESSO;
 }
 
