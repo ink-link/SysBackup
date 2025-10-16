@@ -194,8 +194,6 @@ TEST_CASE("Caso de Decisao 9: Restaura (PD -> HD) quando HD e o mais antigo", "[
 TEST_CASE("Caso de Decisao 8: ERRO (PD mais antigo que HD) na Restauracao", "[restauracao][erro][data]") {
     const std::string test_name = "test_case_8_restore_error";
     setup_test_env(test_name); 
-
-    // Aqui, a origem da COPIA eh o Pen-drive, e o destino eh o HD.
     const std::string origem_pd = test_name + "_destino";
     const std::string destino_hd = test_name + "_origem"; 
     const std::string arquivo_nome = "restaurar_antigo.txt";
@@ -204,20 +202,16 @@ TEST_CASE("Caso de Decisao 8: ERRO (PD mais antigo que HD) na Restauracao", "[re
     const std::string destino_path = destino_hd + "/" + arquivo_nome;
     const std::string conteudo_hd_novo = "Versao mais recente no HD";
     
-    // 1. Setup: Cria o arquivo no PD (Origem)
     create_file(origem_path, "Conteudo Antigo no PD");
     
-    // 2. Setup: Cria o arquivo no HD (Destino) com CONTEUDO NOVO
     create_file(destino_path, conteudo_hd_novo);
     
     // Define a data de modificacao da origem (PD) para ser INTENCIONALMENTE mais antiga que o HD (Destino)
     auto tempo_antigo = fs::file_time_type::clock::now() - std::chrono::hours(48);
     set_file_time(origem_path, tempo_antigo);
     
-    // 3. Execucao: Chamada em MODO RESTAURACAO
     ResultadoBackup resultado = faz_backup_arquivo(origem_path, destino_path, RESTAURACAO);
     
-    // 4. Verificacao: Espera-se ERRO, pois o HD é mais novo e o PD mais antigo
     REQUIRE(resultado == ERRO_ARQUIVO_ORIGEM_MAIS_ANTIGO);
     
     // Garante que o conteudo do HD NAO FOI SOBRESCRITO
@@ -244,19 +238,15 @@ TEST_CASE("Caso de Decisao 10: Ignora Restauracao (PD == HD)", "[restauracao][ig
     const std::string destino_path = destino_hd + "/" + arquivo_nome;
     const std::string conteudo = "Conteudo identico";
     
-    // 1. Setup: Cria o arquivo no HD e no PD
     create_file(destino_path, conteudo);
     create_file(origem_path, conteudo);
     
-    // 2. Setup: Garante que as datas de modificacao sejam IGUAIS
     auto tempo_atual = fs::file_time_type::clock::now();
     set_file_time(destino_path, tempo_atual);
     set_file_time(origem_path, tempo_atual); 
     
-    // 3. Execucao: Chamada em MODO RESTAURACAO
     ResultadoBackup resultado = faz_backup_arquivo(origem_path, destino_path, RESTAURACAO);
     
-    // 4. Verificacao: Espera-se IGNORAR, pois nao ha necessidade de copia.
     REQUIRE(resultado == IGNORAR);
     
     // Confirma que o conteudo NAO foi alterado
@@ -283,15 +273,11 @@ TEST_CASE("Caso de Decisao 11: Restaura (PD -> HD) quando HD nao existe", "[rest
     const std::string destino_path = destino_hd + "/" + arquivo_nome;
     const std::string conteudo = "Conteudo do Pen-drive a ser restaurado.";
     
-    // 1. Setup: Cria o arquivo no Pen-drive (Origem)
     create_file(origem_path, conteudo);
-    // 2. Setup: Garante que o HD (Destino) NAO exista (Caso de Decisão 11)
     fs::remove(destino_path); 
 
-    // 3. Execucao: Chamada em MODO RESTAURACAO
     ResultadoBackup resultado = faz_backup_arquivo(origem_path, destino_path, RESTAURACAO);
     
-    // 4. Verificacao: Espera-se SUCESSO e que o arquivo de destino exista
     REQUIRE(resultado == SUCESSO);
     
     std::ifstream ifs(destino_path);
@@ -317,16 +303,12 @@ TEST_CASE("Caso de Decisao 12: ERRO (PD inexistente) na Restauracao", "[restaura
     const std::string destino_path = destino_hd + "/" + arquivo_nome;
     const std::string conteudo_hd_original = "Conteudo que deve ser mantido no HD";
     
-    // 1. Setup: Cria o arquivo no HD (Destino), que deve ser mantido
     create_file(destino_path, conteudo_hd_original);
     
-    // 2. Setup: Garante que o arquivo de ORIGEM (PD) NAO exista
-    fs::remove(origem_path); // A funcao remove_all ja garante que o dir esta limpo
+    fs::remove(origem_path); 
 
-    // 3. Execucao: Chamada em MODO RESTAURACAO
     ResultadoBackup resultado = faz_backup_arquivo(origem_path, destino_path, RESTAURACAO);
     
-    // 4. Verificacao: Espera-se ERRO, pois a origem nao existe
     REQUIRE(resultado == ERRO_ARQUIVO_ORIGEM_NAO_EXISTE);
     
     // Garante que o conteudo do HD NAO FOI ALTERADO (mantem a integridade)
@@ -352,15 +334,44 @@ TEST_CASE("Caso de Decisao 13: ERRO (Arquivo ausente em HD e PD) na Restauracao"
     const std::string origem_path = origem_pd + "/" + arquivo_nome;
     const std::string destino_path = destino_hd + "/" + arquivo_nome;
     
-    // 1. Setup: Garante que os arquivos de origem (PD) e destino (HD) NAO existem
-    // O setup_test_env ja garante que o diretorio esta limpo.
     
-    // 2. Execucao: Chamada em MODO RESTAURACAO
     ResultadoBackup resultado = faz_backup_arquivo(origem_path, destino_path, RESTAURACAO);
     
-    // 3. Verificacao: Espera-se ERRO, pois a origem nao existe
     REQUIRE(resultado == ERRO_ARQUIVO_ORIGEM_NAO_EXISTE);
     
     // Garante que o arquivo NAO foi criado no HD.
     REQUIRE(fs::exists(destino_path) == false); 
+}
+
+// ==============================================================================
+// TESTE 13: IGNORAR (CASO DE DECISÃO 7: HD nao existe, PD existe)
+// ==============================================================================
+
+TEST_CASE("Caso de Decisao 7: IGNORAR (HD ausente, PD presente)", "[backup][ignorar][final]") {
+    const std::string test_name = "test_case_7_ignore_delete";
+    setup_test_env(test_name); 
+
+    const std::string origem_dir = test_name + "_origem";
+    const std::string destino_dir = test_name + "_destino";
+    const std::string arquivo_nome = "arquivo_a_ignorar.txt";
+
+    const std::string origem_path = origem_dir + "/" + arquivo_nome;
+    const std::string destino_path = destino_dir + "/" + arquivo_nome;
+    const std::string conteudo_original = "Conteudo que deve permanecer";
+    
+    create_file(destino_path, conteudo_original);
+    
+    fs::remove(origem_path); 
+    // Garante que a pasta de origem existe (para evitar erro de FS)
+    fs::create_directories(origem_dir); 
+
+    ResultadoBackup resultado = faz_backup_arquivo(origem_path, destino_path, BACKUP);
+    
+    REQUIRE(resultado == IGNORAR);
+    REQUIRE(fs::exists(destino_path) == true);
+    
+    std::ifstream ifs(destino_path);
+    std::string linha;
+    std::getline(ifs, linha);
+    REQUIRE(linha == conteudo_original);
 }
