@@ -435,7 +435,7 @@ TEST_CASE("Leitura de Backup.parm com sucesso", "[parametros][sucesso]") {
 }
 
 // ==============================================================================
-// TESTE 14: ORQUESTRAÇÃO DE BACKUP (SUCESSO DE PONTA A PONTA)
+// TESTE 16: ORQUESTRAÇÃO DE BACKUP (SUCESSO DE PONTA A PONTA)
 // ==============================================================================
 
 TEST_CASE("Orquestracao: Execucao de Backup com multiplos arquivos", "[orquestracao][backup]") {
@@ -477,4 +477,29 @@ TEST_CASE("Orquestracao: Execucao de Backup com multiplos arquivos", "[orquestra
     
     // Limpeza adicional do arquivo parm
     fs::remove(parm_file);
+}
+
+// ==============================================================================
+// TESTE 16: ERRO NA ORQUESTRAÇÃO (CASO DE DECISÃO 1: Backup.parm ausente)
+// ==============================================================================
+
+TEST_CASE("Caso de Decisao 1: Orquestracao Falha por Backup.parm Ausente", "[orquestracao][erro]") {
+    const std::string test_name = "test_case_orquestracao_erro_parm";
+    setup_test_env(test_name); 
+
+    const std::string origem_base = test_name + "_origem";
+    const std::string destino_base = test_name + "_destino";
+    const std::string parm_file = "Backup.parm";
+    
+    fs::remove(parm_file);
+    
+    // A funcao deve falhar imediatamente ao tentar ler o arquivo.
+    ResultadoBackup resultado = executa_backup_restauracao(
+        parm_file, 
+        origem_base, 
+        destino_base, 
+        BACKUP
+    );
+    
+    REQUIRE(resultado == ERRO_ARQUIVO_PARAMETROS_AUSENTE);
 }
