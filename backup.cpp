@@ -111,13 +111,18 @@ ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string&
                 }
 
                 // CASO DE DECISÃO 9: HD existe, PD existe, PD > HD -> ACAO: COPIAR (Restauracao)
-                if (tempo_origem > tempo_destino) {
+                else if (tempo_origem > tempo_destino) {
                     fs::copy(origem, destino, fs::copy_options::overwrite_existing);
 
                     // Assertiva de saida
                     assert(get_file_time(destino) >= tempo_origem && "A data do HD nao foi atualizada na restauracao.");
                     
                     return SUCESSO;
+                }
+
+                // CASO DE DECISÃO 10: PD == HD -> ACAO: IGNORAR
+                else if (tempo_origem == tempo_destino) {
+                    return IGNORAR;
                 }
                 
                 // Se PD e mais antigo ou igual, a logica sera tratada nos proximos testes (10, 11, 12).
