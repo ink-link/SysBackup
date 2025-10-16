@@ -186,3 +186,44 @@ TEST_CASE("Caso de Decisao 9: Restaura (PD -> HD) quando HD e o mais antigo", "[
     std::getline(ifs, linha);
     REQUIRE(linha == conteudo_novo);
 }
+
+// ==============================================================================
+// TESTE 7: ERRO NA RESTAURACAO (CASO DE DECISÃO 8: HD mais novo que PD)
+// ==============================================================================
+
+TEST_CASE("Caso de Decisao 8: ERRO (PD mais antigo que HD) na Restauracao", "[restauracao][erro][data]") {
+    const std::string test_name = "test_case_8_restore_error";
+    setup_test_env(test_name); 
+
+    // Aqui, a origem da COPIA eh o Pen-drive, e o destino eh o HD.
+    const std::string origem_pd = test_name + "_destino";
+    const std::string destino_hd = test_name + "_origem"; 
+    const std::string arquivo_nome = "restaurar_antigo.txt";
+
+    const std::string origem_path = origem_pd + "/" + arquivo_nome;
+    const std::string destino_path = destino_hd + "/" + arquivo_nome;
+    const std::string conteudo_hd_novo = "Versao mais recente no HD";
+    
+    // 1. Setup: Cria o arquivo no PD (Origem)
+    create_file(origem_path, "Conteudo Antigo no PD");
+    
+    // 2. Setup: Cria o arquivo no HD (Destino) com CONTEUDO NOVO
+    create_file(destino_path, conteudo_hd_novo);
+    
+    // Define a data de modificacao da origem (PD) para ser INTENCIONALMENTE mais antiga que o HD (Destino)
+    auto tempo_antigo = fs::file_time_type::clock::now() - std::chrono::hours(48);
+    set_file_time(origem_path, tempo_antigo);
+    
+    // 3. Execucao: Chamada em MODO RESTAURACAO
+    ResultadoBackup resultado = faz_backup_arquivo(origem_path, destino_path, RESTAURACAO);
+    
+    // 4. Verificacao: Espera-se ERRO, pois o HD é mais novo e o PD mais antigo
+    REQUIRE(resultado == ERRO_ARQUIVO_ORIGEM_MAIS_ANTIGO);
+    
+    // Garante que o conteudo do HD NAO FOI SOBRESCRITO
+    std::ifstream ifs(destino_path);
+    std::string linha;
+    std::getline(ifs, linha);
+    REQUIRE(linha == conteudo_hd_novo); 
+}
+

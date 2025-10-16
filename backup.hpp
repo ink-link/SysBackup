@@ -11,7 +11,8 @@ enum ResultadoBackup {
     IGNORAR = 1,
     ERRO_GERAL = -1,
     ERRO_ARQUIVO_ORIGEM_NAO_EXISTE = -2,
-    ERRO_ARQUIVO_DESTINO_MAIS_NOVO = -3 
+    ERRO_ARQUIVO_DESTINO_MAIS_NOVO = -3,
+    ERRO_ARQUIVO_ORIGEM_MAIS_ANTIGO = -4
 };
 
 enum Operacao {
