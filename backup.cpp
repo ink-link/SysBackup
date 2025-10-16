@@ -55,7 +55,9 @@ ResultadoBackup le_arquivo_parametros(const std::string& nome_arquivo_parm,
         
         return SUCESSO;
     }
-    
+    // Este caso so ocorreria se o arquivo existisse mas nao pudesse ser aberto 
+    // (erro de permissao)
+    return ERRO_GERAL;
 }
 
 ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string& destino, Operacao operacao) {
