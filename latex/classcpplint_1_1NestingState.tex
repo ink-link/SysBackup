@@ -1,0 +1,195 @@
+\doxysection{cpplint.\+Nesting\+State Class Reference}
+\hypertarget{classcpplint_1_1NestingState}{}\label{classcpplint_1_1NestingState}\index{cpplint.NestingState@{cpplint.NestingState}}
+
+
+Inheritance diagram for cpplint.\+Nesting\+State\+:
+% FIG 0
+
+
+Collaboration diagram for cpplint.\+Nesting\+State\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classcpplint_1_1NestingState_a8e396c592b3e045ac6d493cc4fe92d79}\label{classcpplint_1_1NestingState_a8e396c592b3e045ac6d493cc4fe92d79} 
+{\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self)
+\item 
+\mbox{\hyperlink{classcpplint_1_1NestingState_aba98d984db5687df0825d005a78e6be9}{Seen\+Open\+Brace}} (self)
+\item 
+\mbox{\hyperlink{classcpplint_1_1NestingState_a115cd9192a1398dc22a52c491be059c6}{In\+Namespace\+Body}} (self)
+\item 
+\mbox{\hyperlink{classcpplint_1_1NestingState_a1ef3784ff504c95f705e112515bf4428}{In\+ExternC}} (self)
+\item 
+\mbox{\hyperlink{classcpplint_1_1NestingState_aaf69acb36e074f842f992e916c6912a3}{In\+Class\+Declaration}} (self)
+\item 
+\mbox{\hyperlink{classcpplint_1_1NestingState_ab5615602356aa85bc0842a09b4045408}{In\+Asm\+Block}} (self)
+\item 
+\mbox{\hyperlink{classcpplint_1_1NestingState_a3a0d3776009d9f4542e23319bd1e92a9}{In\+Template\+Argument\+List}} (self, clean\+\_\+lines, linenum, pos)
+\item 
+\mbox{\hyperlink{classcpplint_1_1NestingState_aaab05dd32b05c5683b5baff25cfe3c45}{Update\+Preprocessor}} (self, line)
+\item 
+\mbox{\hyperlink{classcpplint_1_1NestingState_a2f1325b07d3915849320dd6ad2309359}{Update}} (self, filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{classcpplint_1_1NestingState_aedcd83c180d8da5c3c1d355cc117cb0a}{Innermost\+Class}} (self)
+\item 
+\mbox{\hyperlink{classcpplint_1_1NestingState_a2fe9e879b4fd6054142659f99583b46e}{Check\+Completed\+Blocks}} (self, filename, error)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classcpplint_1_1NestingState_a6ae9bea040f988d152922788d0d73a15}\label{classcpplint_1_1NestingState_a6ae9bea040f988d152922788d0d73a15} 
+{\bfseries stack}
+\item 
+\Hypertarget{classcpplint_1_1NestingState_a7aa34c8fb8df73d76f702c7012c46911}\label{classcpplint_1_1NestingState_a7aa34c8fb8df73d76f702c7012c46911} 
+{\bfseries previous\+\_\+stack\+\_\+top}
+\item 
+\Hypertarget{classcpplint_1_1NestingState_a3a5ca37e3066d91830ea1faa8feae4e5}\label{classcpplint_1_1NestingState_a3a5ca37e3066d91830ea1faa8feae4e5} 
+{\bfseries pp\+\_\+stack}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Holds states related to parsing braces.\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcpplint_1_1NestingState_a2fe9e879b4fd6054142659f99583b46e}\label{classcpplint_1_1NestingState_a2fe9e879b4fd6054142659f99583b46e} 
+\index{cpplint.NestingState@{cpplint.NestingState}!CheckCompletedBlocks@{CheckCompletedBlocks}}
+\index{CheckCompletedBlocks@{CheckCompletedBlocks}!cpplint.NestingState@{cpplint.NestingState}}
+\doxysubsubsection{\texorpdfstring{CheckCompletedBlocks()}{CheckCompletedBlocks()}}
+{\footnotesize\ttfamily cpplint.\+Nesting\+State.\+Check\+Completed\+Blocks (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{filename,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks that all classes and namespaces have been completely parsed.
+
+Call this when all lines in a file have been processed.
+Args:
+  filename: The name of the current file.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{classcpplint_1_1NestingState_ab5615602356aa85bc0842a09b4045408}\label{classcpplint_1_1NestingState_ab5615602356aa85bc0842a09b4045408} 
+\index{cpplint.NestingState@{cpplint.NestingState}!InAsmBlock@{InAsmBlock}}
+\index{InAsmBlock@{InAsmBlock}!cpplint.NestingState@{cpplint.NestingState}}
+\doxysubsubsection{\texorpdfstring{InAsmBlock()}{InAsmBlock()}}
+{\footnotesize\ttfamily cpplint.\+Nesting\+State.\+In\+Asm\+Block (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if we are currently one level inside an inline ASM block.
+
+Returns:
+  True if the top of the stack is a block containing inline ASM.
+\end{DoxyVerb}
+ \Hypertarget{classcpplint_1_1NestingState_aaf69acb36e074f842f992e916c6912a3}\label{classcpplint_1_1NestingState_aaf69acb36e074f842f992e916c6912a3} 
+\index{cpplint.NestingState@{cpplint.NestingState}!InClassDeclaration@{InClassDeclaration}}
+\index{InClassDeclaration@{InClassDeclaration}!cpplint.NestingState@{cpplint.NestingState}}
+\doxysubsubsection{\texorpdfstring{InClassDeclaration()}{InClassDeclaration()}}
+{\footnotesize\ttfamily cpplint.\+Nesting\+State.\+In\+Class\+Declaration (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if we are currently one level inside a class or struct declaration.
+
+Returns:
+  True if top of the stack is a class/struct, False otherwise.
+\end{DoxyVerb}
+ \Hypertarget{classcpplint_1_1NestingState_a1ef3784ff504c95f705e112515bf4428}\label{classcpplint_1_1NestingState_a1ef3784ff504c95f705e112515bf4428} 
+\index{cpplint.NestingState@{cpplint.NestingState}!InExternC@{InExternC}}
+\index{InExternC@{InExternC}!cpplint.NestingState@{cpplint.NestingState}}
+\doxysubsubsection{\texorpdfstring{InExternC()}{InExternC()}}
+{\footnotesize\ttfamily cpplint.\+Nesting\+State.\+In\+ExternC (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if we are currently one level inside an 'extern "C"' block.
+
+Returns:
+  True if top of the stack is an extern block, False otherwise.
+\end{DoxyVerb}
+ \Hypertarget{classcpplint_1_1NestingState_a115cd9192a1398dc22a52c491be059c6}\label{classcpplint_1_1NestingState_a115cd9192a1398dc22a52c491be059c6} 
+\index{cpplint.NestingState@{cpplint.NestingState}!InNamespaceBody@{InNamespaceBody}}
+\index{InNamespaceBody@{InNamespaceBody}!cpplint.NestingState@{cpplint.NestingState}}
+\doxysubsubsection{\texorpdfstring{InNamespaceBody()}{InNamespaceBody()}}
+{\footnotesize\ttfamily cpplint.\+Nesting\+State.\+In\+Namespace\+Body (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if we are currently one level inside a namespace body.
+
+Returns:
+  True if top of the stack is a namespace block, False otherwise.
+\end{DoxyVerb}
+ \Hypertarget{classcpplint_1_1NestingState_aedcd83c180d8da5c3c1d355cc117cb0a}\label{classcpplint_1_1NestingState_aedcd83c180d8da5c3c1d355cc117cb0a} 
+\index{cpplint.NestingState@{cpplint.NestingState}!InnermostClass@{InnermostClass}}
+\index{InnermostClass@{InnermostClass}!cpplint.NestingState@{cpplint.NestingState}}
+\doxysubsubsection{\texorpdfstring{InnermostClass()}{InnermostClass()}}
+{\footnotesize\ttfamily cpplint.\+Nesting\+State.\+Innermost\+Class (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get class info on the top of the stack.
+
+Returns:
+  A _ClassInfo object if we are inside a class, or None otherwise.
+\end{DoxyVerb}
+ \Hypertarget{classcpplint_1_1NestingState_a3a0d3776009d9f4542e23319bd1e92a9}\label{classcpplint_1_1NestingState_a3a0d3776009d9f4542e23319bd1e92a9} 
+\index{cpplint.NestingState@{cpplint.NestingState}!InTemplateArgumentList@{InTemplateArgumentList}}
+\index{InTemplateArgumentList@{InTemplateArgumentList}!cpplint.NestingState@{cpplint.NestingState}}
+\doxysubsubsection{\texorpdfstring{InTemplateArgumentList()}{InTemplateArgumentList()}}
+{\footnotesize\ttfamily cpplint.\+Nesting\+State.\+In\+Template\+Argument\+List (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{pos }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if current position is inside template argument list.
+
+Args:
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  pos: position just after the suspected template argument.
+Returns:
+  True if (linenum, pos) is inside template arguments.
+\end{DoxyVerb}
+ \Hypertarget{classcpplint_1_1NestingState_aba98d984db5687df0825d005a78e6be9}\label{classcpplint_1_1NestingState_aba98d984db5687df0825d005a78e6be9} 
+\index{cpplint.NestingState@{cpplint.NestingState}!SeenOpenBrace@{SeenOpenBrace}}
+\index{SeenOpenBrace@{SeenOpenBrace}!cpplint.NestingState@{cpplint.NestingState}}
+\doxysubsubsection{\texorpdfstring{SeenOpenBrace()}{SeenOpenBrace()}}
+{\footnotesize\ttfamily cpplint.\+Nesting\+State.\+Seen\+Open\+Brace (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if we have seen the opening brace for the innermost block.
+
+Returns:
+  True if we have seen the opening brace, False if the innermost
+  block is still expecting an opening brace.
+\end{DoxyVerb}
+ \Hypertarget{classcpplint_1_1NestingState_a2f1325b07d3915849320dd6ad2309359}\label{classcpplint_1_1NestingState_a2f1325b07d3915849320dd6ad2309359} 
+\index{cpplint.NestingState@{cpplint.NestingState}!Update@{Update}}
+\index{Update@{Update}!cpplint.NestingState@{cpplint.NestingState}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily cpplint.\+Nesting\+State.\+Update (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Update nesting state with current line.
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{classcpplint_1_1NestingState_aaab05dd32b05c5683b5baff25cfe3c45}\label{classcpplint_1_1NestingState_aaab05dd32b05c5683b5baff25cfe3c45} 
+\index{cpplint.NestingState@{cpplint.NestingState}!UpdatePreprocessor@{UpdatePreprocessor}}
+\index{UpdatePreprocessor@{UpdatePreprocessor}!cpplint.NestingState@{cpplint.NestingState}}
+\doxysubsubsection{\texorpdfstring{UpdatePreprocessor()}{UpdatePreprocessor()}}
+{\footnotesize\ttfamily cpplint.\+Nesting\+State.\+Update\+Preprocessor (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{line }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Update preprocessor stack.
+
+We need to handle preprocessors due to classes like this:
+  #ifdef SWIG
+  struct ResultDetailsPageElementExtensionPoint {
+  #else
+  struct ResultDetailsPageElementExtensionPoint : public Extension {
+  #endif
+
+We make the following assumptions (good enough for most files):
+- Preprocessor condition evaluates to true from #if up to first
+  #else/#elif/#endif.
+
+- Preprocessor condition evaluates to false from #else/#elif up
+  to #endif.  We still perform lint checks on these lines, but
+  these do not affect nesting stack.
+
+Args:
+  line: current line to check.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+cpplint.\+py\end{DoxyCompactItemize}

@@ -1,0 +1,71 @@
+\doxysection{Catch\+::Generators\+::Chunk\+Generator\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classCatch_1_1Generators_1_1ChunkGenerator}{}\label{classCatch_1_1Generators_1_1ChunkGenerator}\index{Catch::Generators::ChunkGenerator$<$ T $>$@{Catch::Generators::ChunkGenerator$<$ T $>$}}
+
+
+Inheritance diagram for Catch\+::Generators\+::Chunk\+Generator\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+% FIG 0
+
+
+Collaboration diagram for Catch\+::Generators\+::Chunk\+Generator\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classCatch_1_1Generators_1_1ChunkGenerator_a50c334d00cde3166d71e9b90ebc2d2e3}\label{classCatch_1_1Generators_1_1ChunkGenerator_a50c334d00cde3166d71e9b90ebc2d2e3} 
+{\bfseries Chunk\+Generator} (size\+\_\+t size, \mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorWrapper}{Generator\+Wrapper}}$<$ T $>$ generator)
+\item 
+std\+::vector$<$ T $>$ const \& \mbox{\hyperlink{classCatch_1_1Generators_1_1ChunkGenerator_afab9d06c84aa469b3af60eb3e8f10597}{get}} () const override
+\item 
+bool \mbox{\hyperlink{classCatch_1_1Generators_1_1ChunkGenerator_a545e89f80eb1e3c953491541ea083f86}{next}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorUntypedBase}{Catch\+::\+Generators\+::\+Generator\+Untyped\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Generator\+Untyped\+Base} (\mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorUntypedBase}{Generator\+Untyped\+Base}} const \&)=default
+\item 
+\mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorUntypedBase}{Generator\+Untyped\+Base}} \& {\bfseries operator=} (\mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorUntypedBase}{Generator\+Untyped\+Base}} const \&)=default
+\item 
+bool \mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorUntypedBase_a1ea657675ef9274645608f521238ff54}{counted\+Next}} ()
+\item 
+std\+::size\+\_\+t {\bfseries current\+Element\+Index} () const
+\item 
+\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} \mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorUntypedBase_a9c9f450ab1a1aa6ed6ae9e1bfed2e5c1}{current\+Element\+As\+String}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classCatch_1_1Generators_1_1IGenerator}{Catch\+::\+Generators\+::\+IGenerator$<$ std\+::vector$<$ T $>$ $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+using {\bfseries type} = std\+::vector$<$ T $>$
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCatch_1_1Generators_1_1ChunkGenerator_afab9d06c84aa469b3af60eb3e8f10597}\label{classCatch_1_1Generators_1_1ChunkGenerator_afab9d06c84aa469b3af60eb3e8f10597} 
+\index{Catch::Generators::ChunkGenerator$<$ T $>$@{Catch::Generators::ChunkGenerator$<$ T $>$}!get@{get}}
+\index{get@{get}!Catch::Generators::ChunkGenerator$<$ T $>$@{Catch::Generators::ChunkGenerator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$ T $>$ const  \& \mbox{\hyperlink{classCatch_1_1Generators_1_1ChunkGenerator}{Catch\+::\+Generators\+::\+Chunk\+Generator}}$<$ T $>$\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classCatch_1_1Generators_1_1IGenerator}{Catch\+::\+Generators\+::\+IGenerator$<$ std\+::vector$<$ T $>$ $>$}}.
+
+\Hypertarget{classCatch_1_1Generators_1_1ChunkGenerator_a545e89f80eb1e3c953491541ea083f86}\label{classCatch_1_1Generators_1_1ChunkGenerator_a545e89f80eb1e3c953491541ea083f86} 
+\index{Catch::Generators::ChunkGenerator$<$ T $>$@{Catch::Generators::ChunkGenerator$<$ T $>$}!next@{next}}
+\index{next@{next}!Catch::Generators::ChunkGenerator$<$ T $>$@{Catch::Generators::ChunkGenerator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classCatch_1_1Generators_1_1ChunkGenerator}{Catch\+::\+Generators\+::\+Chunk\+Generator}}$<$ T $>$\+::next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Attempts to move the generator to the next element
+
+Returns true iff the move succeeded (and a valid element can be retrieved). 
+
+Implements \mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorUntypedBase}{Catch\+::\+Generators\+::\+Generator\+Untyped\+Base}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{catch__amalgamated_8hpp}{catch\+\_\+amalgamated.\+hpp}}\end{DoxyCompactItemize}

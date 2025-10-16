@@ -1,0 +1,34 @@
+\doxysection{Catch\+::Test\+Case\+Handle Class Reference}
+\hypertarget{classCatch_1_1TestCaseHandle}{}\label{classCatch_1_1TestCaseHandle}\index{Catch::TestCaseHandle@{Catch::TestCaseHandle}}
+
+
+{\ttfamily \#include $<$catch\+\_\+amalgamated.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classCatch_1_1TestCaseHandle_ae265e45e0c834125ebd1cb6a370ebb83}\label{classCatch_1_1TestCaseHandle_ae265e45e0c834125ebd1cb6a370ebb83} 
+constexpr {\bfseries Test\+Case\+Handle} (\mbox{\hyperlink{structCatch_1_1TestCaseInfo}{Test\+Case\+Info}} \texorpdfstring{$\ast$}{*}info, ITest\+Invoker \texorpdfstring{$\ast$}{*}invoker)
+\item 
+\Hypertarget{classCatch_1_1TestCaseHandle_a7e78330f0d1a6ddbb952369bf37b1e52}\label{classCatch_1_1TestCaseHandle_a7e78330f0d1a6ddbb952369bf37b1e52} 
+void {\bfseries prepare\+Test\+Case} () const
+\item 
+\Hypertarget{classCatch_1_1TestCaseHandle_ad243c3ac78d702cda848c909383da2d7}\label{classCatch_1_1TestCaseHandle_ad243c3ac78d702cda848c909383da2d7} 
+void {\bfseries tear\+Down\+Test\+Case} () const
+\item 
+\Hypertarget{classCatch_1_1TestCaseHandle_a3ceefa8ee4fecb6aba985fb539ef94f4}\label{classCatch_1_1TestCaseHandle_a3ceefa8ee4fecb6aba985fb539ef94f4} 
+void {\bfseries invoke} () const
+\item 
+\Hypertarget{classCatch_1_1TestCaseHandle_a9a89d26457c8585f93eb8baea0f39884}\label{classCatch_1_1TestCaseHandle_a9a89d26457c8585f93eb8baea0f39884} 
+constexpr \mbox{\hyperlink{structCatch_1_1TestCaseInfo}{Test\+Case\+Info}} const \& {\bfseries get\+Test\+Case\+Info} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Wrapper over the test case information and the test case invoker
+
+Does not own either, and is specifically made to be cheap to copy around. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{catch__amalgamated_8hpp}{catch\+\_\+amalgamated.\+hpp}}\end{DoxyCompactItemize}

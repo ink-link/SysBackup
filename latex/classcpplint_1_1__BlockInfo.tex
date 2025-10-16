@@ -1,0 +1,108 @@
+\doxysection{cpplint.\+\_\+\+Block\+Info Class Reference}
+\hypertarget{classcpplint_1_1__BlockInfo}{}\label{classcpplint_1_1__BlockInfo}\index{cpplint.\_BlockInfo@{cpplint.\_BlockInfo}}
+
+
+Inheritance diagram for cpplint.\+\_\+\+Block\+Info\+:
+% FIG 0
+
+
+Collaboration diagram for cpplint.\+\_\+\+Block\+Info\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classcpplint_1_1__BlockInfo_a0ffada51223f386e56d7983887ee1e36}\label{classcpplint_1_1__BlockInfo_a0ffada51223f386e56d7983887ee1e36} 
+{\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, linenum, seen\+\_\+open\+\_\+brace)
+\item 
+\mbox{\hyperlink{classcpplint_1_1__BlockInfo_ab647f3776f8ea0cddce48df16866c22b}{Check\+Begin}} (self, filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{classcpplint_1_1__BlockInfo_a8aa346eb67ebeca1794b4b0d49ce1710}{Check\+End}} (self, filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{classcpplint_1_1__BlockInfo_a91769e579c79f86c6cbf586398a55fc9}{Is\+Block\+Info}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classcpplint_1_1__BlockInfo_a81d316f03e42aebbfe0636f905c4c291}\label{classcpplint_1_1__BlockInfo_a81d316f03e42aebbfe0636f905c4c291} 
+{\bfseries starting\+\_\+linenum}
+\item 
+\Hypertarget{classcpplint_1_1__BlockInfo_aa974539217437751383ad20896c974d7}\label{classcpplint_1_1__BlockInfo_aa974539217437751383ad20896c974d7} 
+{\bfseries seen\+\_\+open\+\_\+brace}
+\item 
+\Hypertarget{classcpplint_1_1__BlockInfo_a02a0b48995a599f6b2bbaa6f16cca98a}\label{classcpplint_1_1__BlockInfo_a02a0b48995a599f6b2bbaa6f16cca98a} 
+{\bfseries open\+\_\+parentheses}
+\item 
+\Hypertarget{classcpplint_1_1__BlockInfo_aad762ef7088f2f556a75c9a80006f4db}\label{classcpplint_1_1__BlockInfo_aad762ef7088f2f556a75c9a80006f4db} 
+{\bfseries inline\+\_\+asm}
+\item 
+\Hypertarget{classcpplint_1_1__BlockInfo_a120822b07db37b3480a573ec29ee4457}\label{classcpplint_1_1__BlockInfo_a120822b07db37b3480a573ec29ee4457} 
+{\bfseries check\+\_\+namespace\+\_\+indentation}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Stores information about a generic block of code.\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcpplint_1_1__BlockInfo_ab647f3776f8ea0cddce48df16866c22b}\label{classcpplint_1_1__BlockInfo_ab647f3776f8ea0cddce48df16866c22b} 
+\index{cpplint.\_BlockInfo@{cpplint.\_BlockInfo}!CheckBegin@{CheckBegin}}
+\index{CheckBegin@{CheckBegin}!cpplint.\_BlockInfo@{cpplint.\_BlockInfo}}
+\doxysubsubsection{\texorpdfstring{CheckBegin()}{CheckBegin()}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Block\+Info.\+Check\+Begin (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Run checks that applies to text up to the opening brace.
+
+This is mostly for checking the text after the class identifier
+and the "{", usually where the base class is specified.  For other
+blocks, there isn't much to check, so we always pass.
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classcpplint_1_1__ClassInfo_ac6f8b3209ba2297ce81d63116ddb6c31}{cpplint.\+\_\+\+Class\+Info}}.
+
+\Hypertarget{classcpplint_1_1__BlockInfo_a8aa346eb67ebeca1794b4b0d49ce1710}\label{classcpplint_1_1__BlockInfo_a8aa346eb67ebeca1794b4b0d49ce1710} 
+\index{cpplint.\_BlockInfo@{cpplint.\_BlockInfo}!CheckEnd@{CheckEnd}}
+\index{CheckEnd@{CheckEnd}!cpplint.\_BlockInfo@{cpplint.\_BlockInfo}}
+\doxysubsubsection{\texorpdfstring{CheckEnd()}{CheckEnd()}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Block\+Info.\+Check\+End (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Run checks that applies to text after the closing brace.
+
+This is mostly used for checking end of namespace comments.
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classcpplint_1_1__ClassInfo_af46c33e69478b0b71a84cde0cbf70984}{cpplint.\+\_\+\+Class\+Info}}, and \mbox{\hyperlink{classcpplint_1_1__NamespaceInfo_acb5ed6c0be2970b1045eacc18f08e797}{cpplint.\+\_\+\+Namespace\+Info}}.
+
+\Hypertarget{classcpplint_1_1__BlockInfo_a91769e579c79f86c6cbf586398a55fc9}\label{classcpplint_1_1__BlockInfo_a91769e579c79f86c6cbf586398a55fc9} 
+\index{cpplint.\_BlockInfo@{cpplint.\_BlockInfo}!IsBlockInfo@{IsBlockInfo}}
+\index{IsBlockInfo@{IsBlockInfo}!cpplint.\_BlockInfo@{cpplint.\_BlockInfo}}
+\doxysubsubsection{\texorpdfstring{IsBlockInfo()}{IsBlockInfo()}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Block\+Info.\+Is\+Block\+Info (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns true if this block is a _BlockInfo.
+
+This is convenient for verifying that an object is an instance of
+a _BlockInfo, but not an instance of any of the derived classes.
+
+Returns:
+  True for this class, False for derived classes.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+cpplint.\+py\end{DoxyCompactItemize}

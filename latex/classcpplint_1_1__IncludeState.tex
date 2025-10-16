@@ -1,0 +1,199 @@
+\doxysection{cpplint.\+\_\+\+Include\+State Class Reference}
+\hypertarget{classcpplint_1_1__IncludeState}{}\label{classcpplint_1_1__IncludeState}\index{cpplint.\_IncludeState@{cpplint.\_IncludeState}}
+
+
+Inheritance diagram for cpplint.\+\_\+\+Include\+State\+:
+% FIG 0
+
+
+Collaboration diagram for cpplint.\+\_\+\+Include\+State\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classcpplint_1_1__IncludeState_a4648ad4ac393dbd957103e2cd8df6e93}\label{classcpplint_1_1__IncludeState_a4648ad4ac393dbd957103e2cd8df6e93} 
+{\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self)
+\item 
+\mbox{\hyperlink{classcpplint_1_1__IncludeState_ad79d0efe62f3c3ccf1b4f0e8d8356448}{Find\+Header}} (self, header)
+\item 
+\mbox{\hyperlink{classcpplint_1_1__IncludeState_ada8b6e3c35424517077c13679219cdf8}{Reset\+Section}} (self, directive)
+\item 
+\Hypertarget{classcpplint_1_1__IncludeState_a77d884d3a75bb6270ca0c00981156f74}\label{classcpplint_1_1__IncludeState_a77d884d3a75bb6270ca0c00981156f74} 
+{\bfseries Set\+Last\+Header} (self, header\+\_\+path)
+\item 
+\mbox{\hyperlink{classcpplint_1_1__IncludeState_aac9cac7998bc80fb59f4caaf4e777ffe}{Canonicalize\+Alphabetical\+Order}} (self, header\+\_\+path)
+\item 
+\mbox{\hyperlink{classcpplint_1_1__IncludeState_adddaa0dc635ebfcd8ad22d2781a47ed9}{Is\+In\+Alphabetical\+Order}} (self, clean\+\_\+lines, linenum, header\+\_\+path)
+\item 
+\mbox{\hyperlink{classcpplint_1_1__IncludeState_a6ab1ae614e035fdee2b2219dcc6a5d57}{Check\+Next\+Include\+Order}} (self, header\+\_\+type)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classcpplint_1_1__IncludeState_a82d8b92a431437ee181e950517c71cbb}\label{classcpplint_1_1__IncludeState_a82d8b92a431437ee181e950517c71cbb} 
+{\bfseries include\+\_\+list}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classcpplint_1_1__IncludeState_ab1a8864f105dd145d84fe88ba04c3565}\label{classcpplint_1_1__IncludeState_ab1a8864f105dd145d84fe88ba04c3565} 
+{\bfseries \+\_\+section}
+\item 
+\Hypertarget{classcpplint_1_1__IncludeState_adcb4bc7a995593913ab71672ca314649}\label{classcpplint_1_1__IncludeState_adcb4bc7a995593913ab71672ca314649} 
+{\bfseries \+\_\+last\+\_\+header}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classcpplint_1_1__IncludeState_a91a5a4add6ae053f4ef6ac19943d40fb}\label{classcpplint_1_1__IncludeState_a91a5a4add6ae053f4ef6ac19943d40fb} 
+int {\bfseries \+\_\+\+INITIAL\+\_\+\+SECTION} = 0
+\item 
+\Hypertarget{classcpplint_1_1__IncludeState_ac594f53b34c2b7303350638247b13812}\label{classcpplint_1_1__IncludeState_ac594f53b34c2b7303350638247b13812} 
+int {\bfseries \+\_\+\+MY\+\_\+\+H\+\_\+\+SECTION} = 1
+\item 
+\Hypertarget{classcpplint_1_1__IncludeState_a6f0cd97b110703aaebde37a726e6667d}\label{classcpplint_1_1__IncludeState_a6f0cd97b110703aaebde37a726e6667d} 
+int {\bfseries \+\_\+\+C\+\_\+\+SECTION} = 2
+\item 
+\Hypertarget{classcpplint_1_1__IncludeState_a02d92497eead44f258fbd11aee7825f7}\label{classcpplint_1_1__IncludeState_a02d92497eead44f258fbd11aee7825f7} 
+int {\bfseries \+\_\+\+CPP\+\_\+\+SECTION} = 3
+\item 
+\Hypertarget{classcpplint_1_1__IncludeState_a61762d0c9aa19bcfcea686d6d77d33d1}\label{classcpplint_1_1__IncludeState_a61762d0c9aa19bcfcea686d6d77d33d1} 
+int {\bfseries \+\_\+\+OTHER\+\_\+\+H\+\_\+\+SECTION} = 4
+\item 
+dict \mbox{\hyperlink{classcpplint_1_1__IncludeState_af05d3e4ccfdbbc17f1cdcbfb95563ec5}{\+\_\+\+TYPE\+\_\+\+NAMES}}
+\item 
+dict \mbox{\hyperlink{classcpplint_1_1__IncludeState_a605066851786f27b9293f3637b246b24}{\+\_\+\+SECTION\+\_\+\+NAMES}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Tracks line numbers for includes, and the order in which includes appear.
+
+include_list contains list of lists of (header, line number) pairs.
+It's a lists of lists rather than just one flat list to make it
+easier to update across preprocessor boundaries.
+
+Call CheckNextIncludeOrder() once for each header in the file, passing
+in the type constants defined above. Calls in an illegal order will
+raise an _IncludeError with an appropriate error message.\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcpplint_1_1__IncludeState_aac9cac7998bc80fb59f4caaf4e777ffe}\label{classcpplint_1_1__IncludeState_aac9cac7998bc80fb59f4caaf4e777ffe} 
+\index{cpplint.\_IncludeState@{cpplint.\_IncludeState}!CanonicalizeAlphabeticalOrder@{CanonicalizeAlphabeticalOrder}}
+\index{CanonicalizeAlphabeticalOrder@{CanonicalizeAlphabeticalOrder}!cpplint.\_IncludeState@{cpplint.\_IncludeState}}
+\doxysubsubsection{\texorpdfstring{CanonicalizeAlphabeticalOrder()}{CanonicalizeAlphabeticalOrder()}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Include\+State.\+Canonicalize\+Alphabetical\+Order (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{header\+\_\+path }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a path canonicalized for alphabetical comparison.
+
+- replaces "-" with "_" so they both cmp the same.
+- removes '-inl' since we don't require them to be after the main header.
+- lowercase everything, just in case.
+
+Args:
+  header_path: Path to be canonicalized.
+
+Returns:
+  Canonicalized path.
+\end{DoxyVerb}
+ \Hypertarget{classcpplint_1_1__IncludeState_a6ab1ae614e035fdee2b2219dcc6a5d57}\label{classcpplint_1_1__IncludeState_a6ab1ae614e035fdee2b2219dcc6a5d57} 
+\index{cpplint.\_IncludeState@{cpplint.\_IncludeState}!CheckNextIncludeOrder@{CheckNextIncludeOrder}}
+\index{CheckNextIncludeOrder@{CheckNextIncludeOrder}!cpplint.\_IncludeState@{cpplint.\_IncludeState}}
+\doxysubsubsection{\texorpdfstring{CheckNextIncludeOrder()}{CheckNextIncludeOrder()}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Include\+State.\+Check\+Next\+Include\+Order (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{header\+\_\+type }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a non-empty error message if the next header is out of order.
+
+This function also updates the internal state to be ready to check
+the next include.
+
+Args:
+  header_type: One of the _XXX_HEADER constants defined above.
+
+Returns:
+  The empty string if the header is in the right order, or an
+  error message describing what's wrong.\end{DoxyVerb}
+ \Hypertarget{classcpplint_1_1__IncludeState_ad79d0efe62f3c3ccf1b4f0e8d8356448}\label{classcpplint_1_1__IncludeState_ad79d0efe62f3c3ccf1b4f0e8d8356448} 
+\index{cpplint.\_IncludeState@{cpplint.\_IncludeState}!FindHeader@{FindHeader}}
+\index{FindHeader@{FindHeader}!cpplint.\_IncludeState@{cpplint.\_IncludeState}}
+\doxysubsubsection{\texorpdfstring{FindHeader()}{FindHeader()}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Include\+State.\+Find\+Header (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{header }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if a header has already been included.
+
+Args:
+  header: header to check.
+Returns:
+  Line number of previous occurrence, or -1 if the header has not
+  been seen before.
+\end{DoxyVerb}
+ \Hypertarget{classcpplint_1_1__IncludeState_adddaa0dc635ebfcd8ad22d2781a47ed9}\label{classcpplint_1_1__IncludeState_adddaa0dc635ebfcd8ad22d2781a47ed9} 
+\index{cpplint.\_IncludeState@{cpplint.\_IncludeState}!IsInAlphabeticalOrder@{IsInAlphabeticalOrder}}
+\index{IsInAlphabeticalOrder@{IsInAlphabeticalOrder}!cpplint.\_IncludeState@{cpplint.\_IncludeState}}
+\doxysubsubsection{\texorpdfstring{IsInAlphabeticalOrder()}{IsInAlphabeticalOrder()}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Include\+State.\+Is\+In\+Alphabetical\+Order (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{header\+\_\+path }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if a header is in alphabetical order with the previous header.
+
+Args:
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  header_path: Canonicalized header to be checked.
+
+Returns:
+  Returns true if the header is in alphabetical order.
+\end{DoxyVerb}
+ \Hypertarget{classcpplint_1_1__IncludeState_ada8b6e3c35424517077c13679219cdf8}\label{classcpplint_1_1__IncludeState_ada8b6e3c35424517077c13679219cdf8} 
+\index{cpplint.\_IncludeState@{cpplint.\_IncludeState}!ResetSection@{ResetSection}}
+\index{ResetSection@{ResetSection}!cpplint.\_IncludeState@{cpplint.\_IncludeState}}
+\doxysubsubsection{\texorpdfstring{ResetSection()}{ResetSection()}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Include\+State.\+Reset\+Section (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{directive }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Reset section checking for preprocessor directive.
+
+Args:
+  directive: preprocessor directive (e.g. "if", "else").
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classcpplint_1_1__IncludeState_a605066851786f27b9293f3637b246b24}\label{classcpplint_1_1__IncludeState_a605066851786f27b9293f3637b246b24} 
+\index{cpplint.\_IncludeState@{cpplint.\_IncludeState}!\_SECTION\_NAMES@{\_SECTION\_NAMES}}
+\index{\_SECTION\_NAMES@{\_SECTION\_NAMES}!cpplint.\_IncludeState@{cpplint.\_IncludeState}}
+\doxysubsubsection{\texorpdfstring{\_SECTION\_NAMES}{\_SECTION\_NAMES}}
+{\footnotesize\ttfamily dict cpplint.\+\_\+\+Include\+State.\+\_\+\+SECTION\+\_\+\+NAMES\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \_INITIAL\_SECTION:\ \textcolor{stringliteral}{"{}...\ nothing.\ (This\ can't\ be\ an\ error.)"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \_MY\_H\_SECTION:\ \textcolor{stringliteral}{'a\ header\ this\ file\ implements'},}
+\DoxyCodeLine{\ \ \ \ \ \ \_C\_SECTION:\ \textcolor{stringliteral}{'C\ system\ header'},}
+\DoxyCodeLine{\ \ \ \ \ \ \_CPP\_SECTION:\ \textcolor{stringliteral}{'C++\ system\ header'},}
+\DoxyCodeLine{\ \ \ \ \ \ \_OTHER\_H\_SECTION:\ \textcolor{stringliteral}{'other\ header'},}
+\DoxyCodeLine{\ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcpplint_1_1__IncludeState_af05d3e4ccfdbbc17f1cdcbfb95563ec5}\label{classcpplint_1_1__IncludeState_af05d3e4ccfdbbc17f1cdcbfb95563ec5} 
+\index{cpplint.\_IncludeState@{cpplint.\_IncludeState}!\_TYPE\_NAMES@{\_TYPE\_NAMES}}
+\index{\_TYPE\_NAMES@{\_TYPE\_NAMES}!cpplint.\_IncludeState@{cpplint.\_IncludeState}}
+\doxysubsubsection{\texorpdfstring{\_TYPE\_NAMES}{\_TYPE\_NAMES}}
+{\footnotesize\ttfamily dict cpplint.\+\_\+\+Include\+State.\+\_\+\+TYPE\+\_\+\+NAMES\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \_C\_SYS\_HEADER:\ \textcolor{stringliteral}{'C\ system\ header'},}
+\DoxyCodeLine{\ \ \ \ \ \ \_CPP\_SYS\_HEADER:\ \textcolor{stringliteral}{'C++\ system\ header'},}
+\DoxyCodeLine{\ \ \ \ \ \ \_LIKELY\_MY\_HEADER:\ \textcolor{stringliteral}{'header\ this\ file\ implements'},}
+\DoxyCodeLine{\ \ \ \ \ \ \_POSSIBLE\_MY\_HEADER:\ \textcolor{stringliteral}{'header\ this\ file\ may\ implement'},}
+\DoxyCodeLine{\ \ \ \ \ \ \_OTHER\_HEADER:\ \textcolor{stringliteral}{'other\ header'},}
+\DoxyCodeLine{\ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+cpplint.\+py\end{DoxyCompactItemize}

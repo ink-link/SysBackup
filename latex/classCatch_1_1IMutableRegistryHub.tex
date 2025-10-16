@@ -1,0 +1,32 @@
+\doxysection{Catch\+::IMutable\+Registry\+Hub Class Reference}
+\hypertarget{classCatch_1_1IMutableRegistryHub}{}\label{classCatch_1_1IMutableRegistryHub}\index{Catch::IMutableRegistryHub@{Catch::IMutableRegistryHub}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classCatch_1_1IMutableRegistryHub_aa94a804d04ed6ca0dbd0553d6acd6257}\label{classCatch_1_1IMutableRegistryHub_aa94a804d04ed6ca0dbd0553d6acd6257} 
+virtual void {\bfseries register\+Reporter} (std\+::string const \&name, \mbox{\hyperlink{classCatch_1_1Detail_1_1unique__ptr}{IReporter\+Factory\+Ptr}} factory)=0
+\item 
+\Hypertarget{classCatch_1_1IMutableRegistryHub_a8c70c6e8f0d2ac0c83fe4e5c53d193f6}\label{classCatch_1_1IMutableRegistryHub_a8c70c6e8f0d2ac0c83fe4e5c53d193f6} 
+virtual void {\bfseries register\+Listener} (\mbox{\hyperlink{classCatch_1_1Detail_1_1unique__ptr}{Detail\+::unique\+\_\+ptr}}$<$ Event\+Listener\+Factory $>$ factory)=0
+\item 
+\Hypertarget{classCatch_1_1IMutableRegistryHub_a07ecec9d39a4ec17ee6a12c9a5a7c8a6}\label{classCatch_1_1IMutableRegistryHub_a07ecec9d39a4ec17ee6a12c9a5a7c8a6} 
+virtual void {\bfseries register\+Test} (\mbox{\hyperlink{classCatch_1_1Detail_1_1unique__ptr}{Detail\+::unique\+\_\+ptr}}$<$ \mbox{\hyperlink{structCatch_1_1TestCaseInfo}{Test\+Case\+Info}} $>$ \&\&test\+Info, \mbox{\hyperlink{classCatch_1_1Detail_1_1unique__ptr}{Detail\+::unique\+\_\+ptr}}$<$ ITest\+Invoker $>$ \&\&invoker)=0
+\item 
+\Hypertarget{classCatch_1_1IMutableRegistryHub_aed579e45f9d9082d8e45f93fa028d11e}\label{classCatch_1_1IMutableRegistryHub_aed579e45f9d9082d8e45f93fa028d11e} 
+virtual void {\bfseries register\+Translator} (\mbox{\hyperlink{classCatch_1_1Detail_1_1unique__ptr}{Detail\+::unique\+\_\+ptr}}$<$ \mbox{\hyperlink{classCatch_1_1IExceptionTranslator}{IException\+Translator}} $>$ \&\&translator)=0
+\item 
+\Hypertarget{classCatch_1_1IMutableRegistryHub_abf2e386b6f94f615719ada711adbf822}\label{classCatch_1_1IMutableRegistryHub_abf2e386b6f94f615719ada711adbf822} 
+virtual void {\bfseries register\+Tag\+Alias} (std\+::string const \&alias, std\+::string const \&tag, \mbox{\hyperlink{structCatch_1_1SourceLineInfo}{Source\+Line\+Info}} const \&line\+Info)=0
+\item 
+\Hypertarget{classCatch_1_1IMutableRegistryHub_a72a7d5386851ac3200f8da794a009c86}\label{classCatch_1_1IMutableRegistryHub_a72a7d5386851ac3200f8da794a009c86} 
+virtual void {\bfseries register\+Startup\+Exception} () noexcept=0
+\item 
+\Hypertarget{classCatch_1_1IMutableRegistryHub_ab1f0013630047f8295e5969b624ad632}\label{classCatch_1_1IMutableRegistryHub_ab1f0013630047f8295e5969b624ad632} 
+virtual \mbox{\hyperlink{classCatch_1_1IMutableEnumValuesRegistry}{IMutable\+Enum\+Values\+Registry}} \& {\bfseries get\+Mutable\+Enum\+Values\+Registry} ()=0
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{catch__amalgamated_8hpp}{catch\+\_\+amalgamated.\+hpp}}\item 
+\mbox{\hyperlink{catch__amalgamated_8cpp}{catch\+\_\+amalgamated.\+cpp}}\end{DoxyCompactItemize}

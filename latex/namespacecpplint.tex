@@ -1,0 +1,2216 @@
+\doxysection{cpplint Namespace Reference}
+\hypertarget{namespacecpplint}{}\label{namespacecpplint}\index{cpplint@{cpplint}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classcpplint_1_1__BlockInfo}{\+\_\+\+Block\+Info}}
+\item 
+class \mbox{\hyperlink{classcpplint_1_1__ClassInfo}{\+\_\+\+Class\+Info}}
+\item 
+class \mbox{\hyperlink{classcpplint_1_1__CppLintState}{\+\_\+\+Cpp\+Lint\+State}}
+\item 
+class \mbox{\hyperlink{classcpplint_1_1__ExternCInfo}{\+\_\+\+Extern\+CInfo}}
+\item 
+class \mbox{\hyperlink{classcpplint_1_1__FunctionState}{\+\_\+\+Function\+State}}
+\item 
+class \mbox{\hyperlink{classcpplint_1_1__IncludeError}{\+\_\+\+Include\+Error}}
+\item 
+class \mbox{\hyperlink{classcpplint_1_1__IncludeState}{\+\_\+\+Include\+State}}
+\item 
+class \mbox{\hyperlink{classcpplint_1_1__NamespaceInfo}{\+\_\+\+Namespace\+Info}}
+\item 
+class \mbox{\hyperlink{classcpplint_1_1__PreprocessorInfo}{\+\_\+\+Preprocessor\+Info}}
+\item 
+class \mbox{\hyperlink{classcpplint_1_1CleansedLines}{Cleansed\+Lines}}
+\item 
+class \mbox{\hyperlink{classcpplint_1_1FileInfo}{File\+Info}}
+\item 
+class \mbox{\hyperlink{classcpplint_1_1NestingState}{Nesting\+State}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{namespacecpplint_a61ea7ddd7fa3d98dbe6f1252803dea0e}\label{namespacecpplint_a61ea7ddd7fa3d98dbe6f1252803dea0e} 
+{\bfseries Process\+Hpp\+Headers\+Option} (val)
+\item 
+\Hypertarget{namespacecpplint_a7fa055bc9c71fba8acc4b4e216cc19cd}\label{namespacecpplint_a7fa055bc9c71fba8acc4b4e216cc19cd} 
+{\bfseries Is\+Header\+Extension} (file\+\_\+extension)
+\item 
+\mbox{\hyperlink{namespacecpplint_a22a0d25680a41ec23d754425a73e47c5}{Parse\+Nolint\+Suppressions}} (filename, raw\+\_\+line, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a084823b16c0140d867262fd987ab204a}{Process\+Global\+Suppresions}} (lines)
+\item 
+\mbox{\hyperlink{namespacecpplint_ab57355a5b2189a15ef03ab6bdecd5838}{Reset\+Nolint\+Suppressions}} ()
+\item 
+\mbox{\hyperlink{namespacecpplint_a236008b9c766ce526ac9dfafeef0a246}{Is\+Error\+Suppressed\+By\+Nolint}} (category, linenum)
+\item 
+\mbox{\hyperlink{namespacecpplint_aa0db7290fc6bd23f44b6602a6ae22738}{Match}} (pattern, s)
+\item 
+\mbox{\hyperlink{namespacecpplint_a4524ac0ff2e171cef865a36f535495ed}{Replace\+All}} (pattern, rep, s)
+\item 
+\mbox{\hyperlink{namespacecpplint_a515e256f8ccda50d15b9b7401f5264f7}{Search}} (pattern, s)
+\item 
+\mbox{\hyperlink{namespacecpplint_aa418f429ad1c4cbe4a3fcaf4d308d1a9}{\+\_\+\+Is\+Source\+Extension}} (s)
+\item 
+\mbox{\hyperlink{namespacecpplint_a0918c2cf1a6d367270c78453a64a4537}{\+\_\+\+Output\+Format}} ()
+\item 
+\mbox{\hyperlink{namespacecpplint_a8b4c979cba2f10f233e9be66c575a767}{\+\_\+\+Set\+Output\+Format}} (output\+\_\+format)
+\item 
+\mbox{\hyperlink{namespacecpplint_ae40914ab6bdc6321d57574ea838b2857}{\+\_\+\+Quiet}} ()
+\item 
+\mbox{\hyperlink{namespacecpplint_ad9bb222f193f2fa6b478e45ef4629247}{\+\_\+\+Set\+Quiet}} (quiet)
+\item 
+\mbox{\hyperlink{namespacecpplint_a66473d736ac5e8173d51bc2007c465f4}{\+\_\+\+Verbose\+Level}} ()
+\item 
+\mbox{\hyperlink{namespacecpplint_ac555c636192b91d5dc7bb297ec8a8002}{\+\_\+\+Set\+Verbose\+Level}} (level)
+\item 
+\mbox{\hyperlink{namespacecpplint_a18027dbca3cce9a7f42da24034c792ef}{\+\_\+\+Set\+Counting\+Style}} (level)
+\item 
+\mbox{\hyperlink{namespacecpplint_a579a2c20128b210a3a717c560c5757a7}{\+\_\+\+Filters}} ()
+\item 
+\mbox{\hyperlink{namespacecpplint_a00a6e750b3f9b6615136d51b841b4a43}{\+\_\+\+Set\+Filters}} (filters)
+\item 
+\mbox{\hyperlink{namespacecpplint_afddd2b6b8a5419d76312738b1b365bf9}{\+\_\+\+Add\+Filters}} (filters)
+\item 
+\mbox{\hyperlink{namespacecpplint_a521cce550ec375f406e1bc1c9d340523}{\+\_\+\+Backup\+Filters}} ()
+\item 
+\mbox{\hyperlink{namespacecpplint_a596e396989b937bb3c0c88119e51a713}{\+\_\+\+Restore\+Filters}} ()
+\item 
+\mbox{\hyperlink{namespacecpplint_a7f821c71233c10095cbb3ad8805b1d17}{\+\_\+\+Should\+Print\+Error}} (category, confidence, linenum)
+\item 
+\mbox{\hyperlink{namespacecpplint_aca228b36be5460efe4ace10b0e5d0f7d}{Error}} (filename, linenum, category, confidence, message)
+\item 
+\mbox{\hyperlink{namespacecpplint_af27826b49df1e5e9c87705ff0c469082}{Is\+Cpp\+String}} (line)
+\item 
+\mbox{\hyperlink{namespacecpplint_a4fae6fc97d3683e4f74115c09e1f223d}{Cleanse\+Raw\+Strings}} (raw\+\_\+lines)
+\item 
+\mbox{\hyperlink{namespacecpplint_a3da19fcc995011176b2b3a8a4bc09090}{Find\+Next\+Multi\+Line\+Comment\+Start}} (lines, lineix)
+\item 
+\mbox{\hyperlink{namespacecpplint_a3e5bc72462a25a21e0d312263901ce01}{Find\+Next\+Multi\+Line\+Comment\+End}} (lines, lineix)
+\item 
+\mbox{\hyperlink{namespacecpplint_a783d0e506730eb397484525ff9631d09}{Remove\+Multi\+Line\+Comments\+From\+Range}} (lines, begin, end)
+\item 
+\mbox{\hyperlink{namespacecpplint_acca753613a04062aff9acefc4ce2c78b}{Remove\+Multi\+Line\+Comments}} (filename, lines, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_ae9566310f2866027f14cc468ad85635a}{Cleanse\+Comments}} (line)
+\item 
+\mbox{\hyperlink{namespacecpplint_a9cc0677c6efe4f143ce3705136daf4be}{Find\+End\+Of\+Expression\+In\+Line}} (line, startpos, stack)
+\item 
+\mbox{\hyperlink{namespacecpplint_a1b6021bb43f15b2ba6d35664a529b9b2}{Close\+Expression}} (clean\+\_\+lines, linenum, pos)
+\item 
+\mbox{\hyperlink{namespacecpplint_a3688a48ada153189003ae1638fba6f59}{Find\+Start\+Of\+Expression\+In\+Line}} (line, endpos, stack)
+\item 
+\mbox{\hyperlink{namespacecpplint_a6334cf8e2b362b9cc6f28fb84a3cef48}{Reverse\+Close\+Expression}} (clean\+\_\+lines, linenum, pos)
+\item 
+\mbox{\hyperlink{namespacecpplint_a3210a6bdb9b5e5816bae844438e46175}{Check\+For\+Copyright}} (filename, lines, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a24004af01f4dd0d09c9e84971359ef4f}{Get\+Indent\+Level}} (line)
+\item 
+\mbox{\hyperlink{namespacecpplint_a7ad752dd62ed4ccfed7d956cf1b18f7e}{Path\+Split\+To\+List}} (path)
+\item 
+\mbox{\hyperlink{namespacecpplint_aceb05c1fabdb84a964be5853de8727c8}{Get\+Header\+Guard\+CPPVariable}} (filename)
+\item 
+\mbox{\hyperlink{namespacecpplint_a7c35b84495b8a833fbd59b95d73565d4}{Check\+For\+Header\+Guard}} (filename, clean\+\_\+lines, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a3d8106f98be69e8a21ecd52b2c1a01ad}{Check\+Header\+File\+Included}} (filename, include\+\_\+state, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a39de0ae95d3e2e2ded6fa6a102dc4a87}{Check\+For\+Bad\+Characters}} (filename, lines, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a5cc00552ef046cd3108add1d7bac4a0c}{Check\+For\+Newline\+At\+EOF}} (filename, lines, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_ad01bedd4e81f95d268bd8d57b7a0b25c}{Check\+For\+Multiline\+Comments\+And\+Strings}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a62a1c760ac463a5cd71f01acafd34b75}{Check\+Posix\+Threading}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a7ea52ecef1fdc9fe7a212b80fabfcdbe}{Check\+Vlog\+Arguments}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_ad620dc29deab204431ab36e441945c0b}{Check\+Invalid\+Increment}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\Hypertarget{namespacecpplint_a4ef340070fe7644c1ec8a0393aa73385}\label{namespacecpplint_a4ef340070fe7644c1ec8a0393aa73385} 
+{\bfseries Is\+Macro\+Definition} (clean\+\_\+lines, linenum)
+\item 
+\Hypertarget{namespacecpplint_ada57f76d656a29d447f14402bddf667d}\label{namespacecpplint_ada57f76d656a29d447f14402bddf667d} 
+{\bfseries Is\+Forward\+Class\+Declaration} (clean\+\_\+lines, linenum)
+\item 
+\mbox{\hyperlink{namespacecpplint_ab89b1ea3024934600c0e44e58c0ee681}{Check\+For\+Non\+Standard\+Constructs}} (filename, clean\+\_\+lines, linenum, nesting\+\_\+state, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_ac49aad8d30cf3223bb05477fb1cf00b8}{Check\+Spacing\+For\+Function\+Call}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a98bd45db7f6376b48ba397d1b06df2e7}{Is\+Blank\+Line}} (line)
+\item 
+\Hypertarget{namespacecpplint_aa6e33062b311eb8df8b394968bb8e057}\label{namespacecpplint_aa6e33062b311eb8df8b394968bb8e057} 
+{\bfseries Check\+For\+Namespace\+Indentation} (filename, nesting\+\_\+state, clean\+\_\+lines, line, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a9e87dae35aa33cf4a0db1efd1a6fcb47}{Check\+For\+Function\+Lengths}} (filename, clean\+\_\+lines, linenum, function\+\_\+state, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a1d34e1fe4e9d8a2731f55ff44e807580}{Check\+Comment}} (line, filename, linenum, next\+\_\+line\+\_\+start, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a92ea46979dfe7a731eedfc00f98e6908}{Check\+Spacing}} (filename, clean\+\_\+lines, linenum, nesting\+\_\+state, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_afb7a98d5e074f7cd9d9c590a2ae9dc80}{Check\+Operator\+Spacing}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_ad8d88e9f8764caeb59c8159a77126e47}{Check\+Parenthesis\+Spacing}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_ad57c3efecef205ae9ff72ffce99bae18}{Check\+Comma\+Spacing}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_ad6a8485e6da7c69c68d0bee460aa76e1}{\+\_\+\+Is\+Type}} (clean\+\_\+lines, nesting\+\_\+state, expr)
+\item 
+\mbox{\hyperlink{namespacecpplint_a07255613814f8e6a67d706c97d579d12}{Check\+Braces\+Spacing}} (filename, clean\+\_\+lines, linenum, nesting\+\_\+state, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a204b0fffaabcaccb777da010fb165804}{Is\+Decltype}} (clean\+\_\+lines, linenum, column)
+\item 
+\mbox{\hyperlink{namespacecpplint_ad02e7ecfbf3d754163caa2c9f48c6746}{Check\+Section\+Spacing}} (filename, clean\+\_\+lines, class\+\_\+info, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a42b46bcf4926559c5b946a0bccef5bf3}{Get\+Previous\+Non\+Blank\+Line}} (clean\+\_\+lines, linenum)
+\item 
+\mbox{\hyperlink{namespacecpplint_aafc4fb5ea490272ca6a006b9e9a1b21f}{Check\+Braces}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a2b9c6e28290cdb4f61d1752214e47588}{Check\+Trailing\+Semicolon}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a32b74d81109669b99567cd6444d8f1d4}{Check\+Empty\+Block\+Body}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_ab120ac0a419e4317d0b5458079946d00}{Find\+Check\+Macro}} (line)
+\item 
+\mbox{\hyperlink{namespacecpplint_adab121e085a61cd10a0d7697d0ccba48}{Check\+Check}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_ad699a22c8e9221bcc8395d7a47fe30dc}{Check\+Alt\+Tokens}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a2638d6acb36ef7e352842dfa0bcc2a17}{Get\+Line\+Width}} (line)
+\item 
+\mbox{\hyperlink{namespacecpplint_a2ce48db291ac037321d21b3ba3f70066}{Check\+Style}} (filename, clean\+\_\+lines, linenum, file\+\_\+extension, nesting\+\_\+state, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a308db61b7f969d534458d7ff4199f084}{\+\_\+\+Drop\+Common\+Suffixes}} (filename)
+\item 
+\mbox{\hyperlink{namespacecpplint_a1526090ecd95baf21204601e8debe02e}{\+\_\+\+Classify\+Include}} (fileinfo, include, is\+\_\+system)
+\item 
+\mbox{\hyperlink{namespacecpplint_a250112a79030e6bfd18609fe46eed793}{Check\+Include\+Line}} (filename, clean\+\_\+lines, linenum, include\+\_\+state, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_ad9b398db6acf917691203d15dc765d11}{\+\_\+\+Get\+Text\+Inside}} (text, start\+\_\+pattern)
+\item 
+\mbox{\hyperlink{namespacecpplint_aeb451d66a076ed2f6bdd4fa4e5189fc5}{Check\+Language}} (filename, clean\+\_\+lines, linenum, file\+\_\+extension, include\+\_\+state, nesting\+\_\+state, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a1f3918b9a5d2eeb29c905c2a5f26370e}{Check\+Global\+Static}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a838fe53c34209d10266e4d74c34bc048}{Check\+Printf}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_aaa385f3280ce7c3f7bf64b52918028ca}{Is\+Derived\+Function}} (clean\+\_\+lines, linenum)
+\item 
+\mbox{\hyperlink{namespacecpplint_a55f142e3a1b61d2c3b39895bd48c5d94}{Is\+Out\+Of\+Line\+Method\+Definition}} (clean\+\_\+lines, linenum)
+\item 
+\mbox{\hyperlink{namespacecpplint_a5e7367ed60644c827b59d023706c4b8a}{Is\+Initializer\+List}} (clean\+\_\+lines, linenum)
+\item 
+\mbox{\hyperlink{namespacecpplint_a35d793d3e6da45146d45569fc82e0350}{Check\+For\+Non\+Const\+Reference}} (filename, clean\+\_\+lines, linenum, nesting\+\_\+state, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a4623b4bbd2b8b5e9bd9fb344899dac98}{Check\+Casts}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a151aed5e7a392c99ead7f0ab4f9004b3}{Check\+CStyle\+Cast}} (filename, clean\+\_\+lines, linenum, cast\+\_\+type, pattern, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a161575a5016a22e21e335465a0129000}{Expecting\+Function\+Args}} (clean\+\_\+lines, linenum)
+\item 
+\mbox{\hyperlink{namespacecpplint_abc0b6c4f2dcd4338c7801f54da4ce480}{Files\+Belong\+To\+Same\+Module}} (filename\+\_\+cc, filename\+\_\+h)
+\item 
+\mbox{\hyperlink{namespacecpplint_a11bfdc00ed9bd66b16c882b930a6762b}{Update\+Include\+State}} (filename, include\+\_\+dict, io=codecs)
+\item 
+\mbox{\hyperlink{namespacecpplint_a49b0c080fd4dcf8d6bcbf23ae65ff919}{Check\+For\+Include\+What\+You\+Use}} (filename, clean\+\_\+lines, include\+\_\+state, error, io=codecs)
+\item 
+\mbox{\hyperlink{namespacecpplint_a160d59a445050df2d3888e2d780e8fef}{Check\+Make\+Pair\+Uses\+Deduction}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a4ed66a67812b6822f2d63dfa8b8ae2fa}{Check\+Redundant\+Virtual}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_ad7a61c4e3bd44612340ce58923ed3d9a}{Check\+Redundant\+Override\+Or\+Final}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a57cb8c3332534704b6381c2d75c1d5a3}{Is\+Block\+In\+Name\+Space}} (nesting\+\_\+state, is\+\_\+forward\+\_\+declaration)
+\item 
+\mbox{\hyperlink{namespacecpplint_a9325611c171591900d6eeeff1daf1cb6}{Should\+Check\+Namespace\+Indentation}} (nesting\+\_\+state, is\+\_\+namespace\+\_\+indent\+\_\+item, raw\+\_\+lines\+\_\+no\+\_\+comments, linenum)
+\item 
+\Hypertarget{namespacecpplint_a9f5423d66336a436a8389ddba29f8745}\label{namespacecpplint_a9f5423d66336a436a8389ddba29f8745} 
+{\bfseries Check\+Item\+Indentation\+In\+Namespace} (filename, raw\+\_\+lines\+\_\+no\+\_\+comments, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a60ab7d00cbd976925382b70bbf1fb2cf}{Process\+Line}} (filename, file\+\_\+extension, clean\+\_\+lines, line, include\+\_\+state, function\+\_\+state, nesting\+\_\+state, error, extra\+\_\+check\+\_\+functions=\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{namespacecpplint_ab8abca70d25e2e8981eaacecd6b56c1f}{Flag\+Cxx11\+Features}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_ad45b10ccccb163cbc0ccafa25329d459}{Flag\+Cxx14\+Features}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_af49dbbca393312acfa3a46984665eaff}{Process\+File\+Data}} (filename, file\+\_\+extension, lines, error, extra\+\_\+check\+\_\+functions=\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{namespacecpplint_a20022b1ac01d93c470fbd25610776a33}{Process\+Config\+Overrides}} (filename)
+\item 
+\mbox{\hyperlink{namespacecpplint_acecb7a35ccd8dc94f7759b8740496f5f}{Process\+File}} (filename, vlevel, extra\+\_\+check\+\_\+functions=\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{namespacecpplint_a909dd459f639e414cbf5ffd91ce8c1a4}{Print\+Usage}} (message)
+\item 
+\mbox{\hyperlink{namespacecpplint_a3bba987526e2d3e4eb3d0a25cf80f1dc}{Print\+Categories}} ()
+\item 
+\mbox{\hyperlink{namespacecpplint_a3f8324de8f8a4138491fb973817322da}{Parse\+Arguments}} (args)
+\item 
+\Hypertarget{namespacecpplint_acf4a1286bb0905ffa465d24881a5d2e7}\label{namespacecpplint_acf4a1286bb0905ffa465d24881a5d2e7} 
+{\bfseries main} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{namespacecpplint_aa354ba81f1673ed31f2c0d7ce1f05f5e}\label{namespacecpplint_aa354ba81f1673ed31f2c0d7ce1f05f5e} 
+{\bfseries xrange} = range
+\item 
+\Hypertarget{namespacecpplint_a8d7a904fd919fd2a6e2f9d95d129ca5f}\label{namespacecpplint_a8d7a904fd919fd2a6e2f9d95d129ca5f} 
+str {\bfseries \+\_\+\+USAGE}
+\item 
+\Hypertarget{namespacecpplint_a443dd7edd596a47a3973064c86d24474}\label{namespacecpplint_a443dd7edd596a47a3973064c86d24474} 
+list {\bfseries \+\_\+\+ERROR\+\_\+\+CATEGORIES}
+\item 
+list \mbox{\hyperlink{namespacecpplint_a57f33bd76a6086498bdad77f4d921fdc}{\+\_\+\+LEGACY\+\_\+\+ERROR\+\_\+\+CATEGORIES}}
+\item 
+\Hypertarget{namespacecpplint_af698c82fac7cff7d454fd8ca2be35e68}\label{namespacecpplint_af698c82fac7cff7d454fd8ca2be35e68} 
+list {\bfseries \+\_\+\+DEFAULT\+\_\+\+FILTERS} = \mbox{[}\textquotesingle{}-\/build/include\+\_\+alpha\textquotesingle{}\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacecpplint_a32c68628f86e9d7c90d1cdb52277dbcc}{\+\_\+\+DEFAULT\+\_\+\+C\+\_\+\+SUPPRESSED\+\_\+\+CATEGORIES}}
+\item 
+list \mbox{\hyperlink{namespacecpplint_aa91fc7f951bf23aa73c820508ca6ff7d}{\+\_\+\+DEFAULT\+\_\+\+KERNEL\+\_\+\+SUPPRESSED\+\_\+\+CATEGORIES}}
+\item 
+\Hypertarget{namespacecpplint_a4854144fb2320157db25efaf2fddcdff}\label{namespacecpplint_a4854144fb2320157db25efaf2fddcdff} 
+{\bfseries \+\_\+\+CPP\+\_\+\+HEADERS}
+\item 
+\mbox{\hyperlink{namespacecpplint_afd2511b963c71a6c7281f7f85370c808}{\+\_\+\+TYPES}}
+\item 
+\mbox{\hyperlink{namespacecpplint_abedff37ffb696f5ee67db5d535f29bcd}{\+\_\+\+THIRD\+\_\+\+PARTY\+\_\+\+HEADERS\+\_\+\+PATTERN}}
+\item 
+\Hypertarget{namespacecpplint_a2c53db1a273392f2c2d764992b6a81d5}\label{namespacecpplint_a2c53db1a273392f2c2d764992b6a81d5} 
+str {\bfseries \+\_\+\+TEST\+\_\+\+FILE\+\_\+\+SUFFIX} = r\textquotesingle{}(\+\_\+test\texorpdfstring{$\vert$}{|}\+\_\+unittest\texorpdfstring{$\vert$}{|}\+\_\+regtest)\$\textquotesingle{}
+\item 
+\Hypertarget{namespacecpplint_a8cd8b98aa00e581d653067079f82c7ab}\label{namespacecpplint_a8cd8b98aa00e581d653067079f82c7ab} 
+{\bfseries \+\_\+\+EMPTY\+\_\+\+CONDITIONAL\+\_\+\+BODY\+\_\+\+PATTERN} = re.\+compile(r\textquotesingle{}\texorpdfstring{$^\wedge$}{\string^}\textbackslash{}s\texorpdfstring{$\ast$}{*}\$\textquotesingle{}, re.\+DOTALL)
+\item 
+list \mbox{\hyperlink{namespacecpplint_a96865866cf9b608cbe21c0549782e33c}{\+\_\+\+CHECK\+\_\+\+MACROS}}
+\item 
+\Hypertarget{namespacecpplint_aa29e61cc2dc32e1e9f61ecaed2907b48}\label{namespacecpplint_aa29e61cc2dc32e1e9f61ecaed2907b48} 
+{\bfseries \+\_\+\+CHECK\+\_\+\+REPLACEMENT} = dict(\mbox{[}(m, \{\}) for m in \+\_\+\+CHECK\+\_\+\+MACROS\mbox{]})
+\item 
+dict \mbox{\hyperlink{namespacecpplint_a81cd42cc4392c8b9176e76e09ac95abe}{\+\_\+\+ALT\+\_\+\+TOKEN\+\_\+\+REPLACEMENT}}
+\item 
+\mbox{\hyperlink{namespacecpplint_a06836e29f41961aead03ec8aadd1cecd}{\+\_\+\+ALT\+\_\+\+TOKEN\+\_\+\+REPLACEMENT\+\_\+\+PATTERN}}
+\item 
+\Hypertarget{namespacecpplint_a845e252934563f3b8dbab7cbbd81929d}\label{namespacecpplint_a845e252934563f3b8dbab7cbbd81929d} 
+int {\bfseries \+\_\+\+C\+\_\+\+SYS\+\_\+\+HEADER} = 1
+\item 
+\Hypertarget{namespacecpplint_aa9513a195daca7c7835216243625060d}\label{namespacecpplint_aa9513a195daca7c7835216243625060d} 
+int {\bfseries \+\_\+\+CPP\+\_\+\+SYS\+\_\+\+HEADER} = 2
+\item 
+\Hypertarget{namespacecpplint_a01c68489ef7fc81a65e23ed29a3cc77a}\label{namespacecpplint_a01c68489ef7fc81a65e23ed29a3cc77a} 
+int {\bfseries \+\_\+\+LIKELY\+\_\+\+MY\+\_\+\+HEADER} = 3
+\item 
+\Hypertarget{namespacecpplint_a7c70213e94a156b6c861f1e3d18bca48}\label{namespacecpplint_a7c70213e94a156b6c861f1e3d18bca48} 
+int {\bfseries \+\_\+\+POSSIBLE\+\_\+\+MY\+\_\+\+HEADER} = 4
+\item 
+\Hypertarget{namespacecpplint_a5fad80255610fbd2b1e24d4705806378}\label{namespacecpplint_a5fad80255610fbd2b1e24d4705806378} 
+int {\bfseries \+\_\+\+OTHER\+\_\+\+HEADER} = 5
+\item 
+\Hypertarget{namespacecpplint_a03d7f3e1fb21e3da0a3c4ae1ca9f771a}\label{namespacecpplint_a03d7f3e1fb21e3da0a3c4ae1ca9f771a} 
+int {\bfseries \+\_\+\+NO\+\_\+\+ASM} = 0
+\item 
+\Hypertarget{namespacecpplint_a5b040d60ab9e1d1e1971996561a620e2}\label{namespacecpplint_a5b040d60ab9e1d1e1971996561a620e2} 
+int {\bfseries \+\_\+\+INSIDE\+\_\+\+ASM} = 1
+\item 
+\Hypertarget{namespacecpplint_a6b53db7569ac305c328d95092cf45f1a}\label{namespacecpplint_a6b53db7569ac305c328d95092cf45f1a} 
+int {\bfseries \+\_\+\+END\+\_\+\+ASM} = 2
+\item 
+\Hypertarget{namespacecpplint_a0f1f8da647bf9ced22d7834e1d27d065}\label{namespacecpplint_a0f1f8da647bf9ced22d7834e1d27d065} 
+int {\bfseries \+\_\+\+BLOCK\+\_\+\+ASM} = 3
+\item 
+\mbox{\hyperlink{namespacecpplint_a06e1a7cd329c1216de85c4524dbbb21c}{\+\_\+\+MATCH\+\_\+\+ASM}}
+\item 
+\mbox{\hyperlink{namespacecpplint_a01ccd489908488cba7973b9a17caa343}{\+\_\+\+SEARCH\+\_\+\+C\+\_\+\+FILE}}
+\item 
+\Hypertarget{namespacecpplint_a0ebfae753fc7e59a9921df1bc576654c}\label{namespacecpplint_a0ebfae753fc7e59a9921df1bc576654c} 
+{\bfseries \+\_\+\+SEARCH\+\_\+\+KERNEL\+\_\+\+FILE} = re.\+compile(r\textquotesingle{}\textbackslash{}b(?\+:LINT\+\_\+\+KERNEL\+\_\+\+FILE)\textquotesingle{})
+\item 
+\Hypertarget{namespacecpplint_ae98f9adf8ab237a162c0eedd32e77323}\label{namespacecpplint_ae98f9adf8ab237a162c0eedd32e77323} 
+dict {\bfseries \+\_\+regexp\+\_\+compile\+\_\+cache} = \{\}
+\item 
+\Hypertarget{namespacecpplint_a810fc14f92f99cc0127fcb2385e82d6d}\label{namespacecpplint_a810fc14f92f99cc0127fcb2385e82d6d} 
+dict {\bfseries \+\_\+error\+\_\+suppressions} = \{\}
+\item 
+\Hypertarget{namespacecpplint_aaf6dcfd2e05bfc2a4ec4f758e05d45e2}\label{namespacecpplint_aaf6dcfd2e05bfc2a4ec4f758e05d45e2} 
+{\bfseries \+\_\+root} = None
+\item 
+\Hypertarget{namespacecpplint_a36c55cb9fe6fabd1395a1cd2c6647f35}\label{namespacecpplint_a36c55cb9fe6fabd1395a1cd2c6647f35} 
+bool {\bfseries \+\_\+root\+\_\+debug} = False
+\item 
+\Hypertarget{namespacecpplint_ab59a11cdee470ff44dae2c9a3cf1fa22}\label{namespacecpplint_ab59a11cdee470ff44dae2c9a3cf1fa22} 
+int {\bfseries \+\_\+line\+\_\+length} = 80
+\item 
+\Hypertarget{namespacecpplint_ae969d2ba7b74119c32022cdb60beb15c}\label{namespacecpplint_ae969d2ba7b74119c32022cdb60beb15c} 
+{\bfseries \+\_\+valid\+\_\+extensions} = set(\mbox{[}\textquotesingle{}cc\textquotesingle{}, \textquotesingle{}h\textquotesingle{}, \textquotesingle{}cpp\textquotesingle{}, \textquotesingle{}cu\textquotesingle{}, \textquotesingle{}cuh\textquotesingle{}\mbox{]})
+\item 
+\Hypertarget{namespacecpplint_aa6c6e506c79bdba0431362eca044f02f}\label{namespacecpplint_aa6c6e506c79bdba0431362eca044f02f} 
+{\bfseries \+\_\+hpp\+\_\+headers} = set(\mbox{[}\textquotesingle{}h\textquotesingle{}\mbox{]})
+\item 
+\Hypertarget{namespacecpplint_a23fe7f30be8c7055a089d89dc3d5ee29}\label{namespacecpplint_a23fe7f30be8c7055a089d89dc3d5ee29} 
+dict {\bfseries \+\_\+global\+\_\+error\+\_\+suppressions} = \{\}
+\item 
+\Hypertarget{namespacecpplint_a8ea348311551951f3999dc9c8a25842b}\label{namespacecpplint_a8ea348311551951f3999dc9c8a25842b} 
+{\bfseries \+\_\+cpplint\+\_\+state} = \mbox{\hyperlink{classcpplint_1_1__CppLintState}{\+\_\+\+Cpp\+Lint\+State}}()
+\item 
+\mbox{\hyperlink{namespacecpplint_acb6f93120f1c7ff091fd9dea38ee89df}{\+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+CLEANSE\+\_\+\+LINE\+\_\+\+ESCAPES}}
+\item 
+\Hypertarget{namespacecpplint_ab8d20858906e4cac9c2ba5af3439e397}\label{namespacecpplint_ab8d20858906e4cac9c2ba5af3439e397} 
+str {\bfseries \+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+C\+\_\+\+COMMENTS} = r\textquotesingle{}/\textbackslash{}\texorpdfstring{$\ast$}{*}(?\+:\mbox{[}\texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$\ast$}{*}\mbox{]}\texorpdfstring{$\vert$}{|}\textbackslash{}\texorpdfstring{$\ast$}{*}(?!/))\texorpdfstring{$\ast$}{*}\textbackslash{}\texorpdfstring{$\ast$}{*}/\textquotesingle{}
+\item 
+\mbox{\hyperlink{namespacecpplint_a4c7a1f6077a72f4d5b5223cca4823670}{\+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+CLEANSE\+\_\+\+LINE\+\_\+\+C\+\_\+\+COMMENTS}}
+\item 
+\Hypertarget{namespacecpplint_ad5d9fc525b2cbc3f526144cc750664ba}\label{namespacecpplint_ad5d9fc525b2cbc3f526144cc750664ba} 
+str {\bfseries \+\_\+\+UNSAFE\+\_\+\+FUNC\+\_\+\+PREFIX} = r\textquotesingle{}(?\+:\mbox{[}-\/+\texorpdfstring{$\ast$}{*}/=\%\texorpdfstring{$^\wedge$}{\string^}\&\texorpdfstring{$\vert$}{|}($<$\mbox{]}\textbackslash{}s\texorpdfstring{$\ast$}{*}\texorpdfstring{$\vert$}{|}$>$\textbackslash{}s+)\textquotesingle{}
+\item 
+tuple \mbox{\hyperlink{namespacecpplint_a35b2c753549d4a10e56d6ff4ff49d52a}{\+\_\+\+THREADING\+\_\+\+LIST}}
+\item 
+\mbox{\hyperlink{namespacecpplint_a10f826c497fc61e200b11304e42a2e72}{\+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+INVALID\+\_\+\+INCREMENT}}
+\item 
+\Hypertarget{namespacecpplint_a055d2ef16d7385daba02715dc5da4b70}\label{namespacecpplint_a055d2ef16d7385daba02715dc5da4b70} 
+{\bfseries \+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+TODO} = re.\+compile(r\textquotesingle{}\texorpdfstring{$^\wedge$}{\string^}//(\textbackslash{}s\texorpdfstring{$\ast$}{*})TODO(\textbackslash{}(.+?\textbackslash{}))?\+:?(\textbackslash{}s\texorpdfstring{$\vert$}{|}\$)?\textquotesingle{})
+\item 
+\Hypertarget{namespacecpplint_a93521777a401a40fe994240ff3fc570f}\label{namespacecpplint_a93521777a401a40fe994240ff3fc570f} 
+{\bfseries \+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+INCLUDE} = re.\+compile(r\textquotesingle{}\texorpdfstring{$^\wedge$}{\string^}\textbackslash{}s\texorpdfstring{$\ast$}{*}\#\textbackslash{}s\texorpdfstring{$\ast$}{*}include\textbackslash{}s\texorpdfstring{$\ast$}{*}(\mbox{[}$<$"{}\mbox{]})(\mbox{[}\texorpdfstring{$^\wedge$}{\string^}$>$"{}\mbox{]}\texorpdfstring{$\ast$}{*})\mbox{[}$>$"{}\mbox{]}.\texorpdfstring{$\ast$}{*}\$\textquotesingle{})
+\item 
+\Hypertarget{namespacecpplint_ab0e2ca96162172c16d79a3124d1cb160}\label{namespacecpplint_ab0e2ca96162172c16d79a3124d1cb160} 
+{\bfseries \+\_\+\+RE\+\_\+\+FIRST\+\_\+\+COMPONENT} = re.\+compile(r\textquotesingle{}\texorpdfstring{$^\wedge$}{\string^}\mbox{[}\texorpdfstring{$^\wedge$}{\string^}-\/\+\_\+.\mbox{]}+\textquotesingle{})
+\item 
+\Hypertarget{namespacecpplint_a23b90879af44f72febba23c258e4b2de}\label{namespacecpplint_a23b90879af44f72febba23c258e4b2de} 
+str {\bfseries \+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+IDENT} = r\textquotesingle{}\mbox{[}\+\_\+a-\/zA-\/Z\mbox{]}\textbackslash{}w\texorpdfstring{$\ast$}{*}\textquotesingle{}
+\item 
+tuple \mbox{\hyperlink{namespacecpplint_afedcf56f0eede3aa5608cbcfd09f56e1}{\+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+TYPE}}
+\item 
+\mbox{\hyperlink{namespacecpplint_ab1ef73db80238ad8d42561df04d77920}{\+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+REF\+\_\+\+PARAM}}
+\item 
+tuple \mbox{\hyperlink{namespacecpplint_adee0ad93201bfc951bff10a8725c49a1}{\+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+CONST\+\_\+\+REF\+\_\+\+PARAM}}
+\item 
+tuple \mbox{\hyperlink{namespacecpplint_a63664d5c5cd3b497c1eacb53048674e3}{\+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+REF\+\_\+\+STREAM\+\_\+\+PARAM}}
+\item 
+\Hypertarget{namespacecpplint_a1741ee2a4dc3f33620d655f246b5162f}\label{namespacecpplint_a1741ee2a4dc3f33620d655f246b5162f} 
+tuple {\bfseries \+\_\+\+HEADERS\+\_\+\+CONTAINING\+\_\+\+TEMPLATES}
+\item 
+tuple \mbox{\hyperlink{namespacecpplint_a0cfde54f6a4bc9c9e2e16019146e2167}{\+\_\+\+HEADERS\+\_\+\+MAYBE\+\_\+\+TEMPLATES}}
+\item 
+\Hypertarget{namespacecpplint_aa9034b4a8066397d074296c6c97b2c01}\label{namespacecpplint_aa9034b4a8066397d074296c6c97b2c01} 
+{\bfseries \+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+STRING} = re.\+compile(r\textquotesingle{}\textbackslash{}bstring\textbackslash{}b\textquotesingle{})
+\item 
+\Hypertarget{namespacecpplint_a0f83c6a36a89cf34d052097249697389}\label{namespacecpplint_a0f83c6a36a89cf34d052097249697389} 
+list {\bfseries \+\_\+re\+\_\+pattern\+\_\+headers\+\_\+maybe\+\_\+templates} = \mbox{[}$\,$\mbox{]}
+\item 
+\Hypertarget{namespacecpplint_af915642b63638b43de40fda5bc97760b}\label{namespacecpplint_af915642b63638b43de40fda5bc97760b} 
+list {\bfseries \+\_\+re\+\_\+pattern\+\_\+templates} = \mbox{[}$\,$\mbox{]}
+\item 
+\Hypertarget{namespacecpplint_afe92711322d062e5f8f44cf07607f237}\label{namespacecpplint_afe92711322d062e5f8f44cf07607f237} 
+{\bfseries \+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+EXPLICIT\+\_\+\+MAKEPAIR} = re.\+compile(r\textquotesingle{}\textbackslash{}bmake\+\_\+pair\textbackslash{}s\texorpdfstring{$\ast$}{*}$<$\textquotesingle{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Does google-lint on c++ files.
+
+The goal of this script is to identify places in the code that *may*
+be in non-compliance with google style.  It does not attempt to fix
+up these problems -- the point is to educate.  It does also not
+attempt to find all problems, or to ensure that everything it does
+find is legitimately a problem.
+
+In particular, we can get very confused by /* and // inside strings!
+We do a small hack, which is to ignore //'s with "'s after them on the
+same line, but it is far from perfect (in either direction).
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacecpplint_afddd2b6b8a5419d76312738b1b365bf9}\label{namespacecpplint_afddd2b6b8a5419d76312738b1b365bf9} 
+\index{cpplint@{cpplint}!\_AddFilters@{\_AddFilters}}
+\index{\_AddFilters@{\_AddFilters}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_AddFilters()}{\_AddFilters()}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Add\+Filters (\begin{DoxyParamCaption}\item[{}]{filters }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Adds more filter overrides.
+
+Unlike _SetFilters, this function does not reset the current list of filters
+available.
+
+Args:
+  filters: A string of comma-separated filters (eg "whitespace/indent").
+           Each filter should start with + or -; else we die.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a521cce550ec375f406e1bc1c9d340523}\label{namespacecpplint_a521cce550ec375f406e1bc1c9d340523} 
+\index{cpplint@{cpplint}!\_BackupFilters@{\_BackupFilters}}
+\index{\_BackupFilters@{\_BackupFilters}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_BackupFilters()}{\_BackupFilters()}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Backup\+Filters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb} Saves the current filter list to backup storage.\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a1526090ecd95baf21204601e8debe02e}\label{namespacecpplint_a1526090ecd95baf21204601e8debe02e} 
+\index{cpplint@{cpplint}!\_ClassifyInclude@{\_ClassifyInclude}}
+\index{\_ClassifyInclude@{\_ClassifyInclude}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_ClassifyInclude()}{\_ClassifyInclude()}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Classify\+Include (\begin{DoxyParamCaption}\item[{}]{fileinfo,  }\item[{}]{include,  }\item[{}]{is\+\_\+system }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Figures out what kind of header 'include' is.
+
+Args:
+  fileinfo: The current file cpplint is running over. A FileInfo instance.
+  include: The path to a #included file.
+  is_system: True if the #include used <> rather than "".
+
+Returns:
+  One of the _XXX_HEADER constants.
+
+For example:
+  >>> _ClassifyInclude(FileInfo('foo/foo.cc'), 'stdio.h', True)
+  _C_SYS_HEADER
+  >>> _ClassifyInclude(FileInfo('foo/foo.cc'), 'string', True)
+  _CPP_SYS_HEADER
+  >>> _ClassifyInclude(FileInfo('foo/foo.cc'), 'foo/foo.h', False)
+  _LIKELY_MY_HEADER
+  >>> _ClassifyInclude(FileInfo('foo/foo_unknown_extension.cc'),
+  ...                  'bar/foo_other_ext.h', False)
+  _POSSIBLE_MY_HEADER
+  >>> _ClassifyInclude(FileInfo('foo/foo.cc'), 'foo/bar.h', False)
+  _OTHER_HEADER
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a308db61b7f969d534458d7ff4199f084}\label{namespacecpplint_a308db61b7f969d534458d7ff4199f084} 
+\index{cpplint@{cpplint}!\_DropCommonSuffixes@{\_DropCommonSuffixes}}
+\index{\_DropCommonSuffixes@{\_DropCommonSuffixes}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_DropCommonSuffixes()}{\_DropCommonSuffixes()}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Drop\+Common\+Suffixes (\begin{DoxyParamCaption}\item[{}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Drops common suffixes like _test.cc or -inl.h from filename.
+
+For example:
+  >>> _DropCommonSuffixes('foo/foo-inl.h')
+  'foo/foo'
+  >>> _DropCommonSuffixes('foo/bar/foo.cc')
+  'foo/bar/foo'
+  >>> _DropCommonSuffixes('foo/foo_internal.h')
+  'foo/foo'
+  >>> _DropCommonSuffixes('foo/foo_unusualinternal.h')
+  'foo/foo_unusualinternal'
+
+Args:
+  filename: The input filename.
+
+Returns:
+  The filename with the common suffix removed.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a579a2c20128b210a3a717c560c5757a7}\label{namespacecpplint_a579a2c20128b210a3a717c560c5757a7} 
+\index{cpplint@{cpplint}!\_Filters@{\_Filters}}
+\index{\_Filters@{\_Filters}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_Filters()}{\_Filters()}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Filters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Returns the module's list of output filters, as a list.\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_ad9b398db6acf917691203d15dc765d11}\label{namespacecpplint_ad9b398db6acf917691203d15dc765d11} 
+\index{cpplint@{cpplint}!\_GetTextInside@{\_GetTextInside}}
+\index{\_GetTextInside@{\_GetTextInside}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_GetTextInside()}{\_GetTextInside()}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Get\+Text\+Inside (\begin{DoxyParamCaption}\item[{}]{text,  }\item[{}]{start\+\_\+pattern }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Retrieves all the text between matching open and close parentheses.
+
+Given a string of lines and a regular expression string, retrieve all the text
+following the expression and between opening punctuation symbols like
+(, [, or {, and the matching close-punctuation symbol. This properly nested
+occurrences of the punctuations, so for the text like
+printf(a(), b(c()));
+a call to _GetTextInside(text, r'printf\(') will return 'a(), b(c())'.
+start_pattern must match string having an open punctuation symbol at the end.
+
+Args:
+text: The lines to extract text. Its comments and strings must be elided.
+It can be single line and can span multiple lines.
+start_pattern: The regexp string indicating where to start extracting
+     the text.
+Returns:
+The extracted text.
+None if either the opening string or ending punctuation could not be found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_aa418f429ad1c4cbe4a3fcaf4d308d1a9}\label{namespacecpplint_aa418f429ad1c4cbe4a3fcaf4d308d1a9} 
+\index{cpplint@{cpplint}!\_IsSourceExtension@{\_IsSourceExtension}}
+\index{\_IsSourceExtension@{\_IsSourceExtension}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_IsSourceExtension()}{\_IsSourceExtension()}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Is\+Source\+Extension (\begin{DoxyParamCaption}\item[{}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}File extension (excluding dot) matches a source file extension.\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_ad6a8485e6da7c69c68d0bee460aa76e1}\label{namespacecpplint_ad6a8485e6da7c69c68d0bee460aa76e1} 
+\index{cpplint@{cpplint}!\_IsType@{\_IsType}}
+\index{\_IsType@{\_IsType}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_IsType()}{\_IsType()}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Is\+Type (\begin{DoxyParamCaption}\item[{}]{clean\+\_\+lines,  }\item[{}]{nesting\+\_\+state,  }\item[{}]{expr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Check if expression looks like a type name, returns true if so.
+
+Args:
+  clean_lines: A CleansedLines instance containing the file.
+  nesting_state: A NestingState instance which maintains information about
+                 the current stack of nested blocks being parsed.
+  expr: The expression to check.
+Returns:
+  True, if token looks like a type.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a0918c2cf1a6d367270c78453a64a4537}\label{namespacecpplint_a0918c2cf1a6d367270c78453a64a4537} 
+\index{cpplint@{cpplint}!\_OutputFormat@{\_OutputFormat}}
+\index{\_OutputFormat@{\_OutputFormat}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_OutputFormat()}{\_OutputFormat()}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Output\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Gets the module's output format.\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_ae40914ab6bdc6321d57574ea838b2857}\label{namespacecpplint_ae40914ab6bdc6321d57574ea838b2857} 
+\index{cpplint@{cpplint}!\_Quiet@{\_Quiet}}
+\index{\_Quiet@{\_Quiet}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_Quiet()}{\_Quiet()}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Quiet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Return's the module's quiet setting.\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a596e396989b937bb3c0c88119e51a713}\label{namespacecpplint_a596e396989b937bb3c0c88119e51a713} 
+\index{cpplint@{cpplint}!\_RestoreFilters@{\_RestoreFilters}}
+\index{\_RestoreFilters@{\_RestoreFilters}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_RestoreFilters()}{\_RestoreFilters()}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Restore\+Filters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb} Restores filters previously backed up.\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a18027dbca3cce9a7f42da24034c792ef}\label{namespacecpplint_a18027dbca3cce9a7f42da24034c792ef} 
+\index{cpplint@{cpplint}!\_SetCountingStyle@{\_SetCountingStyle}}
+\index{\_SetCountingStyle@{\_SetCountingStyle}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_SetCountingStyle()}{\_SetCountingStyle()}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Set\+Counting\+Style (\begin{DoxyParamCaption}\item[{}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Sets the module's counting options.\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a00a6e750b3f9b6615136d51b841b4a43}\label{namespacecpplint_a00a6e750b3f9b6615136d51b841b4a43} 
+\index{cpplint@{cpplint}!\_SetFilters@{\_SetFilters}}
+\index{\_SetFilters@{\_SetFilters}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_SetFilters()}{\_SetFilters()}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Set\+Filters (\begin{DoxyParamCaption}\item[{}]{filters }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Sets the module's error-message filters.
+
+These filters are applied when deciding whether to emit a given
+error message.
+
+Args:
+  filters: A string of comma-separated filters (eg "whitespace/indent").
+           Each filter should start with + or -; else we die.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a8b4c979cba2f10f233e9be66c575a767}\label{namespacecpplint_a8b4c979cba2f10f233e9be66c575a767} 
+\index{cpplint@{cpplint}!\_SetOutputFormat@{\_SetOutputFormat}}
+\index{\_SetOutputFormat@{\_SetOutputFormat}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_SetOutputFormat()}{\_SetOutputFormat()}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Set\+Output\+Format (\begin{DoxyParamCaption}\item[{}]{output\+\_\+format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Sets the module's output format.\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_ad9bb222f193f2fa6b478e45ef4629247}\label{namespacecpplint_ad9bb222f193f2fa6b478e45ef4629247} 
+\index{cpplint@{cpplint}!\_SetQuiet@{\_SetQuiet}}
+\index{\_SetQuiet@{\_SetQuiet}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_SetQuiet()}{\_SetQuiet()}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Set\+Quiet (\begin{DoxyParamCaption}\item[{}]{quiet }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Set the module's quiet status, and return previous setting.\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_ac555c636192b91d5dc7bb297ec8a8002}\label{namespacecpplint_ac555c636192b91d5dc7bb297ec8a8002} 
+\index{cpplint@{cpplint}!\_SetVerboseLevel@{\_SetVerboseLevel}}
+\index{\_SetVerboseLevel@{\_SetVerboseLevel}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_SetVerboseLevel()}{\_SetVerboseLevel()}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Set\+Verbose\+Level (\begin{DoxyParamCaption}\item[{}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Sets the module's verbosity, and returns the previous setting.\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a7f821c71233c10095cbb3ad8805b1d17}\label{namespacecpplint_a7f821c71233c10095cbb3ad8805b1d17} 
+\index{cpplint@{cpplint}!\_ShouldPrintError@{\_ShouldPrintError}}
+\index{\_ShouldPrintError@{\_ShouldPrintError}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_ShouldPrintError()}{\_ShouldPrintError()}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Should\+Print\+Error (\begin{DoxyParamCaption}\item[{}]{category,  }\item[{}]{confidence,  }\item[{}]{linenum }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}If confidence >= verbose, category passes filter and is not suppressed.\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a66473d736ac5e8173d51bc2007c465f4}\label{namespacecpplint_a66473d736ac5e8173d51bc2007c465f4} 
+\index{cpplint@{cpplint}!\_VerboseLevel@{\_VerboseLevel}}
+\index{\_VerboseLevel@{\_VerboseLevel}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_VerboseLevel()}{\_VerboseLevel()}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Verbose\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Returns the module's verbosity setting.\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_ad699a22c8e9221bcc8395d7a47fe30dc}\label{namespacecpplint_ad699a22c8e9221bcc8395d7a47fe30dc} 
+\index{cpplint@{cpplint}!CheckAltTokens@{CheckAltTokens}}
+\index{CheckAltTokens@{CheckAltTokens}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckAltTokens()}{CheckAltTokens()}}
+{\footnotesize\ttfamily cpplint.\+Check\+Alt\+Tokens (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check alternative keywords being used in boolean expressions.
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_aafc4fb5ea490272ca6a006b9e9a1b21f}\label{namespacecpplint_aafc4fb5ea490272ca6a006b9e9a1b21f} 
+\index{cpplint@{cpplint}!CheckBraces@{CheckBraces}}
+\index{CheckBraces@{CheckBraces}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckBraces()}{CheckBraces()}}
+{\footnotesize\ttfamily cpplint.\+Check\+Braces (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Looks for misplaced braces (e.g. at the end of line).
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a07255613814f8e6a67d706c97d579d12}\label{namespacecpplint_a07255613814f8e6a67d706c97d579d12} 
+\index{cpplint@{cpplint}!CheckBracesSpacing@{CheckBracesSpacing}}
+\index{CheckBracesSpacing@{CheckBracesSpacing}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckBracesSpacing()}{CheckBracesSpacing()}}
+{\footnotesize\ttfamily cpplint.\+Check\+Braces\+Spacing (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{nesting\+\_\+state,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks for horizontal spacing near commas.
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  nesting_state: A NestingState instance which maintains information about
+                 the current stack of nested blocks being parsed.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a4623b4bbd2b8b5e9bd9fb344899dac98}\label{namespacecpplint_a4623b4bbd2b8b5e9bd9fb344899dac98} 
+\index{cpplint@{cpplint}!CheckCasts@{CheckCasts}}
+\index{CheckCasts@{CheckCasts}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckCasts()}{CheckCasts()}}
+{\footnotesize\ttfamily cpplint.\+Check\+Casts (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Various cast related checks.
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_adab121e085a61cd10a0d7697d0ccba48}\label{namespacecpplint_adab121e085a61cd10a0d7697d0ccba48} 
+\index{cpplint@{cpplint}!CheckCheck@{CheckCheck}}
+\index{CheckCheck@{CheckCheck}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckCheck()}{CheckCheck()}}
+{\footnotesize\ttfamily cpplint.\+Check\+Check (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks the use of CHECK and EXPECT macros.
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_ad57c3efecef205ae9ff72ffce99bae18}\label{namespacecpplint_ad57c3efecef205ae9ff72ffce99bae18} 
+\index{cpplint@{cpplint}!CheckCommaSpacing@{CheckCommaSpacing}}
+\index{CheckCommaSpacing@{CheckCommaSpacing}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckCommaSpacing()}{CheckCommaSpacing()}}
+{\footnotesize\ttfamily cpplint.\+Check\+Comma\+Spacing (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks for horizontal spacing near commas and semicolons.
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a1d34e1fe4e9d8a2731f55ff44e807580}\label{namespacecpplint_a1d34e1fe4e9d8a2731f55ff44e807580} 
+\index{cpplint@{cpplint}!CheckComment@{CheckComment}}
+\index{CheckComment@{CheckComment}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckComment()}{CheckComment()}}
+{\footnotesize\ttfamily cpplint.\+Check\+Comment (\begin{DoxyParamCaption}\item[{}]{line,  }\item[{}]{filename,  }\item[{}]{linenum,  }\item[{}]{next\+\_\+line\+\_\+start,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks for common mistakes in comments.
+
+Args:
+  line: The line in question.
+  filename: The name of the current file.
+  linenum: The number of the line to check.
+  next_line_start: The first non-whitespace column of the next line.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a151aed5e7a392c99ead7f0ab4f9004b3}\label{namespacecpplint_a151aed5e7a392c99ead7f0ab4f9004b3} 
+\index{cpplint@{cpplint}!CheckCStyleCast@{CheckCStyleCast}}
+\index{CheckCStyleCast@{CheckCStyleCast}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckCStyleCast()}{CheckCStyleCast()}}
+{\footnotesize\ttfamily cpplint.\+Check\+CStyle\+Cast (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{cast\+\_\+type,  }\item[{}]{pattern,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks for a C-style cast by looking for the pattern.
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  cast_type: The string for the C++ cast to recommend.  This is either
+    reinterpret_cast, static_cast, or const_cast, depending.
+  pattern: The regular expression used to find C-style casts.
+  error: The function to call with any errors found.
+
+Returns:
+  True if an error was emitted.
+  False otherwise.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a32b74d81109669b99567cd6444d8f1d4}\label{namespacecpplint_a32b74d81109669b99567cd6444d8f1d4} 
+\index{cpplint@{cpplint}!CheckEmptyBlockBody@{CheckEmptyBlockBody}}
+\index{CheckEmptyBlockBody@{CheckEmptyBlockBody}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckEmptyBlockBody()}{CheckEmptyBlockBody()}}
+{\footnotesize\ttfamily cpplint.\+Check\+Empty\+Block\+Body (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Look for empty loop/conditional body with only a single semicolon.
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a39de0ae95d3e2e2ded6fa6a102dc4a87}\label{namespacecpplint_a39de0ae95d3e2e2ded6fa6a102dc4a87} 
+\index{cpplint@{cpplint}!CheckForBadCharacters@{CheckForBadCharacters}}
+\index{CheckForBadCharacters@{CheckForBadCharacters}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckForBadCharacters()}{CheckForBadCharacters()}}
+{\footnotesize\ttfamily cpplint.\+Check\+For\+Bad\+Characters (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{lines,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Logs an error for each line containing bad characters.
+
+Two kinds of bad characters:
+
+1. Unicode replacement characters: These indicate that either the file
+contained invalid UTF-8 (likely) or Unicode replacement characters (which
+it shouldn't).  Note that it's possible for this to throw off line
+numbering if the invalid UTF-8 occurred adjacent to a newline.
+
+2. NUL bytes.  These are problematic for some tools.
+
+Args:
+  filename: The name of the current file.
+  lines: An array of strings, each representing a line of the file.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a3210a6bdb9b5e5816bae844438e46175}\label{namespacecpplint_a3210a6bdb9b5e5816bae844438e46175} 
+\index{cpplint@{cpplint}!CheckForCopyright@{CheckForCopyright}}
+\index{CheckForCopyright@{CheckForCopyright}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckForCopyright()}{CheckForCopyright()}}
+{\footnotesize\ttfamily cpplint.\+Check\+For\+Copyright (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{lines,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Logs an error if no Copyright message appears at the top of the file.\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a9e87dae35aa33cf4a0db1efd1a6fcb47}\label{namespacecpplint_a9e87dae35aa33cf4a0db1efd1a6fcb47} 
+\index{cpplint@{cpplint}!CheckForFunctionLengths@{CheckForFunctionLengths}}
+\index{CheckForFunctionLengths@{CheckForFunctionLengths}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckForFunctionLengths()}{CheckForFunctionLengths()}}
+{\footnotesize\ttfamily cpplint.\+Check\+For\+Function\+Lengths (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{function\+\_\+state,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Reports for long function bodies.
+
+For an overview why this is done, see:
+https://google-styleguide.googlecode.com/svn/trunk/cppguide.xml#Write_Short_Functions
+
+Uses a simplistic algorithm assuming other style guidelines
+(especially spacing) are followed.
+Only checks unindented functions, so class members are unchecked.
+Trivial bodies are unchecked, so constructors with huge initializer lists
+may be missed.
+Blank/comment lines are not counted so as to avoid encouraging the removal
+of vertical space and comments just to get through a lint check.
+NOLINT *on the last line of a function* disables this check.
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  function_state: Current function name and lines in body so far.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a7c35b84495b8a833fbd59b95d73565d4}\label{namespacecpplint_a7c35b84495b8a833fbd59b95d73565d4} 
+\index{cpplint@{cpplint}!CheckForHeaderGuard@{CheckForHeaderGuard}}
+\index{CheckForHeaderGuard@{CheckForHeaderGuard}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckForHeaderGuard()}{CheckForHeaderGuard()}}
+{\footnotesize\ttfamily cpplint.\+Check\+For\+Header\+Guard (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks that the file contains a header guard.
+
+Logs an error if no #ifndef header guard is present.  For other
+headers, checks that the full pathname is used.
+
+Args:
+  filename: The name of the C++ header file.
+  clean_lines: A CleansedLines instance containing the file.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a49b0c080fd4dcf8d6bcbf23ae65ff919}\label{namespacecpplint_a49b0c080fd4dcf8d6bcbf23ae65ff919} 
+\index{cpplint@{cpplint}!CheckForIncludeWhatYouUse@{CheckForIncludeWhatYouUse}}
+\index{CheckForIncludeWhatYouUse@{CheckForIncludeWhatYouUse}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckForIncludeWhatYouUse()}{CheckForIncludeWhatYouUse()}}
+{\footnotesize\ttfamily cpplint.\+Check\+For\+Include\+What\+You\+Use (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{include\+\_\+state,  }\item[{}]{error,  }\item[{}]{io = {\ttfamily codecs} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Reports for missing stl includes.
+
+This function will output warnings to make sure you are including the headers
+necessary for the stl containers and functions that you use. We only give one
+reason to include a header. For example, if you use both equal_to<> and
+less<> in a .h file, only one (the latter in the file) of these will be
+reported as a reason to include the <functional>.
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  include_state: An _IncludeState instance.
+  error: The function to call with any errors found.
+  io: The IO factory to use to read the header file. Provided for unittest
+      injection.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_ad01bedd4e81f95d268bd8d57b7a0b25c}\label{namespacecpplint_ad01bedd4e81f95d268bd8d57b7a0b25c} 
+\index{cpplint@{cpplint}!CheckForMultilineCommentsAndStrings@{CheckForMultilineCommentsAndStrings}}
+\index{CheckForMultilineCommentsAndStrings@{CheckForMultilineCommentsAndStrings}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckForMultilineCommentsAndStrings()}{CheckForMultilineCommentsAndStrings()}}
+{\footnotesize\ttfamily cpplint.\+Check\+For\+Multiline\+Comments\+And\+Strings (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Logs an error if we see /* ... */ or "..." that extend past one line.
+
+/* ... */ comments are legit inside macros, for one line.
+Otherwise, we prefer // comments, so it's ok to warn about the
+other.  Likewise, it's ok for strings to extend across multiple
+lines, as long as a line continuation character (backslash)
+terminates each line. Although not currently prohibited by the C++
+style guide, it's ugly and unnecessary. We don't do well with either
+in this lint program, so we warn about both.
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a5cc00552ef046cd3108add1d7bac4a0c}\label{namespacecpplint_a5cc00552ef046cd3108add1d7bac4a0c} 
+\index{cpplint@{cpplint}!CheckForNewlineAtEOF@{CheckForNewlineAtEOF}}
+\index{CheckForNewlineAtEOF@{CheckForNewlineAtEOF}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckForNewlineAtEOF()}{CheckForNewlineAtEOF()}}
+{\footnotesize\ttfamily cpplint.\+Check\+For\+Newline\+At\+EOF (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{lines,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Logs an error if there is no newline char at the end of the file.
+
+Args:
+  filename: The name of the current file.
+  lines: An array of strings, each representing a line of the file.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a35d793d3e6da45146d45569fc82e0350}\label{namespacecpplint_a35d793d3e6da45146d45569fc82e0350} 
+\index{cpplint@{cpplint}!CheckForNonConstReference@{CheckForNonConstReference}}
+\index{CheckForNonConstReference@{CheckForNonConstReference}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckForNonConstReference()}{CheckForNonConstReference()}}
+{\footnotesize\ttfamily cpplint.\+Check\+For\+Non\+Const\+Reference (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{nesting\+\_\+state,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check for non-const references.
+
+Separate from CheckLanguage since it scans backwards from current
+line, instead of scanning forward.
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  nesting_state: A NestingState instance which maintains information about
+                 the current stack of nested blocks being parsed.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_ab89b1ea3024934600c0e44e58c0ee681}\label{namespacecpplint_ab89b1ea3024934600c0e44e58c0ee681} 
+\index{cpplint@{cpplint}!CheckForNonStandardConstructs@{CheckForNonStandardConstructs}}
+\index{CheckForNonStandardConstructs@{CheckForNonStandardConstructs}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckForNonStandardConstructs()}{CheckForNonStandardConstructs()}}
+{\footnotesize\ttfamily cpplint.\+Check\+For\+Non\+Standard\+Constructs (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{nesting\+\_\+state,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Logs an error if we see certain non-ANSI constructs ignored by gcc-2.
+
+Complain about several constructs which gcc-2 accepts, but which are
+not standard C++.  Warning about these in lint is one way to ease the
+transition to new compilers.
+- put storage class first (e.g. "static const" instead of "const static").
+- "%lld" instead of %qd" in printf-type functions.
+- "%1$d" is non-standard in printf-type functions.
+- "\%" is an undefined character escape sequence.
+- text after #endif is not allowed.
+- invalid inner-style forward declaration.
+- >? and <? operators, and their >?= and <?= cousins.
+
+Additionally, check for constructor/destructor style violations and reference
+members, as it is very convenient to do so while checking for
+gcc-2 compliance.
+
+Args:
+filename: The name of the current file.
+clean_lines: A CleansedLines instance containing the file.
+linenum: The number of the line to check.
+nesting_state: A NestingState instance which maintains information about
+     the current stack of nested blocks being parsed.
+error: A callable to which errors are reported, which takes 4 arguments:
+filename, line number, error level, and message
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a1f3918b9a5d2eeb29c905c2a5f26370e}\label{namespacecpplint_a1f3918b9a5d2eeb29c905c2a5f26370e} 
+\index{cpplint@{cpplint}!CheckGlobalStatic@{CheckGlobalStatic}}
+\index{CheckGlobalStatic@{CheckGlobalStatic}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckGlobalStatic()}{CheckGlobalStatic()}}
+{\footnotesize\ttfamily cpplint.\+Check\+Global\+Static (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check for unsafe global or static objects.
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a3d8106f98be69e8a21ecd52b2c1a01ad}\label{namespacecpplint_a3d8106f98be69e8a21ecd52b2c1a01ad} 
+\index{cpplint@{cpplint}!CheckHeaderFileIncluded@{CheckHeaderFileIncluded}}
+\index{CheckHeaderFileIncluded@{CheckHeaderFileIncluded}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckHeaderFileIncluded()}{CheckHeaderFileIncluded()}}
+{\footnotesize\ttfamily cpplint.\+Check\+Header\+File\+Included (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{include\+\_\+state,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Logs an error if a .cc file does not include its header.\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a250112a79030e6bfd18609fe46eed793}\label{namespacecpplint_a250112a79030e6bfd18609fe46eed793} 
+\index{cpplint@{cpplint}!CheckIncludeLine@{CheckIncludeLine}}
+\index{CheckIncludeLine@{CheckIncludeLine}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckIncludeLine()}{CheckIncludeLine()}}
+{\footnotesize\ttfamily cpplint.\+Check\+Include\+Line (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{include\+\_\+state,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check rules that are applicable to #include lines.
+
+Strings on #include lines are NOT removed from elided line, to make
+certain tasks easier. However, to prevent false positives, checks
+applicable to #include lines in CheckLanguage must be put here.
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  include_state: An _IncludeState instance in which the headers are inserted.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_ad620dc29deab204431ab36e441945c0b}\label{namespacecpplint_ad620dc29deab204431ab36e441945c0b} 
+\index{cpplint@{cpplint}!CheckInvalidIncrement@{CheckInvalidIncrement}}
+\index{CheckInvalidIncrement@{CheckInvalidIncrement}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckInvalidIncrement()}{CheckInvalidIncrement()}}
+{\footnotesize\ttfamily cpplint.\+Check\+Invalid\+Increment (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks for invalid increment *count++.
+
+For example following function:
+void increment_counter(int* count) {
+  *count++;
+}
+is invalid, because it effectively does count++, moving pointer, and should
+be replaced with ++*count, (*count)++ or *count += 1.
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_aeb451d66a076ed2f6bdd4fa4e5189fc5}\label{namespacecpplint_aeb451d66a076ed2f6bdd4fa4e5189fc5} 
+\index{cpplint@{cpplint}!CheckLanguage@{CheckLanguage}}
+\index{CheckLanguage@{CheckLanguage}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckLanguage()}{CheckLanguage()}}
+{\footnotesize\ttfamily cpplint.\+Check\+Language (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{file\+\_\+extension,  }\item[{}]{include\+\_\+state,  }\item[{}]{nesting\+\_\+state,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks rules from the 'C++ language rules' section of cppguide.html.
+
+Some of these rules are hard to test (function overloading, using
+uint32 inappropriately), but we do the best we can.
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  file_extension: The extension (without the dot) of the filename.
+  include_state: An _IncludeState instance in which the headers are inserted.
+  nesting_state: A NestingState instance which maintains information about
+                 the current stack of nested blocks being parsed.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a160d59a445050df2d3888e2d780e8fef}\label{namespacecpplint_a160d59a445050df2d3888e2d780e8fef} 
+\index{cpplint@{cpplint}!CheckMakePairUsesDeduction@{CheckMakePairUsesDeduction}}
+\index{CheckMakePairUsesDeduction@{CheckMakePairUsesDeduction}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckMakePairUsesDeduction()}{CheckMakePairUsesDeduction()}}
+{\footnotesize\ttfamily cpplint.\+Check\+Make\+Pair\+Uses\+Deduction (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check that make_pair's template arguments are deduced.
+
+G++ 4.6 in C++11 mode fails badly if make_pair's template arguments are
+specified explicitly, and such use isn't intended in any case.
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_afb7a98d5e074f7cd9d9c590a2ae9dc80}\label{namespacecpplint_afb7a98d5e074f7cd9d9c590a2ae9dc80} 
+\index{cpplint@{cpplint}!CheckOperatorSpacing@{CheckOperatorSpacing}}
+\index{CheckOperatorSpacing@{CheckOperatorSpacing}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckOperatorSpacing()}{CheckOperatorSpacing()}}
+{\footnotesize\ttfamily cpplint.\+Check\+Operator\+Spacing (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks for horizontal spacing around operators.
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_ad8d88e9f8764caeb59c8159a77126e47}\label{namespacecpplint_ad8d88e9f8764caeb59c8159a77126e47} 
+\index{cpplint@{cpplint}!CheckParenthesisSpacing@{CheckParenthesisSpacing}}
+\index{CheckParenthesisSpacing@{CheckParenthesisSpacing}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckParenthesisSpacing()}{CheckParenthesisSpacing()}}
+{\footnotesize\ttfamily cpplint.\+Check\+Parenthesis\+Spacing (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks for horizontal spacing around parentheses.
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a62a1c760ac463a5cd71f01acafd34b75}\label{namespacecpplint_a62a1c760ac463a5cd71f01acafd34b75} 
+\index{cpplint@{cpplint}!CheckPosixThreading@{CheckPosixThreading}}
+\index{CheckPosixThreading@{CheckPosixThreading}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckPosixThreading()}{CheckPosixThreading()}}
+{\footnotesize\ttfamily cpplint.\+Check\+Posix\+Threading (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks for calls to thread-unsafe functions.
+
+Much code has been originally written without consideration of
+multi-threading. Also, engineers are relying on their old experience;
+they have learned posix before threading extensions were added. These
+tests guide the engineers to use thread-safe functions (when using
+posix directly).
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a838fe53c34209d10266e4d74c34bc048}\label{namespacecpplint_a838fe53c34209d10266e4d74c34bc048} 
+\index{cpplint@{cpplint}!CheckPrintf@{CheckPrintf}}
+\index{CheckPrintf@{CheckPrintf}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckPrintf()}{CheckPrintf()}}
+{\footnotesize\ttfamily cpplint.\+Check\+Printf (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check for printf related issues.
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_ad7a61c4e3bd44612340ce58923ed3d9a}\label{namespacecpplint_ad7a61c4e3bd44612340ce58923ed3d9a} 
+\index{cpplint@{cpplint}!CheckRedundantOverrideOrFinal@{CheckRedundantOverrideOrFinal}}
+\index{CheckRedundantOverrideOrFinal@{CheckRedundantOverrideOrFinal}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckRedundantOverrideOrFinal()}{CheckRedundantOverrideOrFinal()}}
+{\footnotesize\ttfamily cpplint.\+Check\+Redundant\+Override\+Or\+Final (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if line contains a redundant "override" or "final" virt-specifier.
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a4ed66a67812b6822f2d63dfa8b8ae2fa}\label{namespacecpplint_a4ed66a67812b6822f2d63dfa8b8ae2fa} 
+\index{cpplint@{cpplint}!CheckRedundantVirtual@{CheckRedundantVirtual}}
+\index{CheckRedundantVirtual@{CheckRedundantVirtual}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckRedundantVirtual()}{CheckRedundantVirtual()}}
+{\footnotesize\ttfamily cpplint.\+Check\+Redundant\+Virtual (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if line contains a redundant "virtual" function-specifier.
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_ad02e7ecfbf3d754163caa2c9f48c6746}\label{namespacecpplint_ad02e7ecfbf3d754163caa2c9f48c6746} 
+\index{cpplint@{cpplint}!CheckSectionSpacing@{CheckSectionSpacing}}
+\index{CheckSectionSpacing@{CheckSectionSpacing}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckSectionSpacing()}{CheckSectionSpacing()}}
+{\footnotesize\ttfamily cpplint.\+Check\+Section\+Spacing (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{class\+\_\+info,  }\item[{}]{linenum,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks for additional blank line issues related to sections.
+
+Currently the only thing checked here is blank line before protected/private.
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  class_info: A _ClassInfo objects.
+  linenum: The number of the line to check.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a92ea46979dfe7a731eedfc00f98e6908}\label{namespacecpplint_a92ea46979dfe7a731eedfc00f98e6908} 
+\index{cpplint@{cpplint}!CheckSpacing@{CheckSpacing}}
+\index{CheckSpacing@{CheckSpacing}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckSpacing()}{CheckSpacing()}}
+{\footnotesize\ttfamily cpplint.\+Check\+Spacing (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{nesting\+\_\+state,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks for the correctness of various spacing issues in the code.
+
+Things we check for: spaces around operators, spaces after
+if/for/while/switch, no spaces around parens in function calls, two
+spaces between code and comment, don't start a block with a blank
+line, don't end a function with a blank line, don't add a blank line
+after public/protected/private, don't have too many blank lines in a row.
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  nesting_state: A NestingState instance which maintains information about
+                 the current stack of nested blocks being parsed.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_ac49aad8d30cf3223bb05477fb1cf00b8}\label{namespacecpplint_ac49aad8d30cf3223bb05477fb1cf00b8} 
+\index{cpplint@{cpplint}!CheckSpacingForFunctionCall@{CheckSpacingForFunctionCall}}
+\index{CheckSpacingForFunctionCall@{CheckSpacingForFunctionCall}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckSpacingForFunctionCall()}{CheckSpacingForFunctionCall()}}
+{\footnotesize\ttfamily cpplint.\+Check\+Spacing\+For\+Function\+Call (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks for the correctness of various spacing around function calls.
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a2ce48db291ac037321d21b3ba3f70066}\label{namespacecpplint_a2ce48db291ac037321d21b3ba3f70066} 
+\index{cpplint@{cpplint}!CheckStyle@{CheckStyle}}
+\index{CheckStyle@{CheckStyle}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckStyle()}{CheckStyle()}}
+{\footnotesize\ttfamily cpplint.\+Check\+Style (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{file\+\_\+extension,  }\item[{}]{nesting\+\_\+state,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks rules from the 'C++ style rules' section of cppguide.html.
+
+Most of these rules are hard to test (naming, comment style), but we
+do what we can.  In particular we check for 2-space indents, line lengths,
+tab usage, spaces inside code, etc.
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  file_extension: The extension (without the dot) of the filename.
+  nesting_state: A NestingState instance which maintains information about
+                 the current stack of nested blocks being parsed.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a2b9c6e28290cdb4f61d1752214e47588}\label{namespacecpplint_a2b9c6e28290cdb4f61d1752214e47588} 
+\index{cpplint@{cpplint}!CheckTrailingSemicolon@{CheckTrailingSemicolon}}
+\index{CheckTrailingSemicolon@{CheckTrailingSemicolon}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckTrailingSemicolon()}{CheckTrailingSemicolon()}}
+{\footnotesize\ttfamily cpplint.\+Check\+Trailing\+Semicolon (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Looks for redundant trailing semicolon.
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a7ea52ecef1fdc9fe7a212b80fabfcdbe}\label{namespacecpplint_a7ea52ecef1fdc9fe7a212b80fabfcdbe} 
+\index{cpplint@{cpplint}!CheckVlogArguments@{CheckVlogArguments}}
+\index{CheckVlogArguments@{CheckVlogArguments}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CheckVlogArguments()}{CheckVlogArguments()}}
+{\footnotesize\ttfamily cpplint.\+Check\+Vlog\+Arguments (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks that VLOG() is only used for defining a logging level.
+
+For example, VLOG(2) is correct. VLOG(INFO), VLOG(WARNING), VLOG(ERROR), and
+VLOG(FATAL) are not.
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_ae9566310f2866027f14cc468ad85635a}\label{namespacecpplint_ae9566310f2866027f14cc468ad85635a} 
+\index{cpplint@{cpplint}!CleanseComments@{CleanseComments}}
+\index{CleanseComments@{CleanseComments}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CleanseComments()}{CleanseComments()}}
+{\footnotesize\ttfamily cpplint.\+Cleanse\+Comments (\begin{DoxyParamCaption}\item[{}]{line }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Removes //-comments and single-line C-style /* */ comments.
+
+Args:
+  line: A line of C++ source.
+
+Returns:
+  The line with single-line comments removed.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a4fae6fc97d3683e4f74115c09e1f223d}\label{namespacecpplint_a4fae6fc97d3683e4f74115c09e1f223d} 
+\index{cpplint@{cpplint}!CleanseRawStrings@{CleanseRawStrings}}
+\index{CleanseRawStrings@{CleanseRawStrings}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CleanseRawStrings()}{CleanseRawStrings()}}
+{\footnotesize\ttfamily cpplint.\+Cleanse\+Raw\+Strings (\begin{DoxyParamCaption}\item[{}]{raw\+\_\+lines }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Removes C++11 raw strings from lines.
+
+  Before:
+    static const char kData[] = R"(
+        multi-line string
+        )";
+
+  After:
+    static const char kData[] = ""
+        (replaced by blank line)
+        "";
+
+Args:
+  raw_lines: list of raw lines.
+
+Returns:
+  list of lines with C++11 raw strings replaced by empty strings.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a1b6021bb43f15b2ba6d35664a529b9b2}\label{namespacecpplint_a1b6021bb43f15b2ba6d35664a529b9b2} 
+\index{cpplint@{cpplint}!CloseExpression@{CloseExpression}}
+\index{CloseExpression@{CloseExpression}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{CloseExpression()}{CloseExpression()}}
+{\footnotesize\ttfamily cpplint.\+Close\+Expression (\begin{DoxyParamCaption}\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{pos }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}If input points to ( or { or [ or <, finds the position that closes it.
+
+If lines[linenum][pos] points to a '(' or '{' or '[' or '<', finds the
+linenum/pos that correspond to the closing of the expression.
+
+TODO(unknown): cpplint spends a fair bit of time matching parentheses.
+Ideally we would want to index all opening and closing parentheses once
+and have CloseExpression be just a simple lookup, but due to preprocessor
+tricks, this is not so easy.
+
+Args:
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  pos: A position on the line.
+
+Returns:
+  A tuple (line, linenum, pos) pointer *past* the closing brace, or
+  (line, len(lines), -1) if we never find a close.  Note we ignore
+  strings and comments when matching; and the line we return is the
+  'cleansed' line at linenum.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_aca228b36be5460efe4ace10b0e5d0f7d}\label{namespacecpplint_aca228b36be5460efe4ace10b0e5d0f7d} 
+\index{cpplint@{cpplint}!Error@{Error}}
+\index{Error@{Error}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{Error()}{Error()}}
+{\footnotesize\ttfamily cpplint.\+Error (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{linenum,  }\item[{}]{category,  }\item[{}]{confidence,  }\item[{}]{message }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Logs the fact we've found a lint error.
+
+We log where the error was found, and also our confidence in the error,
+that is, how certain we are this is a legitimate style regression, and
+not a misidentification or a use that's sometimes justified.
+
+False positives can be suppressed by the use of
+"cpplint(category)"  comments on the offending line.  These are
+parsed into _error_suppressions.
+
+Args:
+  filename: The name of the file containing the error.
+  linenum: The number of the line containing the error.
+  category: A string used to describe the "category" this bug
+    falls under: "whitespace", say, or "runtime".  Categories
+    may have a hierarchy separated by slashes: "whitespace/indent".
+  confidence: A number from 1-5 representing a confidence score for
+    the error, with 5 meaning that we are certain of the problem,
+    and 1 meaning that it could be a legitimate construct.
+  message: The error message.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a161575a5016a22e21e335465a0129000}\label{namespacecpplint_a161575a5016a22e21e335465a0129000} 
+\index{cpplint@{cpplint}!ExpectingFunctionArgs@{ExpectingFunctionArgs}}
+\index{ExpectingFunctionArgs@{ExpectingFunctionArgs}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{ExpectingFunctionArgs()}{ExpectingFunctionArgs()}}
+{\footnotesize\ttfamily cpplint.\+Expecting\+Function\+Args (\begin{DoxyParamCaption}\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks whether where function type arguments are expected.
+
+Args:
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+
+Returns:
+  True if the line at 'linenum' is inside something that expects arguments
+  of function types.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_abc0b6c4f2dcd4338c7801f54da4ce480}\label{namespacecpplint_abc0b6c4f2dcd4338c7801f54da4ce480} 
+\index{cpplint@{cpplint}!FilesBelongToSameModule@{FilesBelongToSameModule}}
+\index{FilesBelongToSameModule@{FilesBelongToSameModule}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{FilesBelongToSameModule()}{FilesBelongToSameModule()}}
+{\footnotesize\ttfamily cpplint.\+Files\+Belong\+To\+Same\+Module (\begin{DoxyParamCaption}\item[{}]{filename\+\_\+cc,  }\item[{}]{filename\+\_\+h }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if these two filenames belong to the same module.
+
+The concept of a 'module' here is a as follows:
+foo.h, foo-inl.h, foo.cc, foo_test.cc and foo_unittest.cc belong to the
+same 'module' if they are in the same directory.
+some/path/public/xyzzy and some/path/internal/xyzzy are also considered
+to belong to the same module here.
+
+If the filename_cc contains a longer path than the filename_h, for example,
+'/absolute/path/to/base/sysinfo.cc', and this file would include
+'base/sysinfo.h', this function also produces the prefix needed to open the
+header. This is used by the caller of this function to more robustly open the
+header file. We don't have access to the real include paths in this context,
+so we need this guesswork here.
+
+Known bugs: tools/base/bar.cc and base/bar.h belong to the same module
+according to this implementation. Because of this, this function gives
+some false positives. This should be sufficiently rare in practice.
+
+Args:
+  filename_cc: is the path for the .cc file
+  filename_h: is the path for the header path
+
+Returns:
+  Tuple with a bool and a string:
+  bool: True if filename_cc and filename_h belong to the same module.
+  string: the additional prefix needed to open the header file.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_ab120ac0a419e4317d0b5458079946d00}\label{namespacecpplint_ab120ac0a419e4317d0b5458079946d00} 
+\index{cpplint@{cpplint}!FindCheckMacro@{FindCheckMacro}}
+\index{FindCheckMacro@{FindCheckMacro}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{FindCheckMacro()}{FindCheckMacro()}}
+{\footnotesize\ttfamily cpplint.\+Find\+Check\+Macro (\begin{DoxyParamCaption}\item[{}]{line }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find a replaceable CHECK-like macro.
+
+Args:
+  line: line to search on.
+Returns:
+  (macro name, start position), or (None, -1) if no replaceable
+  macro is found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a9cc0677c6efe4f143ce3705136daf4be}\label{namespacecpplint_a9cc0677c6efe4f143ce3705136daf4be} 
+\index{cpplint@{cpplint}!FindEndOfExpressionInLine@{FindEndOfExpressionInLine}}
+\index{FindEndOfExpressionInLine@{FindEndOfExpressionInLine}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{FindEndOfExpressionInLine()}{FindEndOfExpressionInLine()}}
+{\footnotesize\ttfamily cpplint.\+Find\+End\+Of\+Expression\+In\+Line (\begin{DoxyParamCaption}\item[{}]{line,  }\item[{}]{startpos,  }\item[{}]{stack }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find the position just after the end of current parenthesized expression.
+
+Args:
+  line: a CleansedLines line.
+  startpos: start searching at this position.
+  stack: nesting stack at startpos.
+
+Returns:
+  On finding matching end: (index just after matching end, None)
+  On finding an unclosed expression: (-1, None)
+  Otherwise: (-1, new stack at end of this line)
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a3e5bc72462a25a21e0d312263901ce01}\label{namespacecpplint_a3e5bc72462a25a21e0d312263901ce01} 
+\index{cpplint@{cpplint}!FindNextMultiLineCommentEnd@{FindNextMultiLineCommentEnd}}
+\index{FindNextMultiLineCommentEnd@{FindNextMultiLineCommentEnd}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{FindNextMultiLineCommentEnd()}{FindNextMultiLineCommentEnd()}}
+{\footnotesize\ttfamily cpplint.\+Find\+Next\+Multi\+Line\+Comment\+End (\begin{DoxyParamCaption}\item[{}]{lines,  }\item[{}]{lineix }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}We are inside a comment, find the end marker.\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a3da19fcc995011176b2b3a8a4bc09090}\label{namespacecpplint_a3da19fcc995011176b2b3a8a4bc09090} 
+\index{cpplint@{cpplint}!FindNextMultiLineCommentStart@{FindNextMultiLineCommentStart}}
+\index{FindNextMultiLineCommentStart@{FindNextMultiLineCommentStart}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{FindNextMultiLineCommentStart()}{FindNextMultiLineCommentStart()}}
+{\footnotesize\ttfamily cpplint.\+Find\+Next\+Multi\+Line\+Comment\+Start (\begin{DoxyParamCaption}\item[{}]{lines,  }\item[{}]{lineix }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find the beginning marker for a multiline comment.\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a3688a48ada153189003ae1638fba6f59}\label{namespacecpplint_a3688a48ada153189003ae1638fba6f59} 
+\index{cpplint@{cpplint}!FindStartOfExpressionInLine@{FindStartOfExpressionInLine}}
+\index{FindStartOfExpressionInLine@{FindStartOfExpressionInLine}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{FindStartOfExpressionInLine()}{FindStartOfExpressionInLine()}}
+{\footnotesize\ttfamily cpplint.\+Find\+Start\+Of\+Expression\+In\+Line (\begin{DoxyParamCaption}\item[{}]{line,  }\item[{}]{endpos,  }\item[{}]{stack }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find position at the matching start of current expression.
+
+This is almost the reverse of FindEndOfExpressionInLine, but note
+that the input position and returned position differs by 1.
+
+Args:
+  line: a CleansedLines line.
+  endpos: start searching at this position.
+  stack: nesting stack at endpos.
+
+Returns:
+  On finding matching start: (index at matching start, None)
+  On finding an unclosed expression: (-1, None)
+  Otherwise: (-1, new stack at beginning of this line)
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_ab8abca70d25e2e8981eaacecd6b56c1f}\label{namespacecpplint_ab8abca70d25e2e8981eaacecd6b56c1f} 
+\index{cpplint@{cpplint}!FlagCxx11Features@{FlagCxx11Features}}
+\index{FlagCxx11Features@{FlagCxx11Features}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{FlagCxx11Features()}{FlagCxx11Features()}}
+{\footnotesize\ttfamily cpplint.\+Flag\+Cxx11\+Features (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Flag those c++11 features that we only allow in certain places.
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_ad45b10ccccb163cbc0ccafa25329d459}\label{namespacecpplint_ad45b10ccccb163cbc0ccafa25329d459} 
+\index{cpplint@{cpplint}!FlagCxx14Features@{FlagCxx14Features}}
+\index{FlagCxx14Features@{FlagCxx14Features}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{FlagCxx14Features()}{FlagCxx14Features()}}
+{\footnotesize\ttfamily cpplint.\+Flag\+Cxx14\+Features (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Flag those C++14 features that we restrict.
+
+Args:
+  filename: The name of the current file.
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  error: The function to call with any errors found.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_aceb05c1fabdb84a964be5853de8727c8}\label{namespacecpplint_aceb05c1fabdb84a964be5853de8727c8} 
+\index{cpplint@{cpplint}!GetHeaderGuardCPPVariable@{GetHeaderGuardCPPVariable}}
+\index{GetHeaderGuardCPPVariable@{GetHeaderGuardCPPVariable}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{GetHeaderGuardCPPVariable()}{GetHeaderGuardCPPVariable()}}
+{\footnotesize\ttfamily cpplint.\+Get\+Header\+Guard\+CPPVariable (\begin{DoxyParamCaption}\item[{}]{filename }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the CPP variable that should be used as a header guard.
+
+Args:
+  filename: The name of a C++ header file.
+
+Returns:
+  The CPP variable that should be used as a header guard in the
+  named file.\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a24004af01f4dd0d09c9e84971359ef4f}\label{namespacecpplint_a24004af01f4dd0d09c9e84971359ef4f} 
+\index{cpplint@{cpplint}!GetIndentLevel@{GetIndentLevel}}
+\index{GetIndentLevel@{GetIndentLevel}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{GetIndentLevel()}{GetIndentLevel()}}
+{\footnotesize\ttfamily cpplint.\+Get\+Indent\+Level (\begin{DoxyParamCaption}\item[{}]{line }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the number of leading spaces in line.
+
+Args:
+  line: A string to check.
+
+Returns:
+  An integer count of leading spaces, possibly zero.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a2638d6acb36ef7e352842dfa0bcc2a17}\label{namespacecpplint_a2638d6acb36ef7e352842dfa0bcc2a17} 
+\index{cpplint@{cpplint}!GetLineWidth@{GetLineWidth}}
+\index{GetLineWidth@{GetLineWidth}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{GetLineWidth()}{GetLineWidth()}}
+{\footnotesize\ttfamily cpplint.\+Get\+Line\+Width (\begin{DoxyParamCaption}\item[{}]{line }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Determines the width of the line in column positions.
+
+Args:
+  line: A string, which may be a Unicode string.
+
+Returns:
+  The width of the line in column positions, accounting for Unicode
+  combining characters and wide characters.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a42b46bcf4926559c5b946a0bccef5bf3}\label{namespacecpplint_a42b46bcf4926559c5b946a0bccef5bf3} 
+\index{cpplint@{cpplint}!GetPreviousNonBlankLine@{GetPreviousNonBlankLine}}
+\index{GetPreviousNonBlankLine@{GetPreviousNonBlankLine}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{GetPreviousNonBlankLine()}{GetPreviousNonBlankLine()}}
+{\footnotesize\ttfamily cpplint.\+Get\+Previous\+Non\+Blank\+Line (\begin{DoxyParamCaption}\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the most recent non-blank line and its line number.
+
+Args:
+  clean_lines: A CleansedLines instance containing the file contents.
+  linenum: The number of the line to check.
+
+Returns:
+  A tuple with two elements.  The first element is the contents of the last
+  non-blank line before the current line, or the empty string if this is the
+  first non-blank line.  The second is the line number of that line, or -1
+  if this is the first non-blank line.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a98bd45db7f6376b48ba397d1b06df2e7}\label{namespacecpplint_a98bd45db7f6376b48ba397d1b06df2e7} 
+\index{cpplint@{cpplint}!IsBlankLine@{IsBlankLine}}
+\index{IsBlankLine@{IsBlankLine}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{IsBlankLine()}{IsBlankLine()}}
+{\footnotesize\ttfamily cpplint.\+Is\+Blank\+Line (\begin{DoxyParamCaption}\item[{}]{line }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns true if the given line is blank.
+
+We consider a line to be blank if the line is empty or consists of
+only white spaces.
+
+Args:
+  line: A line of a string.
+
+Returns:
+  True, if the given line is blank.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a57cb8c3332534704b6381c2d75c1d5a3}\label{namespacecpplint_a57cb8c3332534704b6381c2d75c1d5a3} 
+\index{cpplint@{cpplint}!IsBlockInNameSpace@{IsBlockInNameSpace}}
+\index{IsBlockInNameSpace@{IsBlockInNameSpace}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{IsBlockInNameSpace()}{IsBlockInNameSpace()}}
+{\footnotesize\ttfamily cpplint.\+Is\+Block\+In\+Name\+Space (\begin{DoxyParamCaption}\item[{}]{nesting\+\_\+state,  }\item[{}]{is\+\_\+forward\+\_\+declaration }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks that the new block is directly in a namespace.
+
+Args:
+  nesting_state: The _NestingState object that contains info about our state.
+  is_forward_declaration: If the class is a forward declared class.
+Returns:
+  Whether or not the new block is directly in a namespace.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_af27826b49df1e5e9c87705ff0c469082}\label{namespacecpplint_af27826b49df1e5e9c87705ff0c469082} 
+\index{cpplint@{cpplint}!IsCppString@{IsCppString}}
+\index{IsCppString@{IsCppString}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{IsCppString()}{IsCppString()}}
+{\footnotesize\ttfamily cpplint.\+Is\+Cpp\+String (\begin{DoxyParamCaption}\item[{}]{line }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Does line terminate so, that the next symbol is in string constant.
+
+This function does not consider single-line nor multi-line comments.
+
+Args:
+  line: is a partial line of code starting from the 0..n.
+
+Returns:
+  True, if next character appended to 'line' is inside a
+  string constant.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a204b0fffaabcaccb777da010fb165804}\label{namespacecpplint_a204b0fffaabcaccb777da010fb165804} 
+\index{cpplint@{cpplint}!IsDecltype@{IsDecltype}}
+\index{IsDecltype@{IsDecltype}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{IsDecltype()}{IsDecltype()}}
+{\footnotesize\ttfamily cpplint.\+Is\+Decltype (\begin{DoxyParamCaption}\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{column }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if the token ending on (linenum, column) is decltype().
+
+Args:
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: the number of the line to check.
+  column: end column of the token to check.
+Returns:
+  True if this token is decltype() expression, False otherwise.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_aaa385f3280ce7c3f7bf64b52918028ca}\label{namespacecpplint_aaa385f3280ce7c3f7bf64b52918028ca} 
+\index{cpplint@{cpplint}!IsDerivedFunction@{IsDerivedFunction}}
+\index{IsDerivedFunction@{IsDerivedFunction}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{IsDerivedFunction()}{IsDerivedFunction()}}
+{\footnotesize\ttfamily cpplint.\+Is\+Derived\+Function (\begin{DoxyParamCaption}\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if current line contains an inherited function.
+
+Args:
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+Returns:
+  True if current line contains a function with "override"
+  virt-specifier.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a236008b9c766ce526ac9dfafeef0a246}\label{namespacecpplint_a236008b9c766ce526ac9dfafeef0a246} 
+\index{cpplint@{cpplint}!IsErrorSuppressedByNolint@{IsErrorSuppressedByNolint}}
+\index{IsErrorSuppressedByNolint@{IsErrorSuppressedByNolint}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{IsErrorSuppressedByNolint()}{IsErrorSuppressedByNolint()}}
+{\footnotesize\ttfamily cpplint.\+Is\+Error\+Suppressed\+By\+Nolint (\begin{DoxyParamCaption}\item[{}]{category,  }\item[{}]{linenum }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns true if the specified error category is suppressed on this line.
+
+Consults the global error_suppressions map populated by
+ParseNolintSuppressions/ProcessGlobalSuppresions/ResetNolintSuppressions.
+
+Args:
+  category: str, the category of the error.
+  linenum: int, the current line number.
+Returns:
+  bool, True iff the error should be suppressed due to a NOLINT comment or
+  global suppression.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a5e7367ed60644c827b59d023706c4b8a}\label{namespacecpplint_a5e7367ed60644c827b59d023706c4b8a} 
+\index{cpplint@{cpplint}!IsInitializerList@{IsInitializerList}}
+\index{IsInitializerList@{IsInitializerList}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{IsInitializerList()}{IsInitializerList()}}
+{\footnotesize\ttfamily cpplint.\+Is\+Initializer\+List (\begin{DoxyParamCaption}\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if current line is inside constructor initializer list.
+
+Args:
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+Returns:
+  True if current line appears to be inside constructor initializer
+  list, False otherwise.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a55f142e3a1b61d2c3b39895bd48c5d94}\label{namespacecpplint_a55f142e3a1b61d2c3b39895bd48c5d94} 
+\index{cpplint@{cpplint}!IsOutOfLineMethodDefinition@{IsOutOfLineMethodDefinition}}
+\index{IsOutOfLineMethodDefinition@{IsOutOfLineMethodDefinition}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{IsOutOfLineMethodDefinition()}{IsOutOfLineMethodDefinition()}}
+{\footnotesize\ttfamily cpplint.\+Is\+Out\+Of\+Line\+Method\+Definition (\begin{DoxyParamCaption}\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if current line contains an out-of-line method definition.
+
+Args:
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+Returns:
+  True if current line contains an out-of-line method definition.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_aa0db7290fc6bd23f44b6602a6ae22738}\label{namespacecpplint_aa0db7290fc6bd23f44b6602a6ae22738} 
+\index{cpplint@{cpplint}!Match@{Match}}
+\index{Match@{Match}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{Match()}{Match()}}
+{\footnotesize\ttfamily cpplint.\+Match (\begin{DoxyParamCaption}\item[{}]{pattern,  }\item[{}]{s }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Matches the string with the pattern, caching the compiled regexp.\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a3f8324de8f8a4138491fb973817322da}\label{namespacecpplint_a3f8324de8f8a4138491fb973817322da} 
+\index{cpplint@{cpplint}!ParseArguments@{ParseArguments}}
+\index{ParseArguments@{ParseArguments}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{ParseArguments()}{ParseArguments()}}
+{\footnotesize\ttfamily cpplint.\+Parse\+Arguments (\begin{DoxyParamCaption}\item[{}]{args }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parses the command line arguments.
+
+This may set the output format and verbosity level as side-effects.
+
+Args:
+  args: The command line arguments:
+
+Returns:
+  The list of filenames to lint.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a22a0d25680a41ec23d754425a73e47c5}\label{namespacecpplint_a22a0d25680a41ec23d754425a73e47c5} 
+\index{cpplint@{cpplint}!ParseNolintSuppressions@{ParseNolintSuppressions}}
+\index{ParseNolintSuppressions@{ParseNolintSuppressions}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{ParseNolintSuppressions()}{ParseNolintSuppressions()}}
+{\footnotesize\ttfamily cpplint.\+Parse\+Nolint\+Suppressions (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{raw\+\_\+line,  }\item[{}]{linenum,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Updates the global list of line error-suppressions.
+
+Parses any NOLINT comments on the current line, updating the global
+error_suppressions store.  Reports an error if the NOLINT comment
+was malformed.
+
+Args:
+  filename: str, the name of the input file.
+  raw_line: str, the line of input text, with comments.
+  linenum: int, the number of the current line.
+  error: function, an error handler.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a7ad752dd62ed4ccfed7d956cf1b18f7e}\label{namespacecpplint_a7ad752dd62ed4ccfed7d956cf1b18f7e} 
+\index{cpplint@{cpplint}!PathSplitToList@{PathSplitToList}}
+\index{PathSplitToList@{PathSplitToList}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{PathSplitToList()}{PathSplitToList()}}
+{\footnotesize\ttfamily cpplint.\+Path\+Split\+To\+List (\begin{DoxyParamCaption}\item[{}]{path }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the path split into a list by the separator.
+
+Args:
+  path: An absolute or relative path (e.g. '/a/b/c/' or '../a')
+
+Returns:
+  A list of path components (e.g. ['a', 'b', 'c]).
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a3bba987526e2d3e4eb3d0a25cf80f1dc}\label{namespacecpplint_a3bba987526e2d3e4eb3d0a25cf80f1dc} 
+\index{cpplint@{cpplint}!PrintCategories@{PrintCategories}}
+\index{PrintCategories@{PrintCategories}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{PrintCategories()}{PrintCategories()}}
+{\footnotesize\ttfamily cpplint.\+Print\+Categories (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Prints a list of all the error-categories used by error messages.
+
+These are the categories used to filter messages via --filter.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a909dd459f639e414cbf5ffd91ce8c1a4}\label{namespacecpplint_a909dd459f639e414cbf5ffd91ce8c1a4} 
+\index{cpplint@{cpplint}!PrintUsage@{PrintUsage}}
+\index{PrintUsage@{PrintUsage}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{PrintUsage()}{PrintUsage()}}
+{\footnotesize\ttfamily cpplint.\+Print\+Usage (\begin{DoxyParamCaption}\item[{}]{message }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Prints a brief usage string and exits, optionally with an error message.
+
+Args:
+  message: The optional error message.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a20022b1ac01d93c470fbd25610776a33}\label{namespacecpplint_a20022b1ac01d93c470fbd25610776a33} 
+\index{cpplint@{cpplint}!ProcessConfigOverrides@{ProcessConfigOverrides}}
+\index{ProcessConfigOverrides@{ProcessConfigOverrides}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{ProcessConfigOverrides()}{ProcessConfigOverrides()}}
+{\footnotesize\ttfamily cpplint.\+Process\+Config\+Overrides (\begin{DoxyParamCaption}\item[{}]{filename }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} Loads the configuration files and processes the config overrides.
+
+Args:
+  filename: The name of the file being processed by the linter.
+
+Returns:
+  False if the current |filename| should not be processed further.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_acecb7a35ccd8dc94f7759b8740496f5f}\label{namespacecpplint_acecb7a35ccd8dc94f7759b8740496f5f} 
+\index{cpplint@{cpplint}!ProcessFile@{ProcessFile}}
+\index{ProcessFile@{ProcessFile}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{ProcessFile()}{ProcessFile()}}
+{\footnotesize\ttfamily cpplint.\+Process\+File (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{vlevel,  }\item[{}]{extra\+\_\+check\+\_\+functions = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Does google-lint on a single file.
+
+Args:
+  filename: The name of the file to parse.
+
+  vlevel: The level of errors to report.  Every error of confidence
+  >= verbose_level will be reported.  0 is a good default.
+
+  extra_check_functions: An array of additional check functions that will be
+                         run on each source line. Each function takes 4
+                         arguments: filename, clean_lines, line, error
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_af49dbbca393312acfa3a46984665eaff}\label{namespacecpplint_af49dbbca393312acfa3a46984665eaff} 
+\index{cpplint@{cpplint}!ProcessFileData@{ProcessFileData}}
+\index{ProcessFileData@{ProcessFileData}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{ProcessFileData()}{ProcessFileData()}}
+{\footnotesize\ttfamily cpplint.\+Process\+File\+Data (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{file\+\_\+extension,  }\item[{}]{lines,  }\item[{}]{error,  }\item[{}]{extra\+\_\+check\+\_\+functions = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Performs lint checks and reports any errors to the given error function.
+
+Args:
+  filename: Filename of the file that is being processed.
+  file_extension: The extension (dot not included) of the file.
+  lines: An array of strings, each representing a line of the file, with the
+         last element being empty if the file is terminated with a newline.
+  error: A callable to which errors are reported, which takes 4 arguments:
+         filename, line number, error level, and message
+  extra_check_functions: An array of additional check functions that will be
+                         run on each source line. Each function takes 4
+                         arguments: filename, clean_lines, line, error
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a084823b16c0140d867262fd987ab204a}\label{namespacecpplint_a084823b16c0140d867262fd987ab204a} 
+\index{cpplint@{cpplint}!ProcessGlobalSuppresions@{ProcessGlobalSuppresions}}
+\index{ProcessGlobalSuppresions@{ProcessGlobalSuppresions}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{ProcessGlobalSuppresions()}{ProcessGlobalSuppresions()}}
+{\footnotesize\ttfamily cpplint.\+Process\+Global\+Suppresions (\begin{DoxyParamCaption}\item[{}]{lines }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Updates the list of global error suppressions.
+
+Parses any lint directives in the file that have global effect.
+
+Args:
+  lines: An array of strings, each representing a line of the file, with the
+         last element being empty if the file is terminated with a newline.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a60ab7d00cbd976925382b70bbf1fb2cf}\label{namespacecpplint_a60ab7d00cbd976925382b70bbf1fb2cf} 
+\index{cpplint@{cpplint}!ProcessLine@{ProcessLine}}
+\index{ProcessLine@{ProcessLine}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{ProcessLine()}{ProcessLine()}}
+{\footnotesize\ttfamily cpplint.\+Process\+Line (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{file\+\_\+extension,  }\item[{}]{clean\+\_\+lines,  }\item[{}]{line,  }\item[{}]{include\+\_\+state,  }\item[{}]{function\+\_\+state,  }\item[{}]{nesting\+\_\+state,  }\item[{}]{error,  }\item[{}]{extra\+\_\+check\+\_\+functions = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Processes a single line in the file.
+
+Args:
+  filename: Filename of the file that is being processed.
+  file_extension: The extension (dot not included) of the file.
+  clean_lines: An array of strings, each representing a line of the file,
+               with comments stripped.
+  line: Number of line being processed.
+  include_state: An _IncludeState instance in which the headers are inserted.
+  function_state: A _FunctionState instance which counts function lines, etc.
+  nesting_state: A NestingState instance which maintains information about
+                 the current stack of nested blocks being parsed.
+  error: A callable to which errors are reported, which takes 4 arguments:
+         filename, line number, error level, and message
+  extra_check_functions: An array of additional check functions that will be
+                         run on each source line. Each function takes 4
+                         arguments: filename, clean_lines, line, error
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_acca753613a04062aff9acefc4ce2c78b}\label{namespacecpplint_acca753613a04062aff9acefc4ce2c78b} 
+\index{cpplint@{cpplint}!RemoveMultiLineComments@{RemoveMultiLineComments}}
+\index{RemoveMultiLineComments@{RemoveMultiLineComments}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{RemoveMultiLineComments()}{RemoveMultiLineComments()}}
+{\footnotesize\ttfamily cpplint.\+Remove\+Multi\+Line\+Comments (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{lines,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Removes multiline (c-style) comments from lines.\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a783d0e506730eb397484525ff9631d09}\label{namespacecpplint_a783d0e506730eb397484525ff9631d09} 
+\index{cpplint@{cpplint}!RemoveMultiLineCommentsFromRange@{RemoveMultiLineCommentsFromRange}}
+\index{RemoveMultiLineCommentsFromRange@{RemoveMultiLineCommentsFromRange}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{RemoveMultiLineCommentsFromRange()}{RemoveMultiLineCommentsFromRange()}}
+{\footnotesize\ttfamily cpplint.\+Remove\+Multi\+Line\+Comments\+From\+Range (\begin{DoxyParamCaption}\item[{}]{lines,  }\item[{}]{begin,  }\item[{}]{end }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Clears a range of lines for multi-line comments.\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a4524ac0ff2e171cef865a36f535495ed}\label{namespacecpplint_a4524ac0ff2e171cef865a36f535495ed} 
+\index{cpplint@{cpplint}!ReplaceAll@{ReplaceAll}}
+\index{ReplaceAll@{ReplaceAll}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{ReplaceAll()}{ReplaceAll()}}
+{\footnotesize\ttfamily cpplint.\+Replace\+All (\begin{DoxyParamCaption}\item[{}]{pattern,  }\item[{}]{rep,  }\item[{}]{s }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Replaces instances of pattern in a string with a replacement.
+
+The compiled regex is kept in a cache shared by Match and Search.
+
+Args:
+  pattern: regex pattern
+  rep: replacement text
+  s: search string
+
+Returns:
+  string with replacements made (or original string if no replacements)
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_ab57355a5b2189a15ef03ab6bdecd5838}\label{namespacecpplint_ab57355a5b2189a15ef03ab6bdecd5838} 
+\index{cpplint@{cpplint}!ResetNolintSuppressions@{ResetNolintSuppressions}}
+\index{ResetNolintSuppressions@{ResetNolintSuppressions}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{ResetNolintSuppressions()}{ResetNolintSuppressions()}}
+{\footnotesize\ttfamily cpplint.\+Reset\+Nolint\+Suppressions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Resets the set of NOLINT suppressions to empty.\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a6334cf8e2b362b9cc6f28fb84a3cef48}\label{namespacecpplint_a6334cf8e2b362b9cc6f28fb84a3cef48} 
+\index{cpplint@{cpplint}!ReverseCloseExpression@{ReverseCloseExpression}}
+\index{ReverseCloseExpression@{ReverseCloseExpression}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{ReverseCloseExpression()}{ReverseCloseExpression()}}
+{\footnotesize\ttfamily cpplint.\+Reverse\+Close\+Expression (\begin{DoxyParamCaption}\item[{}]{clean\+\_\+lines,  }\item[{}]{linenum,  }\item[{}]{pos }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}If input points to ) or } or ] or >, finds the position that opens it.
+
+If lines[linenum][pos] points to a ')' or '}' or ']' or '>', finds the
+linenum/pos that correspond to the opening of the expression.
+
+Args:
+  clean_lines: A CleansedLines instance containing the file.
+  linenum: The number of the line to check.
+  pos: A position on the line.
+
+Returns:
+  A tuple (line, linenum, pos) pointer *at* the opening brace, or
+  (line, 0, -1) if we never find the matching opening brace.  Note
+  we ignore strings and comments when matching; and the line we
+  return is the 'cleansed' line at linenum.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a515e256f8ccda50d15b9b7401f5264f7}\label{namespacecpplint_a515e256f8ccda50d15b9b7401f5264f7} 
+\index{cpplint@{cpplint}!Search@{Search}}
+\index{Search@{Search}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{Search()}{Search()}}
+{\footnotesize\ttfamily cpplint.\+Search (\begin{DoxyParamCaption}\item[{}]{pattern,  }\item[{}]{s }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Searches the string for the pattern, caching the compiled regexp.\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a9325611c171591900d6eeeff1daf1cb6}\label{namespacecpplint_a9325611c171591900d6eeeff1daf1cb6} 
+\index{cpplint@{cpplint}!ShouldCheckNamespaceIndentation@{ShouldCheckNamespaceIndentation}}
+\index{ShouldCheckNamespaceIndentation@{ShouldCheckNamespaceIndentation}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{ShouldCheckNamespaceIndentation()}{ShouldCheckNamespaceIndentation()}}
+{\footnotesize\ttfamily cpplint.\+Should\+Check\+Namespace\+Indentation (\begin{DoxyParamCaption}\item[{}]{nesting\+\_\+state,  }\item[{}]{is\+\_\+namespace\+\_\+indent\+\_\+item,  }\item[{}]{raw\+\_\+lines\+\_\+no\+\_\+comments,  }\item[{}]{linenum }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This method determines if we should apply our namespace indentation check.
+
+Args:
+  nesting_state: The current nesting state.
+  is_namespace_indent_item: If we just put a new class on the stack, True.
+    If the top of the stack is not a class, or we did not recently
+    add the class, False.
+  raw_lines_no_comments: The lines without the comments.
+  linenum: The current line number we are processing.
+
+Returns:
+  True if we should apply our namespace indentation check. Currently, it
+  only works for classes and namespaces inside of a namespace.
+\end{DoxyVerb}
+ \Hypertarget{namespacecpplint_a11bfdc00ed9bd66b16c882b930a6762b}\label{namespacecpplint_a11bfdc00ed9bd66b16c882b930a6762b} 
+\index{cpplint@{cpplint}!UpdateIncludeState@{UpdateIncludeState}}
+\index{UpdateIncludeState@{UpdateIncludeState}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{UpdateIncludeState()}{UpdateIncludeState()}}
+{\footnotesize\ttfamily cpplint.\+Update\+Include\+State (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{include\+\_\+dict,  }\item[{}]{io = {\ttfamily codecs} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Fill up the include_dict with new includes found from the file.
+
+Args:
+  filename: the name of the header to read.
+  include_dict: a dictionary in which the headers are inserted.
+  io: The io factory to use to read the file. Provided for testability.
+
+Returns:
+  True if a header was successfully added. False otherwise.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacecpplint_a81cd42cc4392c8b9176e76e09ac95abe}\label{namespacecpplint_a81cd42cc4392c8b9176e76e09ac95abe} 
+\index{cpplint@{cpplint}!\_ALT\_TOKEN\_REPLACEMENT@{\_ALT\_TOKEN\_REPLACEMENT}}
+\index{\_ALT\_TOKEN\_REPLACEMENT@{\_ALT\_TOKEN\_REPLACEMENT}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_ALT\_TOKEN\_REPLACEMENT}{\_ALT\_TOKEN\_REPLACEMENT}}
+{\footnotesize\ttfamily dict cpplint.\+\_\+\+ALT\+\_\+\+TOKEN\+\_\+\+REPLACEMENT\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \{}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{'and'}:\ \textcolor{stringliteral}{'\&\&'},}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{stringliteral}{'bitor'}:\ \textcolor{stringliteral}{'|'},}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{stringliteral}{'or'}:\ \textcolor{stringliteral}{'||'},}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{stringliteral}{'xor'}:\ \textcolor{stringliteral}{'\string^'},}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{stringliteral}{'compl'}:\ \textcolor{stringliteral}{'\string~'},}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{stringliteral}{'bitand'}:\ \textcolor{stringliteral}{'\&'},}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{stringliteral}{'and\_eq'}:\ \textcolor{stringliteral}{'\&='},}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{stringliteral}{'or\_eq'}:\ \textcolor{stringliteral}{'|='},}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{stringliteral}{'xor\_eq'}:\ \textcolor{stringliteral}{'\string^='},}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{stringliteral}{'not'}:\ \textcolor{stringliteral}{'!'},}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{stringliteral}{'not\_eq'}:\ \textcolor{stringliteral}{'!='}}
+\DoxyCodeLine{00013\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespacecpplint_a06836e29f41961aead03ec8aadd1cecd}\label{namespacecpplint_a06836e29f41961aead03ec8aadd1cecd} 
+\index{cpplint@{cpplint}!\_ALT\_TOKEN\_REPLACEMENT\_PATTERN@{\_ALT\_TOKEN\_REPLACEMENT\_PATTERN}}
+\index{\_ALT\_TOKEN\_REPLACEMENT\_PATTERN@{\_ALT\_TOKEN\_REPLACEMENT\_PATTERN}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_ALT\_TOKEN\_REPLACEMENT\_PATTERN}{\_ALT\_TOKEN\_REPLACEMENT\_PATTERN}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+ALT\+\_\+\+TOKEN\+\_\+\+REPLACEMENT\+\_\+\+PATTERN\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ re.compile(}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{r'[\ =()]('}\ +\ (\textcolor{stringliteral}{'|'}.join(\_ALT\_TOKEN\_REPLACEMENT.keys()))\ +\ \textcolor{stringliteral}{r')(?=[\ (]|\$)'})}
+
+\end{DoxyCode}
+\Hypertarget{namespacecpplint_a96865866cf9b608cbe21c0549782e33c}\label{namespacecpplint_a96865866cf9b608cbe21c0549782e33c} 
+\index{cpplint@{cpplint}!\_CHECK\_MACROS@{\_CHECK\_MACROS}}
+\index{\_CHECK\_MACROS@{\_CHECK\_MACROS}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_CHECK\_MACROS}{\_CHECK\_MACROS}}
+{\footnotesize\ttfamily list cpplint.\+\_\+\+CHECK\+\_\+\+MACROS\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ [}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{'DCHECK'},\ \textcolor{stringliteral}{'CHECK'},}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{stringliteral}{'EXPECT\_TRUE'},\ \textcolor{stringliteral}{'ASSERT\_TRUE'},}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{stringliteral}{'EXPECT\_FALSE'},\ \textcolor{stringliteral}{'ASSERT\_FALSE'},}
+\DoxyCodeLine{00005\ \ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{namespacecpplint_a32c68628f86e9d7c90d1cdb52277dbcc}\label{namespacecpplint_a32c68628f86e9d7c90d1cdb52277dbcc} 
+\index{cpplint@{cpplint}!\_DEFAULT\_C\_SUPPRESSED\_CATEGORIES@{\_DEFAULT\_C\_SUPPRESSED\_CATEGORIES}}
+\index{\_DEFAULT\_C\_SUPPRESSED\_CATEGORIES@{\_DEFAULT\_C\_SUPPRESSED\_CATEGORIES}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_DEFAULT\_C\_SUPPRESSED\_CATEGORIES}{\_DEFAULT\_C\_SUPPRESSED\_CATEGORIES}}
+{\footnotesize\ttfamily list cpplint.\+\_\+\+DEFAULT\+\_\+\+C\+\_\+\+SUPPRESSED\+\_\+\+CATEGORIES\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ [}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{'readability/casting'},}
+\DoxyCodeLine{00003\ \ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{namespacecpplint_aa91fc7f951bf23aa73c820508ca6ff7d}\label{namespacecpplint_aa91fc7f951bf23aa73c820508ca6ff7d} 
+\index{cpplint@{cpplint}!\_DEFAULT\_KERNEL\_SUPPRESSED\_CATEGORIES@{\_DEFAULT\_KERNEL\_SUPPRESSED\_CATEGORIES}}
+\index{\_DEFAULT\_KERNEL\_SUPPRESSED\_CATEGORIES@{\_DEFAULT\_KERNEL\_SUPPRESSED\_CATEGORIES}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_DEFAULT\_KERNEL\_SUPPRESSED\_CATEGORIES}{\_DEFAULT\_KERNEL\_SUPPRESSED\_CATEGORIES}}
+{\footnotesize\ttfamily list cpplint.\+\_\+\+DEFAULT\+\_\+\+KERNEL\+\_\+\+SUPPRESSED\+\_\+\+CATEGORIES\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ [}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{'whitespace/tab'},}
+\DoxyCodeLine{00003\ \ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{namespacecpplint_a0cfde54f6a4bc9c9e2e16019146e2167}\label{namespacecpplint_a0cfde54f6a4bc9c9e2e16019146e2167} 
+\index{cpplint@{cpplint}!\_HEADERS\_MAYBE\_TEMPLATES@{\_HEADERS\_MAYBE\_TEMPLATES}}
+\index{\_HEADERS\_MAYBE\_TEMPLATES@{\_HEADERS\_MAYBE\_TEMPLATES}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_HEADERS\_MAYBE\_TEMPLATES}{\_HEADERS\_MAYBE\_TEMPLATES}}
+{\footnotesize\ttfamily tuple cpplint.\+\_\+\+HEADERS\+\_\+\+MAYBE\+\_\+\+TEMPLATES\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ (}
+\DoxyCodeLine{00002\ \ \ \ \ (\textcolor{stringliteral}{'<algorithm>'},\ (\textcolor{stringliteral}{'copy'},\ \textcolor{stringliteral}{'max'},\ \textcolor{stringliteral}{'min'},\ \textcolor{stringliteral}{'min\_element'},\ \textcolor{stringliteral}{'sort'},}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'transform'},}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )),}
+\DoxyCodeLine{00005\ \ \ \ \ (\textcolor{stringliteral}{'<utility>'},\ (\textcolor{stringliteral}{'forward'},\ \textcolor{stringliteral}{'make\_pair'},\ \textcolor{stringliteral}{'move'},\ \textcolor{stringliteral}{'swap'})),}
+\DoxyCodeLine{00006\ \ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{namespacecpplint_a57f33bd76a6086498bdad77f4d921fdc}\label{namespacecpplint_a57f33bd76a6086498bdad77f4d921fdc} 
+\index{cpplint@{cpplint}!\_LEGACY\_ERROR\_CATEGORIES@{\_LEGACY\_ERROR\_CATEGORIES}}
+\index{\_LEGACY\_ERROR\_CATEGORIES@{\_LEGACY\_ERROR\_CATEGORIES}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_LEGACY\_ERROR\_CATEGORIES}{\_LEGACY\_ERROR\_CATEGORIES}}
+{\footnotesize\ttfamily list cpplint.\+\_\+\+LEGACY\+\_\+\+ERROR\+\_\+\+CATEGORIES\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ [}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{'readability/streams'},}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{stringliteral}{'readability/function'},}
+\DoxyCodeLine{00004\ \ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{namespacecpplint_a06e1a7cd329c1216de85c4524dbbb21c}\label{namespacecpplint_a06e1a7cd329c1216de85c4524dbbb21c} 
+\index{cpplint@{cpplint}!\_MATCH\_ASM@{\_MATCH\_ASM}}
+\index{\_MATCH\_ASM@{\_MATCH\_ASM}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_MATCH\_ASM}{\_MATCH\_ASM}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+MATCH\+\_\+\+ASM\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ re.compile(\textcolor{stringliteral}{r'\string^\(\backslash\)s*(?:asm|\_asm|\_\_asm|\_\_asm\_\_)'}}
+\DoxyCodeLine{00002\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{r'(?:\(\backslash\)s+(volatile|\_\_volatile\_\_))?'}}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{r'\(\backslash\)s*[\{(]'})}
+
+\end{DoxyCode}
+\Hypertarget{namespacecpplint_a4c7a1f6077a72f4d5b5223cca4823670}\label{namespacecpplint_a4c7a1f6077a72f4d5b5223cca4823670} 
+\index{cpplint@{cpplint}!\_RE\_PATTERN\_CLEANSE\_LINE\_C\_COMMENTS@{\_RE\_PATTERN\_CLEANSE\_LINE\_C\_COMMENTS}}
+\index{\_RE\_PATTERN\_CLEANSE\_LINE\_C\_COMMENTS@{\_RE\_PATTERN\_CLEANSE\_LINE\_C\_COMMENTS}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_RE\_PATTERN\_CLEANSE\_LINE\_C\_COMMENTS}{\_RE\_PATTERN\_CLEANSE\_LINE\_C\_COMMENTS}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+CLEANSE\+\_\+\+LINE\+\_\+\+C\+\_\+\+COMMENTS\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ re.compile(}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{r'(\(\backslash\)s*'}\ +\ \_RE\_PATTERN\_C\_COMMENTS\ +\ \textcolor{stringliteral}{r'\(\backslash\)s*\$|'}\ +}
+\DoxyCodeLine{00003\ \ \ \ \ \_RE\_PATTERN\_C\_COMMENTS\ +\ \textcolor{stringliteral}{r'\(\backslash\)s+|'}\ +}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{stringliteral}{r'\(\backslash\)s+'}\ +\ \_RE\_PATTERN\_C\_COMMENTS\ +\ \textcolor{stringliteral}{r'(?=\(\backslash\)W)|'}\ +}
+\DoxyCodeLine{00005\ \ \ \ \ \_RE\_PATTERN\_C\_COMMENTS\ +\ \textcolor{stringliteral}{r')'})}
+
+\end{DoxyCode}
+\Hypertarget{namespacecpplint_acb6f93120f1c7ff091fd9dea38ee89df}\label{namespacecpplint_acb6f93120f1c7ff091fd9dea38ee89df} 
+\index{cpplint@{cpplint}!\_RE\_PATTERN\_CLEANSE\_LINE\_ESCAPES@{\_RE\_PATTERN\_CLEANSE\_LINE\_ESCAPES}}
+\index{\_RE\_PATTERN\_CLEANSE\_LINE\_ESCAPES@{\_RE\_PATTERN\_CLEANSE\_LINE\_ESCAPES}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_RE\_PATTERN\_CLEANSE\_LINE\_ESCAPES}{\_RE\_PATTERN\_CLEANSE\_LINE\_ESCAPES}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+CLEANSE\+\_\+\+LINE\+\_\+\+ESCAPES\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ re.compile(}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{r'\(\backslash\)\(\backslash\)([abfnrtv?"{}\(\backslash\)\(\backslash\)\(\backslash\)']|\(\backslash\)d+|x[0-\/9a-\/fA-\/F]+)'})}
+
+\end{DoxyCode}
+\Hypertarget{namespacecpplint_adee0ad93201bfc951bff10a8725c49a1}\label{namespacecpplint_adee0ad93201bfc951bff10a8725c49a1} 
+\index{cpplint@{cpplint}!\_RE\_PATTERN\_CONST\_REF\_PARAM@{\_RE\_PATTERN\_CONST\_REF\_PARAM}}
+\index{\_RE\_PATTERN\_CONST\_REF\_PARAM@{\_RE\_PATTERN\_CONST\_REF\_PARAM}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_RE\_PATTERN\_CONST\_REF\_PARAM}{\_RE\_PATTERN\_CONST\_REF\_PARAM}}
+{\footnotesize\ttfamily tuple cpplint.\+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+CONST\+\_\+\+REF\+\_\+\+PARAM\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ (}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{r'(?:.*\(\backslash\)s*\(\backslash\)bconst\(\backslash\)s*\&\(\backslash\)s*'}\ +\ \_RE\_PATTERN\_IDENT\ +}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{stringliteral}{r'|const\(\backslash\)s+'}\ +\ \_RE\_PATTERN\_TYPE\ +\ \textcolor{stringliteral}{r'\(\backslash\)s*\&\(\backslash\)s*'}\ +\ \_RE\_PATTERN\_IDENT\ +\ \textcolor{stringliteral}{r')'})}
+
+\end{DoxyCode}
+\Hypertarget{namespacecpplint_a10f826c497fc61e200b11304e42a2e72}\label{namespacecpplint_a10f826c497fc61e200b11304e42a2e72} 
+\index{cpplint@{cpplint}!\_RE\_PATTERN\_INVALID\_INCREMENT@{\_RE\_PATTERN\_INVALID\_INCREMENT}}
+\index{\_RE\_PATTERN\_INVALID\_INCREMENT@{\_RE\_PATTERN\_INVALID\_INCREMENT}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_RE\_PATTERN\_INVALID\_INCREMENT}{\_RE\_PATTERN\_INVALID\_INCREMENT}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+INVALID\+\_\+\+INCREMENT\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ re.compile(}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{r'\string^\(\backslash\)s*\(\backslash\)*\(\backslash\)w+(\(\backslash\)+\(\backslash\)+|-\/-\/);'})}
+
+\end{DoxyCode}
+\Hypertarget{namespacecpplint_ab1ef73db80238ad8d42561df04d77920}\label{namespacecpplint_ab1ef73db80238ad8d42561df04d77920} 
+\index{cpplint@{cpplint}!\_RE\_PATTERN\_REF\_PARAM@{\_RE\_PATTERN\_REF\_PARAM}}
+\index{\_RE\_PATTERN\_REF\_PARAM@{\_RE\_PATTERN\_REF\_PARAM}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_RE\_PATTERN\_REF\_PARAM}{\_RE\_PATTERN\_REF\_PARAM}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+REF\+\_\+\+PARAM\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ re.compile(}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{r'('}\ +\ \_RE\_PATTERN\_TYPE\ +\ \textcolor{stringliteral}{r'(?:\(\backslash\)s*(?:\(\backslash\)bconst\(\backslash\)b|[*]))*\(\backslash\)s*'}}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{stringliteral}{r'\&\(\backslash\)s*'}\ +\ \_RE\_PATTERN\_IDENT\ +\ \textcolor{stringliteral}{r')\(\backslash\)s*(?:=[\string^,()]+)?[,)]'})}
+
+\end{DoxyCode}
+\Hypertarget{namespacecpplint_a63664d5c5cd3b497c1eacb53048674e3}\label{namespacecpplint_a63664d5c5cd3b497c1eacb53048674e3} 
+\index{cpplint@{cpplint}!\_RE\_PATTERN\_REF\_STREAM\_PARAM@{\_RE\_PATTERN\_REF\_STREAM\_PARAM}}
+\index{\_RE\_PATTERN\_REF\_STREAM\_PARAM@{\_RE\_PATTERN\_REF\_STREAM\_PARAM}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_RE\_PATTERN\_REF\_STREAM\_PARAM}{\_RE\_PATTERN\_REF\_STREAM\_PARAM}}
+{\footnotesize\ttfamily tuple cpplint.\+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+REF\+\_\+\+STREAM\+\_\+\+PARAM\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ (}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{r'(?:.*stream\(\backslash\)s*\&\(\backslash\)s*'}\ +\ \_RE\_PATTERN\_IDENT\ +\ \textcolor{stringliteral}{r')'})}
+
+\end{DoxyCode}
+\Hypertarget{namespacecpplint_afedcf56f0eede3aa5608cbcfd09f56e1}\label{namespacecpplint_afedcf56f0eede3aa5608cbcfd09f56e1} 
+\index{cpplint@{cpplint}!\_RE\_PATTERN\_TYPE@{\_RE\_PATTERN\_TYPE}}
+\index{\_RE\_PATTERN\_TYPE@{\_RE\_PATTERN\_TYPE}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_RE\_PATTERN\_TYPE}{\_RE\_PATTERN\_TYPE}}
+{\footnotesize\ttfamily tuple cpplint.\+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+TYPE\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ (}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{r'(?:const\(\backslash\)s+)?(?:typename\(\backslash\)s+|class\(\backslash\)s+|struct\(\backslash\)s+|union\(\backslash\)s+|enum\(\backslash\)s+)?'}}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{stringliteral}{r'(?:\(\backslash\)w|'}}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{stringliteral}{r'\(\backslash\)s*<(?:<(?:<[\string^<>]*>|[\string^<>])*>|[\string^<>])*>|'}}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{stringliteral}{r'::)+'})}
+
+\end{DoxyCode}
+\Hypertarget{namespacecpplint_a01ccd489908488cba7973b9a17caa343}\label{namespacecpplint_a01ccd489908488cba7973b9a17caa343} 
+\index{cpplint@{cpplint}!\_SEARCH\_C\_FILE@{\_SEARCH\_C\_FILE}}
+\index{\_SEARCH\_C\_FILE@{\_SEARCH\_C\_FILE}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_SEARCH\_C\_FILE}{\_SEARCH\_C\_FILE}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+SEARCH\+\_\+\+C\+\_\+\+FILE\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ re.compile(\textcolor{stringliteral}{r'\(\backslash\)b(?:LINT\_C\_FILE|'}}
+\DoxyCodeLine{00002\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{r'vim?:\(\backslash\)s*.*(\(\backslash\)s*|:)filetype=c(\(\backslash\)s*|:|\$))'})}
+
+\end{DoxyCode}
+\Hypertarget{namespacecpplint_abedff37ffb696f5ee67db5d535f29bcd}\label{namespacecpplint_abedff37ffb696f5ee67db5d535f29bcd} 
+\index{cpplint@{cpplint}!\_THIRD\_PARTY\_HEADERS\_PATTERN@{\_THIRD\_PARTY\_HEADERS\_PATTERN}}
+\index{\_THIRD\_PARTY\_HEADERS\_PATTERN@{\_THIRD\_PARTY\_HEADERS\_PATTERN}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_THIRD\_PARTY\_HEADERS\_PATTERN}{\_THIRD\_PARTY\_HEADERS\_PATTERN}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+THIRD\+\_\+\+PARTY\+\_\+\+HEADERS\+\_\+\+PATTERN\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ re.compile(}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{r'\string^(?:[\string^/]*[A-\/Z][\string^/]*\(\backslash\).h|lua\(\backslash\).h|lauxlib\(\backslash\).h|lualib\(\backslash\).h)\$'})}
+
+\end{DoxyCode}
+\Hypertarget{namespacecpplint_a35b2c753549d4a10e56d6ff4ff49d52a}\label{namespacecpplint_a35b2c753549d4a10e56d6ff4ff49d52a} 
+\index{cpplint@{cpplint}!\_THREADING\_LIST@{\_THREADING\_LIST}}
+\index{\_THREADING\_LIST@{\_THREADING\_LIST}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_THREADING\_LIST}{\_THREADING\_LIST}}
+{\footnotesize\ttfamily tuple cpplint.\+\_\+\+THREADING\+\_\+\+LIST\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ (}
+\DoxyCodeLine{00002\ \ \ \ \ (\textcolor{stringliteral}{'asctime('},\ \textcolor{stringliteral}{'asctime\_r('},\ \_UNSAFE\_FUNC\_PREFIX\ +\ \textcolor{stringliteral}{r'asctime\(\backslash\)([\string^)]+\(\backslash\))'}),}
+\DoxyCodeLine{00003\ \ \ \ \ (\textcolor{stringliteral}{'ctime('},\ \textcolor{stringliteral}{'ctime\_r('},\ \_UNSAFE\_FUNC\_PREFIX\ +\ \textcolor{stringliteral}{r'ctime\(\backslash\)([\string^)]+\(\backslash\))'}),}
+\DoxyCodeLine{00004\ \ \ \ \ (\textcolor{stringliteral}{'getgrgid('},\ \textcolor{stringliteral}{'getgrgid\_r('},\ \_UNSAFE\_FUNC\_PREFIX\ +\ \textcolor{stringliteral}{r'getgrgid\(\backslash\)([\string^)]+\(\backslash\))'}),}
+\DoxyCodeLine{00005\ \ \ \ \ (\textcolor{stringliteral}{'getgrnam('},\ \textcolor{stringliteral}{'getgrnam\_r('},\ \_UNSAFE\_FUNC\_PREFIX\ +\ \textcolor{stringliteral}{r'getgrnam\(\backslash\)([\string^)]+\(\backslash\))'}),}
+\DoxyCodeLine{00006\ \ \ \ \ (\textcolor{stringliteral}{'getlogin('},\ \textcolor{stringliteral}{'getlogin\_r('},\ \_UNSAFE\_FUNC\_PREFIX\ +\ \textcolor{stringliteral}{r'getlogin\(\backslash\)(\(\backslash\))'}),}
+\DoxyCodeLine{00007\ \ \ \ \ (\textcolor{stringliteral}{'getpwnam('},\ \textcolor{stringliteral}{'getpwnam\_r('},\ \_UNSAFE\_FUNC\_PREFIX\ +\ \textcolor{stringliteral}{r'getpwnam\(\backslash\)([\string^)]+\(\backslash\))'}),}
+\DoxyCodeLine{00008\ \ \ \ \ (\textcolor{stringliteral}{'getpwuid('},\ \textcolor{stringliteral}{'getpwuid\_r('},\ \_UNSAFE\_FUNC\_PREFIX\ +\ \textcolor{stringliteral}{r'getpwuid\(\backslash\)([\string^)]+\(\backslash\))'}),}
+\DoxyCodeLine{00009\ \ \ \ \ (\textcolor{stringliteral}{'gmtime('},\ \textcolor{stringliteral}{'gmtime\_r('},\ \_UNSAFE\_FUNC\_PREFIX\ +\ \textcolor{stringliteral}{r'gmtime\(\backslash\)([\string^)]+\(\backslash\))'}),}
+\DoxyCodeLine{00010\ \ \ \ \ (\textcolor{stringliteral}{'localtime('},\ \textcolor{stringliteral}{'localtime\_r('},\ \_UNSAFE\_FUNC\_PREFIX\ +\ \textcolor{stringliteral}{r'localtime\(\backslash\)([\string^)]+\(\backslash\))'}),}
+\DoxyCodeLine{00011\ \ \ \ \ (\textcolor{stringliteral}{'rand('},\ \textcolor{stringliteral}{'rand\_r('},\ \_UNSAFE\_FUNC\_PREFIX\ +\ \textcolor{stringliteral}{r'rand\(\backslash\)(\(\backslash\))'}),}
+\DoxyCodeLine{00012\ \ \ \ \ (\textcolor{stringliteral}{'strtok('},\ \textcolor{stringliteral}{'strtok\_r('},}
+\DoxyCodeLine{00013\ \ \ \ \ \ \_UNSAFE\_FUNC\_PREFIX\ +\ \textcolor{stringliteral}{r'strtok\(\backslash\)([\string^)]+\(\backslash\))'}),}
+\DoxyCodeLine{00014\ \ \ \ \ (\textcolor{stringliteral}{'ttyname('},\ \textcolor{stringliteral}{'ttyname\_r('},\ \_UNSAFE\_FUNC\_PREFIX\ +\ \textcolor{stringliteral}{r'ttyname\(\backslash\)([\string^)]+\(\backslash\))'}),}
+\DoxyCodeLine{00015\ \ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{namespacecpplint_afd2511b963c71a6c7281f7f85370c808}\label{namespacecpplint_afd2511b963c71a6c7281f7f85370c808} 
+\index{cpplint@{cpplint}!\_TYPES@{\_TYPES}}
+\index{\_TYPES@{\_TYPES}!cpplint@{cpplint}}
+\doxysubsubsection{\texorpdfstring{\_TYPES}{\_TYPES}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+TYPES\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ re.compile(}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{r'\string^(?:'}}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{comment}{\#\ [dcl.type.simple]}}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{stringliteral}{r'(char(16\_t|32\_t)?)|wchar\_t|'}}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{stringliteral}{r'bool|short|int|long|signed|unsigned|float|double|'}}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{comment}{\#\ [support.types]}}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{stringliteral}{r'(ptrdiff\_t|size\_t|max\_align\_t|nullptr\_t)|'}}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{comment}{\#\ [cstdint.syn]}}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{stringliteral}{r'(u?int(\_fast|\_least)?(8|16|32|64)\_t)|'}}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{stringliteral}{r'(u?int(max|ptr)\_t)|'}}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{stringliteral}{r')\$'})}
+
+\end{DoxyCode}

@@ -1,0 +1,100 @@
+\doxysection{Catch\+::String\+Ref Class Reference}
+\hypertarget{classCatch_1_1StringRef}{}\label{classCatch_1_1StringRef}\index{Catch::StringRef@{Catch::StringRef}}
+
+
+{\ttfamily \#include $<$catch\+\_\+amalgamated.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classCatch_1_1StringRef_a06b4db8fc82b197004291cf370b2ba7c}\label{classCatch_1_1StringRef_a06b4db8fc82b197004291cf370b2ba7c} 
+using {\bfseries size\+\_\+type} = std\+::size\+\_\+t
+\item 
+\Hypertarget{classCatch_1_1StringRef_ac3aa3d16f48b5429a480f823c504f93c}\label{classCatch_1_1StringRef_ac3aa3d16f48b5429a480f823c504f93c} 
+using {\bfseries const\+\_\+iterator} = const char \texorpdfstring{$\ast$}{*}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classCatch_1_1StringRef_aea45f5089c53adac362bff6bd7c40943}\label{classCatch_1_1StringRef_aea45f5089c53adac362bff6bd7c40943} 
+{\bfseries String\+Ref} (char const \texorpdfstring{$\ast$}{*}raw\+Chars) noexcept
+\item 
+\Hypertarget{classCatch_1_1StringRef_a36df94807491c0ad84184fb8e44e1a7c}\label{classCatch_1_1StringRef_a36df94807491c0ad84184fb8e44e1a7c} 
+constexpr {\bfseries String\+Ref} (char const \texorpdfstring{$\ast$}{*}raw\+Chars, size\+\_\+type size) noexcept
+\item 
+\Hypertarget{classCatch_1_1StringRef_a7fe41469048f906e9a847798cd335f23}\label{classCatch_1_1StringRef_a7fe41469048f906e9a847798cd335f23} 
+{\bfseries String\+Ref} (std\+::string const \&std\+String) noexcept
+\item 
+\Hypertarget{classCatch_1_1StringRef_ad9fde21785affacc32d7da7a70d74e93}\label{classCatch_1_1StringRef_ad9fde21785affacc32d7da7a70d74e93} 
+{\bfseries operator std\+::string} () const
+\item 
+\Hypertarget{classCatch_1_1StringRef_a6f0336769aed4b5c1a9001314c2e2451}\label{classCatch_1_1StringRef_a6f0336769aed4b5c1a9001314c2e2451} 
+auto {\bfseries operator==} (\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} other) const noexcept -\/$>$ bool
+\item 
+\Hypertarget{classCatch_1_1StringRef_a22adacb4efefaaed6cf899153bfbc1b8}\label{classCatch_1_1StringRef_a22adacb4efefaaed6cf899153bfbc1b8} 
+auto {\bfseries operator!=} (\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} other) const noexcept -\/$>$ bool
+\item 
+\Hypertarget{classCatch_1_1StringRef_a2f91b207a5797f0e2633c13d63f06929}\label{classCatch_1_1StringRef_a2f91b207a5797f0e2633c13d63f06929} 
+constexpr auto {\bfseries operator\mbox{[}$\,$\mbox{]}} (size\+\_\+type index) const noexcept -\/$>$ char
+\item 
+\Hypertarget{classCatch_1_1StringRef_a53ffc0e61b39326c3347042bcf1f5424}\label{classCatch_1_1StringRef_a53ffc0e61b39326c3347042bcf1f5424} 
+bool {\bfseries operator$<$} (\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} rhs) const noexcept
+\item 
+\Hypertarget{classCatch_1_1StringRef_a0b4841c28cbb14ba07296964a0187023}\label{classCatch_1_1StringRef_a0b4841c28cbb14ba07296964a0187023} 
+constexpr auto {\bfseries empty} () const noexcept -\/$>$ bool
+\item 
+\Hypertarget{classCatch_1_1StringRef_acb22719801de2b64361b4c283080d4e5}\label{classCatch_1_1StringRef_acb22719801de2b64361b4c283080d4e5} 
+constexpr auto {\bfseries size} () const noexcept -\/$>$ size\+\_\+type
+\item 
+\Hypertarget{classCatch_1_1StringRef_aabf71767dfce1066e721456d54972bc5}\label{classCatch_1_1StringRef_aabf71767dfce1066e721456d54972bc5} 
+constexpr \mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} {\bfseries substr} (size\+\_\+type start, size\+\_\+type length) const noexcept
+\item 
+\Hypertarget{classCatch_1_1StringRef_a7f6ea2c2386b3800687ad1f7327b704b}\label{classCatch_1_1StringRef_a7f6ea2c2386b3800687ad1f7327b704b} 
+constexpr char const \texorpdfstring{$\ast$}{*} {\bfseries data} () const noexcept
+\item 
+\Hypertarget{classCatch_1_1StringRef_ab0adc7198d60867c2842b998ae456795}\label{classCatch_1_1StringRef_ab0adc7198d60867c2842b998ae456795} 
+constexpr const\+\_\+iterator {\bfseries begin} () const
+\item 
+\Hypertarget{classCatch_1_1StringRef_a3ce9afc711b559d6cc59666898fc0828}\label{classCatch_1_1StringRef_a3ce9afc711b559d6cc59666898fc0828} 
+constexpr const\+\_\+iterator {\bfseries end} () const
+\item 
+int \mbox{\hyperlink{classCatch_1_1StringRef_a4634fb03222f376c5d76e8c16f1743d1}{compare}} (\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} rhs) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classCatch_1_1StringRef_a505ac756fc052fd96cdbc9de3c04d398}\label{classCatch_1_1StringRef_a505ac756fc052fd96cdbc9de3c04d398} 
+static constexpr size\+\_\+type {\bfseries npos} \{ static\+\_\+cast$<$size\+\_\+type$>$( -\/1 ) \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classCatch_1_1StringRef_ae0f042cea0672f394e866f4b54560747}\label{classCatch_1_1StringRef_ae0f042cea0672f394e866f4b54560747} 
+std\+::string \& {\bfseries operator+=} (std\+::string \&lhs, \mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} rhs)
+\item 
+\Hypertarget{classCatch_1_1StringRef_a41c0073b47c737088ae557ab8a07e773}\label{classCatch_1_1StringRef_a41c0073b47c737088ae557ab8a07e773} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, \mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} str)
+\item 
+\Hypertarget{classCatch_1_1StringRef_a0e8d47921104f73376ad48337339edef}\label{classCatch_1_1StringRef_a0e8d47921104f73376ad48337339edef} 
+std\+::string {\bfseries operator+} (\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} lhs, \mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} rhs)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A non-\/owning string class (similar to the forthcoming std\+::string\+\_\+view) Note that, because a \doxylink{classCatch_1_1StringRef}{String\+Ref} may be a substring of another string, it may not be null terminated. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCatch_1_1StringRef_a4634fb03222f376c5d76e8c16f1743d1}\label{classCatch_1_1StringRef_a4634fb03222f376c5d76e8c16f1743d1} 
+\index{Catch::StringRef@{Catch::StringRef}!compare@{compare}}
+\index{compare@{compare}!Catch::StringRef@{Catch::StringRef}}
+\doxysubsubsection{\texorpdfstring{compare()}{compare()}}
+{\footnotesize\ttfamily int Catch\+::\+String\+Ref\+::compare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}}}]{rhs }\end{DoxyParamCaption}) const}
+
+Provides a three-\/way comparison with rhs
+
+Returns negative number if lhs \texorpdfstring{$<$}{<} rhs, 0 if lhs == rhs, and a positive number if lhs \texorpdfstring{$>$}{>} rhs 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{catch__amalgamated_8hpp}{catch\+\_\+amalgamated.\+hpp}}\item 
+\mbox{\hyperlink{catch__amalgamated_8cpp}{catch\+\_\+amalgamated.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,98 @@
+\doxysection{Catch\+::Clara\+::Detail\+::Parser\+Ref\+Impl\texorpdfstring{$<$}{<} DerivedT \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl}{}\label{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl}\index{Catch::Clara::Detail::ParserRefImpl$<$ DerivedT $>$@{Catch::Clara::Detail::ParserRefImpl$<$ DerivedT $>$}}
+
+
+Inheritance diagram for Catch\+::Clara\+::Detail\+::Parser\+Ref\+Impl\texorpdfstring{$<$}{<} DerivedT \texorpdfstring{$>$}{>}\+:
+% FIG 0
+
+
+Collaboration diagram for Catch\+::Clara\+::Detail\+::Parser\+Ref\+Impl\texorpdfstring{$<$}{<} DerivedT \texorpdfstring{$>$}{>}\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_aa1f2cedbb0ff1cb196f2249f3ce96c59}\label{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_aa1f2cedbb0ff1cb196f2249f3ce96c59} 
+{\footnotesize template$<$typename LambdaT $>$ }\\{\bfseries Parser\+Ref\+Impl} (\mbox{\hyperlink{structCatch_1_1Clara_1_1accept__many__t}{accept\+\_\+many\+\_\+t}}, LambdaT const \&ref, \mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} hint)
+\item 
+\Hypertarget{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_a2f887bd22b4297826a57806e56cfd3f3}\label{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_a2f887bd22b4297826a57806e56cfd3f3} 
+{\footnotesize template$<$typename T , typename  = typename std\+::enable\+\_\+if\+\_\+t$<$                              !\+Detail\+::is\+\_\+unary\+\_\+function\+\_\+v$<$\+T$>$$>$$>$ }\\{\bfseries Parser\+Ref\+Impl} (T \&ref, \mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} hint)
+\item 
+\Hypertarget{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_a4c2c1717858e95d3c280dacaf8daadb4}\label{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_a4c2c1717858e95d3c280dacaf8daadb4} 
+{\footnotesize template$<$typename LambdaT , typename  = typename std\+::enable\+\_\+if\+\_\+t$<$                              Detail\+::is\+\_\+unary\+\_\+function\+\_\+v$<$\+Lambda\+T$>$$>$$>$ }\\{\bfseries Parser\+Ref\+Impl} (LambdaT const \&ref, \mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} hint)
+\item 
+\Hypertarget{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_a768770e1bb1236b734e1d1a2f8a84ec9}\label{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_a768770e1bb1236b734e1d1a2f8a84ec9} 
+DerivedT \& {\bfseries operator()} (\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} description) \&
+\item 
+\Hypertarget{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_a2533409ff2ce763b442c085a95c8dce9}\label{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_a2533409ff2ce763b442c085a95c8dce9} 
+DerivedT \&\& {\bfseries operator()} (\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} description) \&\&
+\item 
+\Hypertarget{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_a9b4227e549fdf7ac060f32b04691f852}\label{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_a9b4227e549fdf7ac060f32b04691f852} 
+auto {\bfseries optional} () -\/$>$ DerivedT \&
+\item 
+\Hypertarget{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_af9928e53fd50e79bb2696775fb8f211e}\label{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_af9928e53fd50e79bb2696775fb8f211e} 
+auto {\bfseries required} () -\/$>$ DerivedT \&
+\item 
+\Hypertarget{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_a7f53be97ad14acf78874b60c506e3264}\label{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_a7f53be97ad14acf78874b60c506e3264} 
+auto {\bfseries is\+Optional} () const -\/$>$ bool
+\item 
+auto \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_adc3237f1191340d9567857efc5ffb82c}{cardinality}} () const -\/$>$ size\+\_\+t override
+\item 
+\Hypertarget{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_af2d565724a6e3e5306ff2fa324bc1e00}\label{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_af2d565724a6e3e5306ff2fa324bc1e00} 
+\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} {\bfseries hint} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ComposableParserImpl}{Catch\+::\+Clara\+::\+Detail\+::\+Composable\+Parser\+Impl$<$ Derived\+T $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\auto {\bfseries operator\texorpdfstring{$\vert$}{|}} (T const \&other) const -\/$>$ \mbox{\hyperlink{classCatch_1_1Clara_1_1Parser}{Parser}}
+\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{classCatch_1_1Clara_1_1Parser}{Parser}} {\bfseries operator\texorpdfstring{$\vert$}{|}} (T const \&other) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ParserBase}{Catch\+::\+Clara\+::\+Detail\+::\+Parser\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual auto {\bfseries validate} () const -\/$>$ \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1BasicResult}{Result}}
+\item 
+virtual auto {\bfseries parse} (std\+::string const \&exe\+Name, \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1TokenStream}{Token\+Stream}} tokens) const -\/$>$ \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1BasicResult}{Internal\+Parse\+Result}}=0
+\item 
+\mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1BasicResult}{Internal\+Parse\+Result}} {\bfseries parse} (\mbox{\hyperlink{classCatch_1_1Clara_1_1Args}{Args}} const \&args) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_a04749012641bd3596b1bad797623214e}\label{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_a04749012641bd3596b1bad797623214e} 
+{\bfseries Parser\+Ref\+Impl} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structCatch_1_1Clara_1_1Detail_1_1BoundRef}{Bound\+Ref}} $>$ const \&ref)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_a7e63dd6369e1bafc99685b46e3f906ed}\label{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_a7e63dd6369e1bafc99685b46e3f906ed} 
+Optionality {\bfseries m\+\_\+optionality} = Optionality\+::\+Optional
+\item 
+\Hypertarget{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_afb84f647163ba979e8ebf9a62963100b}\label{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_afb84f647163ba979e8ebf9a62963100b} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structCatch_1_1Clara_1_1Detail_1_1BoundRef}{Bound\+Ref}} $>$ {\bfseries m\+\_\+ref}
+\item 
+\Hypertarget{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_aa5bb1319c27841e765a56aea58435d0a}\label{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_aa5bb1319c27841e765a56aea58435d0a} 
+\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} {\bfseries m\+\_\+hint}
+\item 
+\Hypertarget{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_a51bed809ac3d01f86c33dbfbd1526a9e}\label{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_a51bed809ac3d01f86c33dbfbd1526a9e} 
+\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} {\bfseries m\+\_\+description}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_adc3237f1191340d9567857efc5ffb82c}\label{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_adc3237f1191340d9567857efc5ffb82c} 
+\index{Catch::Clara::Detail::ParserRefImpl$<$ DerivedT $>$@{Catch::Clara::Detail::ParserRefImpl$<$ DerivedT $>$}!cardinality@{cardinality}}
+\index{cardinality@{cardinality}!Catch::Clara::Detail::ParserRefImpl$<$ DerivedT $>$@{Catch::Clara::Detail::ParserRefImpl$<$ DerivedT $>$}}
+\doxysubsubsection{\texorpdfstring{cardinality()}{cardinality()}}
+{\footnotesize\ttfamily template$<$typename DerivedT $>$ \\
+auto \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl}{Catch\+::\+Clara\+::\+Detail\+::\+Parser\+Ref\+Impl}}$<$ DerivedT $>$\+::cardinality (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$ size\+\_\+t\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ParserBase}{Catch\+::\+Clara\+::\+Detail\+::\+Parser\+Base}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{catch__amalgamated_8hpp}{catch\+\_\+amalgamated.\+hpp}}\end{DoxyCompactItemize}

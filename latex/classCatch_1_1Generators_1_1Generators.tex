@@ -1,0 +1,71 @@
+\doxysection{Catch\+::Generators\+::Generators\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classCatch_1_1Generators_1_1Generators}{}\label{classCatch_1_1Generators_1_1Generators}\index{Catch::Generators::Generators$<$ T $>$@{Catch::Generators::Generators$<$ T $>$}}
+
+
+Inheritance diagram for Catch\+::Generators\+::Generators\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+% FIG 0
+
+
+Collaboration diagram for Catch\+::Generators\+::Generators\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classCatch_1_1Generators_1_1Generators_a2bcb50c42a8729cbac079b3b61699a61}\label{classCatch_1_1Generators_1_1Generators_a2bcb50c42a8729cbac079b3b61699a61} 
+{\footnotesize template$<$typename... Gs$>$ }\\{\bfseries Generators} (Gs \&\&... more\+Generators)
+\item 
+T const \& \mbox{\hyperlink{classCatch_1_1Generators_1_1Generators_ad86b343eac34f6771358507dd8ea98c4}{get}} () const override
+\item 
+bool \mbox{\hyperlink{classCatch_1_1Generators_1_1Generators_ad127fd2a07347b527f79ab3b78bd40fb}{next}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorUntypedBase}{Catch\+::\+Generators\+::\+Generator\+Untyped\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Generator\+Untyped\+Base} (\mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorUntypedBase}{Generator\+Untyped\+Base}} const \&)=default
+\item 
+\mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorUntypedBase}{Generator\+Untyped\+Base}} \& {\bfseries operator=} (\mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorUntypedBase}{Generator\+Untyped\+Base}} const \&)=default
+\item 
+bool \mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorUntypedBase_a1ea657675ef9274645608f521238ff54}{counted\+Next}} ()
+\item 
+std\+::size\+\_\+t {\bfseries current\+Element\+Index} () const
+\item 
+\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} \mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorUntypedBase_a9c9f450ab1a1aa6ed6ae9e1bfed2e5c1}{current\+Element\+As\+String}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classCatch_1_1Generators_1_1IGenerator}{Catch\+::\+Generators\+::\+IGenerator$<$ T $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+using {\bfseries type} = T
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCatch_1_1Generators_1_1Generators_ad86b343eac34f6771358507dd8ea98c4}\label{classCatch_1_1Generators_1_1Generators_ad86b343eac34f6771358507dd8ea98c4} 
+\index{Catch::Generators::Generators$<$ T $>$@{Catch::Generators::Generators$<$ T $>$}!get@{get}}
+\index{get@{get}!Catch::Generators::Generators$<$ T $>$@{Catch::Generators::Generators$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T const  \& \mbox{\hyperlink{classCatch_1_1Generators_1_1Generators}{Catch\+::\+Generators\+::\+Generators}}$<$ T $>$\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classCatch_1_1Generators_1_1IGenerator}{Catch\+::\+Generators\+::\+IGenerator$<$ T $>$}}.
+
+\Hypertarget{classCatch_1_1Generators_1_1Generators_ad127fd2a07347b527f79ab3b78bd40fb}\label{classCatch_1_1Generators_1_1Generators_ad127fd2a07347b527f79ab3b78bd40fb} 
+\index{Catch::Generators::Generators$<$ T $>$@{Catch::Generators::Generators$<$ T $>$}!next@{next}}
+\index{next@{next}!Catch::Generators::Generators$<$ T $>$@{Catch::Generators::Generators$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classCatch_1_1Generators_1_1Generators}{Catch\+::\+Generators\+::\+Generators}}$<$ T $>$\+::next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Attempts to move the generator to the next element
+
+Returns true iff the move succeeded (and a valid element can be retrieved). 
+
+Implements \mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorUntypedBase}{Catch\+::\+Generators\+::\+Generator\+Untyped\+Base}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{catch__amalgamated_8hpp}{catch\+\_\+amalgamated.\+hpp}}\end{DoxyCompactItemize}

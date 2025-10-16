@@ -1,0 +1,104 @@
+\doxysection{Catch\+::Clara\+::Help Struct Reference}
+\hypertarget{structCatch_1_1Clara_1_1Help}{}\label{structCatch_1_1Clara_1_1Help}\index{Catch::Clara::Help@{Catch::Clara::Help}}
+
+
+Inheritance diagram for Catch\+::Clara\+::Help\+:
+% FIG 0
+
+
+Collaboration diagram for Catch\+::Clara\+::Help\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structCatch_1_1Clara_1_1Help_a3dac87afaa552a09ce07e81e46283dbe}\label{structCatch_1_1Clara_1_1Help_a3dac87afaa552a09ce07e81e46283dbe} 
+{\bfseries Help} (bool \&show\+Help\+Flag)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCatch_1_1Clara_1_1Opt}{Catch\+::\+Clara\+::\+Opt}}}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename LambdaT $>$ }\\{\bfseries Opt} (LambdaT const \&ref)
+\item 
+{\bfseries Opt} (bool \&ref)
+\item 
+{\footnotesize template$<$typename LambdaT , typename  = typename std\+::enable\+\_\+if\+\_\+t$<$                          Detail\+::is\+\_\+unary\+\_\+function\+\_\+v$<$\+Lambda\+T$>$$>$$>$ }\\{\bfseries Opt} (LambdaT const \&ref, \mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} hint)
+\item 
+{\footnotesize template$<$typename LambdaT $>$ }\\{\bfseries Opt} (\mbox{\hyperlink{structCatch_1_1Clara_1_1accept__many__t}{accept\+\_\+many\+\_\+t}}, LambdaT const \&ref, \mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} hint)
+\item 
+{\footnotesize template$<$typename T , typename  = typename std\+::enable\+\_\+if\+\_\+t$<$                          !\+Detail\+::is\+\_\+unary\+\_\+function\+\_\+v$<$\+T$>$$>$$>$ }\\{\bfseries Opt} (T \&ref, \mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} hint)
+\item 
+\mbox{\hyperlink{classCatch_1_1Clara_1_1Opt}{Opt}} \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} opt\+Name) \&
+\item 
+\mbox{\hyperlink{classCatch_1_1Clara_1_1Opt}{Opt}} \&\& {\bfseries operator\mbox{[}$\,$\mbox{]}} (\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} opt\+Name) \&\&
+\item 
+\mbox{\hyperlink{structCatch_1_1Clara_1_1Detail_1_1HelpColumns}{Detail\+::\+Help\+Columns}} {\bfseries get\+Help\+Columns} () const
+\item 
+bool {\bfseries is\+Match} (\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} opt\+Token) const
+\item 
+\mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1BasicResult}{Detail\+::\+Internal\+Parse\+Result}} \mbox{\hyperlink{classCatch_1_1Clara_1_1Opt_a1e248a3d26bfd1a10fc5f3ddcf017a6c}{parse}} (std\+::string const \&, \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1TokenStream}{Detail\+::\+Token\+Stream}} tokens) const override
+\item 
+\mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1BasicResult}{Detail\+::\+Result}} \mbox{\hyperlink{classCatch_1_1Clara_1_1Opt_a98c20f896243211ad17339e1e15fde48}{validate}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl}{Catch\+::\+Clara\+::\+Detail\+::\+Parser\+Ref\+Impl$<$ Opt $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Parser\+Ref\+Impl} (\mbox{\hyperlink{structCatch_1_1Clara_1_1accept__many__t}{accept\+\_\+many\+\_\+t}}, LambdaT const \&ref, \mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} hint)
+\item 
+{\bfseries Parser\+Ref\+Impl} (T \&ref, \mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} hint)
+\item 
+{\bfseries Parser\+Ref\+Impl} (LambdaT const \&ref, \mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} hint)
+\item 
+\mbox{\hyperlink{classCatch_1_1Clara_1_1Opt}{Opt}} \& {\bfseries operator()} (\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} description) \&
+\item 
+\mbox{\hyperlink{classCatch_1_1Clara_1_1Opt}{Opt}} \&\& {\bfseries operator()} (\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} description) \&\&
+\item 
+auto {\bfseries optional} () -\/$>$ \mbox{\hyperlink{classCatch_1_1Clara_1_1Opt}{Opt}} \&
+\item 
+auto {\bfseries required} () -\/$>$ \mbox{\hyperlink{classCatch_1_1Clara_1_1Opt}{Opt}} \&
+\item 
+auto {\bfseries is\+Optional} () const -\/$>$ bool
+\item 
+auto \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl_adc3237f1191340d9567857efc5ffb82c}{cardinality}} () const -\/$>$ size\+\_\+t override
+\item 
+\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} {\bfseries hint} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ComposableParserImpl}{Catch\+::\+Clara\+::\+Detail\+::\+Composable\+Parser\+Impl$<$ Derived\+T $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\auto {\bfseries operator\texorpdfstring{$\vert$}{|}} (T const \&other) const -\/$>$ \mbox{\hyperlink{classCatch_1_1Clara_1_1Parser}{Parser}}
+\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{classCatch_1_1Clara_1_1Parser}{Parser}} {\bfseries operator\texorpdfstring{$\vert$}{|}} (T const \&other) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ParserBase}{Catch\+::\+Clara\+::\+Detail\+::\+Parser\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1BasicResult}{Internal\+Parse\+Result}} {\bfseries parse} (\mbox{\hyperlink{classCatch_1_1Clara_1_1Args}{Args}} const \&args) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl}{Catch\+::\+Clara\+::\+Detail\+::\+Parser\+Ref\+Impl$<$ Opt $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Parser\+Ref\+Impl} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structCatch_1_1Clara_1_1Detail_1_1BoundRef}{Bound\+Ref}} $>$ const \&ref)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classCatch_1_1Clara_1_1Opt}{Catch\+::\+Clara\+::\+Opt}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} $>$ {\bfseries m\+\_\+opt\+Names}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classCatch_1_1Clara_1_1Detail_1_1ParserRefImpl}{Catch\+::\+Clara\+::\+Detail\+::\+Parser\+Ref\+Impl$<$ Opt $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+Optionality {\bfseries m\+\_\+optionality}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structCatch_1_1Clara_1_1Detail_1_1BoundRef}{Bound\+Ref}} $>$ {\bfseries m\+\_\+ref}
+\item 
+\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} {\bfseries m\+\_\+hint}
+\item 
+\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} {\bfseries m\+\_\+description}
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{catch__amalgamated_8hpp}{catch\+\_\+amalgamated.\+hpp}}\item 
+\mbox{\hyperlink{catch__amalgamated_8cpp}{catch\+\_\+amalgamated.\+cpp}}\end{DoxyCompactItemize}

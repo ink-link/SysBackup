@@ -1,0 +1,22 @@
+\doxysection{backup.\+hpp}
+\hypertarget{backup_8hpp_source}{}\label{backup_8hpp_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BACKUP\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BACKUP\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{enum}\ ResultadoBackup\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ SUCESSO\ =\ 0,}
+\DoxyCodeLine{00010\ \ \ \ \ IGNORAR\ =\ 1,}
+\DoxyCodeLine{00011\ \ \ \ \ ERRO\_GERAL\ =\ -\/1,}
+\DoxyCodeLine{00012\ \ \ \ \ ERRO\_ARQUIVO\_ORIGEM\_NAO\_EXISTE\ =\ -\/2}
+\DoxyCodeLine{00013\ \};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00024\ ResultadoBackup\ faz\_backup\_arquivo(\textcolor{keyword}{const}\ std::string\&\ origem,\ \textcolor{keyword}{const}\ std::string\&\ destino);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
