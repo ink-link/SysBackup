@@ -1,0 +1,107 @@
+[33mcommit 68aaeabc8f1bf0689a1b8f1211826f246f39e6d5[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: guremi <ink.link2017@gmail.com>
+Date:   Thu Oct 16 02:09:37 2025 +0000
+
+    Refatora: Adiciona assertivas e verifica integridade para o ERRO de Restauracao (Caso 8)
+
+[33mcommit 60c032c26b6c87eefea7b8b0d99794c0ebd20641[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: guremi <ink.link2017@gmail.com>
+Date:   Thu Oct 16 01:59:16 2025 +0000
+
+    Implementa logica para Caso de Decisao 8 (ERRO na Restauracao: PD e mais antigo que HD)
+
+[33mcommit 24e536862acb1938c555aa37aaef6032a8113744[m
+Author: guremi <ink.link2017@gmail.com>
+Date:   Thu Oct 16 01:57:56 2025 +0000
+
+    Adiciona teste falhando: Caso de Decisao 8 (ERRO - PD e mais antigo que HD)
+
+[33mcommit 59e85320fd7d409981a46cbf96f97f1a01754db3[m
+Author: guremi <ink.link2017@gmail.com>
+Date:   Thu Oct 16 01:50:07 2025 +0000
+
+    Refatora: Consolida logica de Restauracao e adiciona estrutura if/else if clara
+
+[33mcommit f05ed9820a643cf51e9fa7207e0ed7eb1a7e13b5[m
+Author: guremi <ink.link2017@gmail.com>
+Date:   Thu Oct 16 01:28:21 2025 +0000
+
+    Adiciona teste passando: Caso de Decisao 9 (Restauracao: HD e o mais antigo)
+
+[33mcommit e2e8bd816483944e34fff453d1b2a6de0522a170[m
+Author: guremi <ink.link2017@gmail.com>
+Date:   Thu Oct 16 00:50:33 2025 +0000
+
+    Refatora: Estrutura logica de datas em if/else if
+
+[33mcommit 6c79c5ec579160ff571012be79ce343a35b6e6e8[m
+Author: guremi <ink.link2017@gmail.com>
+Date:   Thu Oct 16 00:46:45 2025 +0000
+
+    Implementa logica para Caso de Decisao 5 (ERRO - Destino mais novo que Origem)
+
+[33mcommit 0c8e22647f4acdf354435082e11c977ced3c0e24[m
+Author: guremi <ink.link2017@gmail.com>
+Date:   Thu Oct 16 00:40:03 2025 +0000
+
+    Adiciona teste falhando: Caso de Decisao 5 (ERRO - PD mais novo que HD)
+
+[33mcommit 02f237762e9bc87871ee5277b5f5122826873dca[m
+Author: guremi <ink.link2017@gmail.com>
+Date:   Thu Oct 16 00:34:25 2025 +0000
+
+    Refatora: Adiciona logica explicita para Caso de Decisao 4 (PD == HD -> IGNORAR)
+
+[33mcommit d4aa8005c6566b34eabf7b6ff6ecef3e7f48cde8[m
+Author: guremi <ink.link2017@gmail.com>
+Date:   Thu Oct 16 00:31:45 2025 +0000
+
+    Adiciona teste passando: Caso de Decisao 4 (Nao faz nada caso o arquivo esteja atualizado)
+
+[33mcommit f7ae24caceeaf885a1b1811c58adbca072ffab96[m
+Author: guremi <ink.link2017@gmail.com>
+Date:   Thu Oct 16 00:16:00 2025 +0000
+
+    Refatora: Adiciona Doxygen, assertivas completas, e estrutura de decisao para Caso 3
+
+[33mcommit 7df40578d02ddc674e33afe8a3412dfa100916d1[m
+Author: guremi <ink.link2017@gmail.com>
+Date:   Thu Oct 16 00:11:13 2025 +0000
+
+    Implementa logica para Caso de Decisao 3 (Atualizacao de arquivo mais antigo)
+
+[33mcommit e52d2f5fc4cdfd4886e0f7e3e53f2307cfdcfe3a[m
+Author: guremi <ink.link2017@gmail.com>
+Date:   Thu Oct 16 00:06:27 2025 +0000
+
+    Adiciona teste falhando: Caso de Decisao 3 (Atualizacao de arquivo mais antigo)
+
+[33mcommit ba96b0530cd48a25f797c341cdc515d728089d9e[m
+Author: guremi <ink.link2017@gmail.com>
+Date:   Wed Oct 15 23:58:22 2025 +0000
+
+    Refatora: Adiciona assertivas de entrada/saida e tratativa ERRO_ARQUIVO_ORIGEM_NAO_EXISTE
+
+[33mcommit deb3b4c8930a7c6abeff2ffe5c46d18663008250[m
+Author: guremi <ink.link2017@gmail.com>
+Date:   Wed Oct 15 23:57:17 2025 +0000
+
+    Implementa logica minima: Caso de Decisao 2 (Copia simples de arquivo)
+
+[33mcommit c0e9248b769ff591e40b0eb2bac8795ec2e816d6[m
+Author: guremi <ink.link2017@gmail.com>
+Date:   Wed Oct 15 21:36:09 2025 +0000
+
+    Adicao de teste falhando: Caso de decisao 2 (Atualizacao de HD para PD
+
+[33mcommit 9cc7f4962d7f8fe318e81687dceebc4fc2827546[m
+Author: guremi <ink.link2017@gmail.com>
+Date:   Tue Oct 14 02:38:21 2025 +0000
+
+    Mudanca do Makefile
+
+[33mcommit 9b500aeb1b227807d4c6184b48ede7d97459aeed[m
+Author: guremi <ink.link2017@gmail.com>
+Date:   Tue Oct 14 02:19:07 2025 +0000
+
+    Commit inicial com Makefile

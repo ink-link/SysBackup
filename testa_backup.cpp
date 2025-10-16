@@ -267,7 +267,7 @@ TEST_CASE("Caso de Decisao 10: Ignora Restauracao (PD == HD)", "[restauracao][ig
 }
 
 // ==============================================================================
-// TESTE 10: RESTAURACAO SIMPLES (CASO DE DECISÃO 11: HD nao existe, PD existe)
+// TESTE 8: RESTAURACAO SIMPLES (CASO DE DECISÃO 11: HD nao existe, PD existe)
 // ==============================================================================
 
 TEST_CASE("Caso de Decisao 11: Restaura (PD -> HD) quando HD nao existe", "[restauracao][simples]") {
@@ -301,7 +301,7 @@ TEST_CASE("Caso de Decisao 11: Restaura (PD -> HD) quando HD nao existe", "[rest
 }
 
 // ==============================================================================
-// TESTE 11: ERRO (CASO DE DECISÃO 12: PD nao existe na Restauracao)
+// TESTE 9: ERRO (CASO DE DECISÃO 12: PD nao existe na Restauracao)
 // ==============================================================================
 
 TEST_CASE("Caso de Decisao 12: ERRO (PD inexistente) na Restauracao", "[restauracao][erro]") {
@@ -334,4 +334,33 @@ TEST_CASE("Caso de Decisao 12: ERRO (PD inexistente) na Restauracao", "[restaura
     std::string linha;
     std::getline(ifs, linha);
     REQUIRE(linha == conteudo_hd_original); 
+}
+
+// ==============================================================================
+// TESTE 10: ERRO (CASO DE DECISÃO 13: Arquivo ausente em ambos)
+// ==============================================================================
+
+TEST_CASE("Caso de Decisao 13: ERRO (Arquivo ausente em HD e PD) na Restauracao", "[restauracao][erro][final]") {
+    const std::string test_name = "test_case_13_missing_both";
+    setup_test_env(test_name); 
+
+    // A origem da COPIA eh o Pen-drive, e o destino eh o HD.
+    const std::string origem_pd = test_name + "_destino";
+    const std::string destino_hd = test_name + "_origem"; 
+    const std::string arquivo_nome = "arquivo_desaparecido.txt";
+
+    const std::string origem_path = origem_pd + "/" + arquivo_nome;
+    const std::string destino_path = destino_hd + "/" + arquivo_nome;
+    
+    // 1. Setup: Garante que os arquivos de origem (PD) e destino (HD) NAO existem
+    // O setup_test_env ja garante que o diretorio esta limpo.
+    
+    // 2. Execucao: Chamada em MODO RESTAURACAO
+    ResultadoBackup resultado = faz_backup_arquivo(origem_path, destino_path, RESTAURACAO);
+    
+    // 3. Verificacao: Espera-se ERRO, pois a origem nao existe
+    REQUIRE(resultado == ERRO_ARQUIVO_ORIGEM_NAO_EXISTE);
+    
+    // Garante que o arquivo NAO foi criado no HD.
+    REQUIRE(fs::exists(destino_path) == false); 
 }
