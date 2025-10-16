@@ -90,7 +90,7 @@ TEST_CASE("Caso de Decisao 3: Atualiza Backup (PD mais antigo que HD)", "[backup
 }
 
 // ==============================================================================
-// TESTE 4: IGNORAR ATUALIZACAO (CASO DE DECISÃO 4: Datas Iguais)
+// TESTE 3: IGNORAR ATUALIZACAO (CASO DE DECISÃO 4: Datas Iguais)
 // ==============================================================================
 
 TEST_CASE("Caso de Decisao 4: Ignora Backup (Datas Iguais)", "[backup][ignorar][data]") {
@@ -123,7 +123,7 @@ TEST_CASE("Caso de Decisao 4: Ignora Backup (Datas Iguais)", "[backup][ignorar][
 }
 
 // ==============================================================================
-// TESTE 5: ERRO POR DATA (CASO DE DECISÃO 5: PD > HD)
+// TESTE 4: ERRO POR DATA (CASO DE DECISÃO 5: PD > HD)
 // ==============================================================================
 
 TEST_CASE("Caso de Decisao 5: ERRO - Destino e mais novo que Origem", "[backup][erro][data]") {
@@ -154,7 +154,7 @@ TEST_CASE("Caso de Decisao 5: ERRO - Destino e mais novo que Origem", "[backup][
 }
 
 // ==============================================================================
-// TESTE 6: RESTAURACAO (CASO DE DECISÃO 9: HD mais antigo que PD)
+// TESTE 5: RESTAURACAO (CASO DE DECISÃO 9: HD mais antigo que PD)
 // ==============================================================================
 
 TEST_CASE("Caso de Decisao 9: Restaura (PD -> HD) quando HD e o mais antigo", "[restauracao][data]") {
@@ -188,7 +188,7 @@ TEST_CASE("Caso de Decisao 9: Restaura (PD -> HD) quando HD e o mais antigo", "[
 }
 
 // ==============================================================================
-// TESTE 7: ERRO NA RESTAURACAO (CASO DE DECISÃO 8: HD mais novo que PD)
+// TESTE 6: ERRO NA RESTAURACAO (CASO DE DECISÃO 8: HD mais novo que PD)
 // ==============================================================================
 
 TEST_CASE("Caso de Decisao 8: ERRO (PD mais antigo que HD) na Restauracao", "[restauracao][erro][data]") {
@@ -227,3 +227,41 @@ TEST_CASE("Caso de Decisao 8: ERRO (PD mais antigo que HD) na Restauracao", "[re
     REQUIRE(linha == conteudo_hd_novo); 
 }
 
+// ==============================================================================
+// TESTE 7: IGNORAR RESTAURACAO (CASO DE DECISÃO 10: Datas Iguais)
+// ==============================================================================
+
+TEST_CASE("Caso de Decisao 10: Ignora Restauracao (PD == HD)", "[restauracao][ignorar]") {
+    const std::string test_name = "test_case_10_ignore";
+    setup_test_env(test_name); 
+
+    // A origem da copia eh o Pen-drive, e o destino eh o HD.
+    const std::string origem_pd = test_name + "_destino";
+    const std::string destino_hd = test_name + "_origem";
+    const std::string arquivo_nome = "ignorar_restauracao.txt";
+
+    const std::string origem_path = origem_pd + "/" + arquivo_nome;
+    const std::string destino_path = destino_hd + "/" + arquivo_nome;
+    const std::string conteudo = "Conteudo identico";
+    
+    // 1. Setup: Cria o arquivo no HD e no PD
+    create_file(destino_path, conteudo);
+    create_file(origem_path, conteudo);
+    
+    // 2. Setup: Garante que as datas de modificacao sejam IGUAIS
+    auto tempo_atual = fs::file_time_type::clock::now();
+    set_file_time(destino_path, tempo_atual);
+    set_file_time(origem_path, tempo_atual); 
+    
+    // 3. Execucao: Chamada em MODO RESTAURACAO
+    ResultadoBackup resultado = faz_backup_arquivo(origem_path, destino_path, RESTAURACAO);
+    
+    // 4. Verificacao: Espera-se IGNORAR, pois nao ha necessidade de copia.
+    REQUIRE(resultado == IGNORAR);
+    
+    // Confirma que o conteudo NAO foi alterado
+    std::ifstream ifs(destino_path);
+    std::string linha;
+    std::getline(ifs, linha);
+    REQUIRE(linha == conteudo); 
+}
