@@ -406,7 +406,7 @@ TEST_CASE("Caso de Decisao 1: ERRO - Backup.parm ausente", "[parametros][erro]")
 }
 
 // ==============================================================================
-// TESTE 2: LEITURA DE PARAMETROS COM SUCESSO
+// TESTE 15: LEITURA DE PARAMETROS COM SUCESSO
 // ==============================================================================
 
 TEST_CASE("Leitura de Backup.parm com sucesso", "[parametros][sucesso]") {
@@ -432,4 +432,49 @@ TEST_CASE("Leitura de Backup.parm com sucesso", "[parametros][sucesso]") {
     }
     
     fs::remove(param_file);
+}
+
+// ==============================================================================
+// TESTE 14: ORQUESTRAÇÃO DE BACKUP (SUCESSO DE PONTA A PONTA)
+// ==============================================================================
+
+TEST_CASE("Orquestracao: Execucao de Backup com multiplos arquivos", "[orquestracao][backup]") {
+    const std::string test_name = "test_case_orquestracao_backup";
+    setup_test_env(test_name); 
+
+    const std::string origem_base = test_name + "_origem";
+    const std::string destino_base = test_name + "_destino";
+    const std::string parm_file = "Backup.parm";
+    
+    // Caminhos relativos (como estariam no Backup.parm)
+    const std::string arq1 = "documentos/doc1.txt";
+    const std::string arq2 = "fotos/foto2.jpg";
+
+    // 1. Setup: Cria o arquivo Backup.parm
+    std::ofstream ofs_parm(parm_file);
+    ofs_parm << arq1 << "\n";
+    ofs_parm << arq2 << "\n";
+    ofs_parm.close();
+
+    // 2. Setup: Cria os arquivos de ORIGEM e as subpastas
+    fs::create_directories(origem_base + "/documentos");
+    fs::create_directories(origem_base + "/fotos");
+    create_file(origem_base + "/" + arq1, "Conteudo 1");
+    create_file(origem_base + "/" + arq2, "Conteudo 2");
+    
+    // 3. Execucao: Roda o processo de orquestracao completo
+    ResultadoBackup resultado = executa_backup_restauracao(
+        parm_file, 
+        origem_base, 
+        destino_base, 
+        BACKUP
+    );
+    
+    // 4. Verificacao: Espera-se SUCESSO e que os arquivos existam no destino
+    REQUIRE(resultado == SUCESSO);
+    REQUIRE(fs::exists(destino_base + "/" + arq1) == true);
+    REQUIRE(fs::exists(destino_base + "/" + arq2) == true);
+    
+    // Limpeza adicional do arquivo parm
+    fs::remove(parm_file);
 }

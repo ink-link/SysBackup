@@ -224,3 +224,12 @@ ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string&
 
     return IGNORAR; 
 }
+
+// ==============================================================================
+// FUNÇÃO PRINCIPAL DE ORQUESTRAÇÃO
+// ==============================================================================
+
+ResultadoBackup executa_backup_restauracao(const std::string& nome_arquivo_parm,
+                                            const std::string& caminho_origem_base,
+                                            const std::string& caminho_destino_base,
+                                            Operacao operacao) {return IGNORAR;}
