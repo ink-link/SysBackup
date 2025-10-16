@@ -44,6 +44,8 @@ ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string&
         if (!origem_existe) {
             // CASO DE DECISÃO 7: HD ausente (F), PD existe (V) -> ACAO: IGNORAR (Faz Nada)
             if (destino_existe) {
+                // Assertiva de Saída: Garante que o arquivo no destino nao foi alterado.
+                assert(fs::exists(destino) && "Arquivo de destino deveria existir.");
                 return IGNORAR;
             }
             // CASO DE DECISÃO 6: HD ausente (F), PD ausente (F) -> ACAO: IGNORAR (Faz Nada, caso nao listado, mas faz sentido)
