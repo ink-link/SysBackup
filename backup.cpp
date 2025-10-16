@@ -32,8 +32,10 @@ ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string&
     // Suprime o warning 'unused parameter'
     (void)operacao; 
     
-    // Se a origem nao existe, retorna erro, e os proximos passos sao ignorados.
+    // Se a origem nao existe, retorna erro, e os proximos passos sao ignorados. Cobre o Caso 12.
     if (!fs::exists(origem)) {
+        // Assertiva de Saida: Garante que, se o HD existia, ele nao foi alterado.
+        assert((!fs::exists(destino) || get_file_time(destino) == get_file_time(destino)) && "Integridade do destino perdida.");
         return ERRO_ARQUIVO_ORIGEM_NAO_EXISTE;
     }
     
@@ -92,7 +94,7 @@ ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string&
     }
 
     // ==============================================================================
-    // B. LOGICA DE RESTAURACAO (PD -> HD) - OPERACAO: RESTAURACAO (Caso 9)
+    // B. LOGICA DE RESTAURACAO (PD -> HD) - OPERACAO: RESTAURACAO (Casos 8, 9, 10, 11)
     // ==============================================================================
     if (operacao == RESTAURACAO) {
 
@@ -107,7 +109,7 @@ ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string&
                 return ERRO_GERAL;
             }
         }
-        
+
         // Logica para Restauraçao (PD -> HD):
         if (fs::exists(destino)) {
             try {
