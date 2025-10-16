@@ -17,12 +17,12 @@ auto get_file_time(const std::string& path) {
 
 /**
  * @brief Le o arquivo de parametros para determinar quais arquivos devem ser processados.
- * @details Implementa a logica para abrir e ler o arquivo de parametros.
+ * @details Esta funcao verifica a existencia do arquivo de parametros.
  * @param nome_arquivo_parm Nome e caminho do arquivo de parametros (ex: "Backup.parm").
  * @param arquivos_para_processar Vetor que recebera a lista de arquivos.
  * @return ResultadoBackup Codigo de sucesso ou erro (ERRO_ARQUIVO_PARAMETROS_AUSENTE).
  * @pre O nome do arquivo de parametros nao deve ser uma string vazia.
- * @post Se SUCESSO, o vetor 'arquivos_para_processar' contem caminhos validos.
+ * @post Se o retorno for ERRO_ARQUIVO_PARAMETROS_AUSENTE, o arquivo nao existe.
  */
 ResultadoBackup le_arquivo_parametros(const std::string& nome_arquivo_parm, 
                                      std::vector<std::string>& arquivos_para_processar) {
@@ -31,7 +31,8 @@ ResultadoBackup le_arquivo_parametros(const std::string& nome_arquivo_parm,
     (void)arquivos_para_processar; // Suprime o warning 'unused parameter'                             
     // Implementacao para o Caso de Decisao 1 (ERRO: Backup.parm ausente)
     if (!fs::exists(nome_arquivo_parm)) {
-        // Retorna o erro exigido pela Coluna 1 da Tabela de Decisao (IMPOSSIVEL/ERRO)
+        // Assertiva de saida: O arquivo deve estar ausente se o erro e lancado.
+        assert(!fs::exists(nome_arquivo_parm));
         return ERRO_ARQUIVO_PARAMETROS_AUSENTE;
     }
     return SUCESSO;
