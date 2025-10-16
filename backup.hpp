@@ -4,6 +4,7 @@
 #include <string>
 #include <filesystem>
 #include <cassert>
+#include <fstream>
 
 enum ResultadoBackup {
     SUCESSO = 0,
@@ -11,6 +12,11 @@ enum ResultadoBackup {
     ERRO_GERAL = -1,
     ERRO_ARQUIVO_ORIGEM_NAO_EXISTE = -2,
     ERRO_ARQUIVO_DESTINO_MAIS_NOVO = -3 
+};
+
+enum Operacao {
+    BACKUP = 0,
+    RESTAURACAO = 1
 };
 
 /**
@@ -22,6 +28,6 @@ enum ResultadoBackup {
  * @pre
  * @post
  */
-ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string& destino);
+ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string& destino, Operacao operacao);
 
 #endif

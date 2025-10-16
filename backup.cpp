@@ -24,10 +24,11 @@ auto get_file_time(const std::string& path) {
  * conteudo e a data de modificacao deve ser maior ou igual a data de origem.
  */
 
-ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string& destino) {
+ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string& destino, Operacao operacao) {
     // Assertiva de entrada minima
     assert(!origem.empty() && "A string de origem nao pode ser vazia.");
     assert(!destino.empty() && "A string de destino nao pode ser vazia.");
+    (void)operacao; 
     
     // Se a origem nao existe, retorna erro, e os proximos passos sao ignorados.
     if (!fs::exists(origem)) {

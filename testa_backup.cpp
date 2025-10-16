@@ -4,6 +4,7 @@
 #include <fstream>
 #include <filesystem>
 #include <cassert>
+#include <chrono>
 
 namespace fs = std::filesystem;
 
@@ -45,7 +46,7 @@ TEST_CASE("Caso de Decisao 2: Copia HD para Pen-drive", "[backup][copia]") {
     
     create_file(origem_path, conteudo);
 
-    ResultadoBackup resultado = faz_backup_arquivo(origem_path, destino_path);
+    ResultadoBackup resultado = faz_backup_arquivo(origem_path, destino_path, BACKUP);
     
     REQUIRE(resultado == SUCESSO);
     REQUIRE(fs::exists(destino_path) == true);
@@ -78,7 +79,7 @@ TEST_CASE("Caso de Decisao 3: Atualiza Backup (PD mais antigo que HD)", "[backup
     auto tempo_antigo = fs::file_time_type::clock::now() - std::chrono::hours(24);
     set_file_time(destino_path, tempo_antigo);
     
-    ResultadoBackup resultado = faz_backup_arquivo(origem_path, destino_path);
+    ResultadoBackup resultado = faz_backup_arquivo(origem_path, destino_path, BACKUP);
     
     REQUIRE(resultado == SUCESSO);
     
@@ -111,7 +112,7 @@ TEST_CASE("Caso de Decisao 4: Ignora Backup (Datas Iguais)", "[backup][ignorar][
     set_file_time(origem_path, tempo_atual);
     set_file_time(destino_path, tempo_atual); // Define a mesma data
     
-    ResultadoBackup resultado = faz_backup_arquivo(origem_path, destino_path);
+    ResultadoBackup resultado = faz_backup_arquivo(origem_path, destino_path, BACKUP);
     
     REQUIRE(resultado == IGNORAR);
     
@@ -142,7 +143,7 @@ TEST_CASE("Caso de Decisao 5: ERRO - Destino e mais novo que Origem", "[backup][
     auto tempo_antigo = fs::file_time_type::clock::now() - std::chrono::hours(48);
     set_file_time(origem_path, tempo_antigo);
     
-    ResultadoBackup resultado = faz_backup_arquivo(origem_path, destino_path);
+    ResultadoBackup resultado = faz_backup_arquivo(origem_path, destino_path, BACKUP);
     
     REQUIRE(resultado == ERRO_ARQUIVO_DESTINO_MAIS_NOVO);
     
@@ -150,4 +151,38 @@ TEST_CASE("Caso de Decisao 5: ERRO - Destino e mais novo que Origem", "[backup][
     std::string linha;
     std::getline(ifs, linha);
     REQUIRE(linha == "Versao mais recente no Pen-drive"); 
+}
+
+// ==============================================================================
+// TESTE 6: RESTAURACAO (CASO DE DECISÃO 9: HD mais antigo que PD)
+// ==============================================================================
+
+TEST_CASE("Caso de Decisao 9: Restaura (PD -> HD) quando HD e o mais antigo", "[restauracao][data]") {
+    const std::string test_name = "test_case_9_restore_update";
+    setup_test_env(test_name); 
+
+    const std::string origem_pd = test_name + "_destino";
+    const std::string destino_hd = test_name + "_origem"; // Usamos 'origem' para simular o HD
+    const std::string arquivo_nome = "restaurar_novo.txt";
+
+    const std::string origem_path = origem_pd + "/" + arquivo_nome;
+    const std::string destino_path = destino_hd + "/" + arquivo_nome;
+    const std::string conteudo_novo = "Versao mais recente no Pen-drive";
+    
+    create_file(destino_path, "Conteudo Antigo no HD");
+    
+    create_file(origem_path, conteudo_novo);
+    
+    auto tempo_antigo = fs::file_time_type::clock::now() - std::chrono::hours(48);
+    set_file_time(destino_path, tempo_antigo);
+    
+    // A funcao deve ser chamada com: origem=PD, destino=HD, Operacao=RESTAURACAO
+    ResultadoBackup resultado = faz_backup_arquivo(origem_path, destino_path, RESTAURACAO);
+    
+    REQUIRE(resultado == SUCESSO);
+    
+    std::ifstream ifs(destino_path);
+    std::string linha;
+    std::getline(ifs, linha);
+    REQUIRE(linha == conteudo_novo);
 }
