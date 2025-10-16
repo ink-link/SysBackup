@@ -120,3 +120,34 @@ TEST_CASE("Caso de Decisao 4: Ignora Backup (Datas Iguais)", "[backup][ignorar][
     std::getline(ifs, linha);
     REQUIRE(linha == conteudo_original);
 }
+
+// ==============================================================================
+// TESTE 5: ERRO POR DATA (CASO DE DECISÃO 5: PD > HD)
+// ==============================================================================
+
+TEST_CASE("Caso de Decisao 5: ERRO - Destino e mais novo que Origem", "[backup][erro][data]") {
+    const std::string test_name = "test_case_5_error_newer_pd";
+    setup_test_env(test_name); 
+
+    const std::string origem_dir = test_name + "_origem";
+    const std::string destino_dir = test_name + "_destino";
+    const std::string arquivo_nome = "erro_novo.txt";
+
+    const std::string origem_path = origem_dir + "/" + arquivo_nome;
+    const std::string destino_path = destino_dir + "/" + arquivo_nome;
+    
+    create_file(destino_path, "Versao mais recente no Pen-drive");
+    create_file(origem_path, "Versao Antiga no HD");
+    
+    auto tempo_antigo = fs::file_time_type::clock::now() - std::chrono::hours(48);
+    set_file_time(origem_path, tempo_antigo);
+    
+    ResultadoBackup resultado = faz_backup_arquivo(origem_path, destino_path);
+    
+    REQUIRE(resultado == ERRO_ARQUIVO_DESTINO_MAIS_NOVO);
+    
+    std::ifstream ifs(destino_path);
+    std::string linha;
+    std::getline(ifs, linha);
+    REQUIRE(linha == "Versao mais recente no Pen-drive"); 
+}
