@@ -299,3 +299,39 @@ TEST_CASE("Caso de Decisao 11: Restaura (PD -> HD) quando HD nao existe", "[rest
     std::getline(ifs, linha);
     REQUIRE(linha == conteudo); // Confirma que o HD foi criado e atualizado
 }
+
+// ==============================================================================
+// TESTE 11: ERRO (CASO DE DECISÃO 12: PD nao existe na Restauracao)
+// ==============================================================================
+
+TEST_CASE("Caso de Decisao 12: ERRO (PD inexistente) na Restauracao", "[restauracao][erro]") {
+    const std::string test_name = "test_case_12_pd_missing";
+    setup_test_env(test_name); 
+
+    // A origem da COPIA eh o Pen-drive, e o destino eh o HD.
+    const std::string origem_pd = test_name + "_destino";
+    const std::string destino_hd = test_name + "_origem"; 
+    const std::string arquivo_nome = "arquivo_perdido.txt";
+
+    const std::string origem_path = origem_pd + "/" + arquivo_nome;
+    const std::string destino_path = destino_hd + "/" + arquivo_nome;
+    const std::string conteudo_hd_original = "Conteudo que deve ser mantido no HD";
+    
+    // 1. Setup: Cria o arquivo no HD (Destino), que deve ser mantido
+    create_file(destino_path, conteudo_hd_original);
+    
+    // 2. Setup: Garante que o arquivo de ORIGEM (PD) NAO exista
+    fs::remove(origem_path); // A funcao remove_all ja garante que o dir esta limpo
+
+    // 3. Execucao: Chamada em MODO RESTAURACAO
+    ResultadoBackup resultado = faz_backup_arquivo(origem_path, destino_path, RESTAURACAO);
+    
+    // 4. Verificacao: Espera-se ERRO, pois a origem nao existe
+    REQUIRE(resultado == ERRO_ARQUIVO_ORIGEM_NAO_EXISTE);
+    
+    // Garante que o conteudo do HD NAO FOI ALTERADO (mantem a integridade)
+    std::ifstream ifs(destino_path);
+    std::string linha;
+    std::getline(ifs, linha);
+    REQUIRE(linha == conteudo_hd_original); 
+}
