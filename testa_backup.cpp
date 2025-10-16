@@ -265,3 +265,37 @@ TEST_CASE("Caso de Decisao 10: Ignora Restauracao (PD == HD)", "[restauracao][ig
     std::getline(ifs, linha);
     REQUIRE(linha == conteudo); 
 }
+
+// ==============================================================================
+// TESTE 10: RESTAURACAO SIMPLES (CASO DE DECISÃO 11: HD nao existe, PD existe)
+// ==============================================================================
+
+TEST_CASE("Caso de Decisao 11: Restaura (PD -> HD) quando HD nao existe", "[restauracao][simples]") {
+    const std::string test_name = "test_case_11_simple_restore";
+    setup_test_env(test_name); 
+
+    // A origem da COPIA eh o Pen-drive, e o destino eh o HD.
+    const std::string origem_pd = test_name + "_destino";
+    const std::string destino_hd = test_name + "_origem";
+    const std::string arquivo_nome = "restaurar_novo.txt";
+
+    const std::string origem_path = origem_pd + "/" + arquivo_nome;
+    const std::string destino_path = destino_hd + "/" + arquivo_nome;
+    const std::string conteudo = "Conteudo do Pen-drive a ser restaurado.";
+    
+    // 1. Setup: Cria o arquivo no Pen-drive (Origem)
+    create_file(origem_path, conteudo);
+    // 2. Setup: Garante que o HD (Destino) NAO exista (Caso de Decisão 11)
+    fs::remove(destino_path); 
+
+    // 3. Execucao: Chamada em MODO RESTAURACAO
+    ResultadoBackup resultado = faz_backup_arquivo(origem_path, destino_path, RESTAURACAO);
+    
+    // 4. Verificacao: Espera-se SUCESSO e que o arquivo de destino exista
+    REQUIRE(resultado == SUCESSO);
+    
+    std::ifstream ifs(destino_path);
+    std::string linha;
+    std::getline(ifs, linha);
+    REQUIRE(linha == conteudo); // Confirma que o HD foi criado e atualizado
+}
