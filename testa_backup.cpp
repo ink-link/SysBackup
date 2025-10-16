@@ -28,6 +28,16 @@ void set_file_time(const std::string& path, const fs::file_time_type& new_time) 
     fs::last_write_time(path, new_time);
 }
 
+// Funcao auxiliar para criar um arquivo de parametros com conteudo de teste
+void create_param_file(const std::string& path, const std::vector<std::string>& files) {
+    std::ofstream ofs(path);
+    assert(ofs.is_open());
+    for (const auto& file : files) {
+        ofs << file << "\n";
+    }
+    ofs.close();
+}
+
 // ==============================================================================
 // TESTE 1: CÓPIA SIMPLES (CASO DE DECISÃO 9: HD EXISTE, PD NÃO EXISTE)
 // ==============================================================================
@@ -393,4 +403,33 @@ TEST_CASE("Caso de Decisao 1: ERRO - Backup.parm ausente", "[parametros][erro]")
     
     REQUIRE(resultado == ERRO_ARQUIVO_PARAMETROS_AUSENTE);
     REQUIRE(lista_arquivos.empty() == true);
+}
+
+// ==============================================================================
+// TESTE 2: LEITURA DE PARAMETROS COM SUCESSO
+// ==============================================================================
+
+TEST_CASE("Leitura de Backup.parm com sucesso", "[parametros][sucesso]") {
+    const std::string param_file = "Backup.parm";
+    std::vector<std::string> lista_arquivos_esperada = {
+        "caminho/do/arquivo1.txt",
+        "pasta/subpasta/arquivo2.cpp",
+        "config.json"
+    };
+    
+    create_param_file(param_file, lista_arquivos_esperada);
+    
+    std::vector<std::string> lista_arquivos_obtida;
+    
+    ResultadoBackup resultado = le_arquivo_parametros(param_file, lista_arquivos_obtida);
+    
+    REQUIRE(resultado == SUCESSO);
+    REQUIRE(lista_arquivos_obtida.size() == lista_arquivos_esperada.size());
+    
+    // Verifica se cada item lido corresponde ao item esperado
+    for (size_t i = 0; i < lista_arquivos_esperada.size(); ++i) {
+        REQUIRE(lista_arquivos_obtida[i] == lista_arquivos_esperada[i]);
+    }
+    
+    fs::remove(param_file);
 }
