@@ -7,7 +7,24 @@ e entao determina o que deve ser feito, de acordo com a tabela de decisao fornec
 
 ### Como Compilar e Executar
 
-Abra o terminal na raiz do projeto e execute o comando make test.
+Preparei duas pastas para representar o HD e o pen drive, respectivamente "hd_origem" e "pen_drive_destino".
+
+Deixei alguns arquivos simples preparados na pasta do HD. 
+Para realizar o backup do HD para o pen drive, use o seguinte comando no terminal:
+./backup_app -b Backup.parm hd_origem pen_drive_destino
+
+
+Para fazer a restauracao dos dados do pen drive para o hd, use esse comando no terminal.
+./backup_app -r Backup.parm pen_drive_destino hd_origem
+
+Esse fluxo leva em conta que a pasta destino esta vazia.
+
+
+O programa leva em conta a data de edicao dos arquivos, entao manualmente manipula-los e 
+tentar os comandos pode dar erros (que sao explicitados no terminal)
+
+
+Para rodar os testes, abra o terminal na raiz do projeto e execute o comando make test.
 Isso irá compilar os arquivos backup.cpp e testa_backup.cpp, e rodar os testes automáticos.
 
 Para limpar todos os resultados dos testes e backups da compilacao, rode make clean no terminal
@@ -18,4 +35,6 @@ Para limpar todos os resultados dos testes e backups da compilacao, rode make cl
 O commit do caso 12 foi feito com o nome incorreto, foi engano da minha parte. 
 O teste ja estava passando sem implementacoes adicionais, por isso parti direto para a refatoracao.
 O nome do commit deveria ser "Adiciona teste passando: Caso de Decisao 12 (ERRO - PD inexistente na restauracao)", 
-mas nao consegui muda-lo depois de ja ter feito o  push.
+mas nao pude muda-lo depois de ja ter feito o  push.
+
+Os erros que aparecem no cppcheck sao do proprio catch_amalgamated, nao de implementacao minha.

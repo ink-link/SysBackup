@@ -1,3 +1,5 @@
+// Copyright 2025 Guilherme Nonato
+
 #ifndef BACKUP_HPP
 #define BACKUP_HPP
 
@@ -14,7 +16,7 @@ enum ResultadoBackup {
     ERRO_ARQUIVO_ORIGEM_NAO_EXISTE = -2,
     ERRO_ARQUIVO_DESTINO_MAIS_NOVO = -3,
     ERRO_ARQUIVO_ORIGEM_MAIS_ANTIGO = -4,
-    ERRO_ARQUIVO_PARAMETROS_AUSENTE = -5 
+    ERRO_ARQUIVO_PARAMETROS_AUSENTE = -5
 };
 
 enum Operacao {
@@ -29,7 +31,7 @@ enum Operacao {
 // Funções de arquivo (deve ser mantida)
 auto get_file_time(const std::string& path); 
 ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string& destino, Operacao operacao);
-ResultadoBackup le_arquivo_parametros(const std::string& nome_arquivo_parm, 
+ResultadoBackup le_arquivo_parametros(const std::string& nome_arquivo_parm,
                                      std::vector<std::string>& arquivos_para_processar);
 
 
@@ -51,6 +53,9 @@ ResultadoBackup executa_backup_restauracao(const std::string& nome_arquivo_parm,
 
 ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string& destino, Operacao operacao);
 
-ResultadoBackup le_arquivo_parametros(const std::string& nome_arquivo_parm, 
+ResultadoBackup le_arquivo_parametros(const std::string& nome_arquivo_parm,
                                      std::vector<std::string>& arquivos_para_processar);
-#endif
+
+std::string resultado_para_string(ResultadoBackup codigo);
+
+#endif  // BACKUP_HPP

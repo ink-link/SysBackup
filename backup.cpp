@@ -1,9 +1,11 @@
+// Copyright 2025 Guilherme Nonato
+
 #include "backup.hpp"
 #include <fstream>
 #include <iostream>
 #include <cassert>
 #include <filesystem>
-
+#include <map> 
 
 namespace fs = std::filesystem;
 
@@ -24,18 +26,18 @@ auto get_file_time(const std::string& path) {
  * @pre O nome do arquivo de parametros nao deve ser uma string vazia.
  * @post Se o retorno for ERRO_ARQUIVO_PARAMETROS_AUSENTE, o arquivo nao existe.
  */
-ResultadoBackup le_arquivo_parametros(const std::string& nome_arquivo_parm, 
-                                     std::vector<std::string>& arquivos_para_processar) {
+ResultadoBackup le_arquivo_parametros(const std::string& nome_arquivo_parm,
+                                      std::vector<std::string>& arquivos_para_processar) {
     // Assertiva de entrada
     assert(!nome_arquivo_parm.empty() && "O nome do arquivo de parametros nao pode ser vazio.");
-                               
+
     // Implementacao para o Caso de Decisao 1 (ERRO: Backup.parm ausente)
     if (!fs::exists(nome_arquivo_parm)) {
         // Assertiva de saida: O arquivo deve estar ausente se o erro e lancado.
         assert(!fs::exists(nome_arquivo_parm));
         return ERRO_ARQUIVO_PARAMETROS_AUSENTE;
     }
-    
+
     // Lógica para o TESTE DE SUCESSO
     std::ifstream arquivo_parm(nome_arquivo_parm);
     std::string linha;
@@ -49,13 +51,13 @@ ResultadoBackup le_arquivo_parametros(const std::string& nome_arquivo_parm,
             }
         }
         arquivo_parm.close();
-        
+
         // Assertiva de Saida: Se retornou SUCESSO, o vetor deve ter sido preenchido
         assert(!arquivos_para_processar.empty() && "Vetor deve ser preenchido se o arquivo existe.");
-        
+
         return SUCESSO;
     }
-    // Este caso so ocorreria se o arquivo existisse mas nao pudesse ser aberto 
+    // Este caso so ocorreria se o arquivo existisse mas nao pudesse ser aberto
     // (erro de permissao)
     return ERRO_GERAL;
 }
@@ -66,13 +68,12 @@ ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string&
     assert(!destino.empty() && "A string de destino nao pode ser vazia.");
 
     // Suprime o warning 'unused parameter'
-    (void)operacao; 
-    
+    (void)operacao;
+
     // ==============================================================================
     // A. LOGICA DE BACKUP (HD -> PD) - OPERACAO: BACKUP (Casos 2, 3, 4, 5)
     // ==============================================================================
     if (operacao == BACKUP) {
-
         bool origem_existe = fs::exists(origem);
         bool destino_existe = fs::exists(destino);
 
@@ -83,10 +84,9 @@ ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string&
                 // Assertiva de Saída: Garante que o arquivo no destino nao foi alterado.
                 assert(fs::exists(destino) && "Arquivo de destino deveria existir.");
                 return IGNORAR;
-            }
+            } else { 
             // CASO DE DECISÃO 6: HD ausente (F), PD ausente (F) -> ACAO: IGNORAR (Faz Nada, caso nao listado, mas faz sentido)
-            else {
-                return IGNORAR; 
+                return IGNORAR;
             }
         }
 
@@ -95,23 +95,22 @@ ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string&
             try {
                 // fs::copy ira criar o arquivo e sobrescrever se ja existir (o que nao e o caso aqui)
                 fs::copy(origem, destino, fs::copy_options::overwrite_existing);
-                
+
                 // Assertiva de saida: Verifica se o arquivo foi criado (requisito do teste)
                 assert(fs::exists(destino) && "O arquivo de destino nao foi criado.");
                 return SUCESSO;
-
             } catch (const fs::filesystem_error& e) {
                 std::cerr << "Erro de copia: " << e.what() << std::endl;
                 return ERRO_GERAL;
             }
         }
-   
+
         // CASO DE DECISÃO 3: PD existe, PD < HD -> ACAO: COPIAR
         if (destino_existe) {
             try {
                 auto tempo_origem = get_file_time(origem);
                 auto tempo_destino = get_file_time(destino);
-                
+
                 // Verifica se o arquivo do Pen-drive (destino) e mais antigo que o HD (origem)
                 if (tempo_destino < tempo_origem) {
                     // Se o PD e mais antigo, copia e sobrescreve (Atualizacao)
@@ -119,15 +118,13 @@ ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string&
 
                     // Assertiva de saida: A data do destino deve ser igual ou superior a origem
                     assert(get_file_time(destino) >= tempo_origem && "A data de destino nao foi atualizada.");
-                    
+
                     return SUCESSO;
-                }
-                
+                } else if (tempo_destino == tempo_origem) { 
                 // CASO DE DECISÃO 4: PD == HD -> ACAO: IGNORAR (Datas Iguais)
-                else if (tempo_destino == tempo_origem) {
-                    return IGNORAR; 
+                    return IGNORAR;
                 }
-                
+
                 // CASO DE DECISÃO 5: PD > HD -> ACAO: ERRO
                 else { // tempo_destino > tempo_origem
                     return ERRO_ARQUIVO_DESTINO_MAIS_NOVO;
@@ -143,9 +140,9 @@ ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string&
             // Se o arquivo foi removido de ambos os lados, nada precisa ser feito.
             return IGNORAR; // A tabela nao lista este caso, mas faz mais sentido IGNORAR
         }
-        
+
         // Ultimo caso de erro: HD existe e PD nao (ja coberto no Caso 2)
-        
+
         // Casos de ERRO FUNDAMENTAL (A Tabela nao lista, mas e um erro de operacao)
         if (!origem_existe && !destino_existe) {
             return ERRO_ARQUIVO_ORIGEM_NAO_EXISTE; // Nao pode copiar o que nao existe
@@ -167,7 +164,7 @@ ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string&
             // CASO 13: PD e HD ausentes OU CASO 12: PD ausente, HD presente
             // Em ambos, a ORIGEM nao existe, o que e um erro critico para a Restauracao.
             // A Tabela exige ERRO para o Caso 12 e o Caso 13
-            assert((!destino_existe || get_file_time(destino) == get_file_time(destino)) && "Integridade do destino perdida."); 
+            assert((!destino_existe || get_file_time(destino) == get_file_time(destino)) && "Integridade do destino perdida.");
             return ERRO_ARQUIVO_ORIGEM_NAO_EXISTE;
         }
 
@@ -194,7 +191,7 @@ ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string&
                     // O arquivo de origem (PD) é mais antigo, o destino (HD) é mais novo.
                     assert(fs::exists(destino) && "HD nao deve ter sido removido.");
                     assert(get_file_time(destino) == tempo_destino && "Data do HD nao deve ser alterada.");
-                    
+
                     return ERRO_ARQUIVO_ORIGEM_MAIS_ANTIGO;
                 }
 
@@ -204,7 +201,7 @@ ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string&
 
                     // Assertiva de saida
                     assert(get_file_time(destino) >= tempo_origem && "A data do HD nao foi atualizada na restauracao.");
-                    
+
                     return SUCESSO;
                 }
 
@@ -212,9 +209,9 @@ ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string&
                 else if (tempo_origem == tempo_destino) {
                     return IGNORAR;
                 }
-                
+
                 // Se PD e mais antigo ou igual, a logica sera tratada nos proximos testes (10, 11, 12).
-                
+
             } catch (const fs::filesystem_error& e) {
                 std::cerr << "Erro de comparacao/copia (Caso 9 Restaura): " << e.what() << std::endl;
                 return ERRO_GERAL;
@@ -222,7 +219,7 @@ ResultadoBackup faz_backup_arquivo(const std::string& origem, const std::string&
         }
     }
 
-    return IGNORAR; 
+    return IGNORAR;
 }
 
 // ==============================================================================
@@ -242,7 +239,7 @@ ResultadoBackup executa_backup_restauracao(const std::string& nome_arquivo_parm,
 
     // 1. LEITURA DO ARQUIVO DE PARAMETROS (Trata o Caso 1 - IMPOSSIVEL)
     ResultadoBackup leitura_resultado = le_arquivo_parametros(nome_arquivo_parm, arquivos_a_processar);
-    
+
     if (leitura_resultado != SUCESSO) {
         return leitura_resultado; // Retorna ERRO_ARQUIVO_PARAMETROS_AUSENTE (Caso 1)
     }
@@ -252,7 +249,7 @@ ResultadoBackup executa_backup_restauracao(const std::string& nome_arquivo_parm,
         // Constrói os caminhos absolutos
         std::string origem_path = caminho_origem_base + "/" + arquivo;
         std::string destino_path = caminho_destino_base + "/" + arquivo;
-        
+
         // --- CORREÇÃO: CRIAÇÃO DE SUBPASTAS RECURSIVAS ---
         try {
             // Extrai o caminho do diretório de destino (ex: test_case_destino/documentos)
@@ -268,10 +265,10 @@ ResultadoBackup executa_backup_restauracao(const std::string& nome_arquivo_parm,
 
         // Chama a funcao de decisao e copia para cada arquivo
         ResultadoBackup item_resultado = faz_backup_arquivo(origem_path, destino_path, operacao);
-        
+
         // Se um erro critico (diferente de IGNORAR ou SUCESSO) ocorrer, o sistema deve parar.
         if (item_resultado != SUCESSO && item_resultado != IGNORAR) {
-            return item_resultado; 
+            return item_resultado;
         }
     }
 
@@ -280,3 +277,22 @@ ResultadoBackup executa_backup_restauracao(const std::string& nome_arquivo_parm,
     
     return SUCESSO;
 }
+
+std::string resultado_para_string(ResultadoBackup codigo) {
+    static const std::map<ResultadoBackup, std::string> resultados = { 
+        {SUCESSO, "SUCESSO"},
+        {IGNORAR, "IGNORAR"},
+        {ERRO_GERAL, "ERRO_GERAL"},
+        {ERRO_ARQUIVO_ORIGEM_NAO_EXISTE, "ERRO_ARQUIVO_ORIGEM_NAO_EXISTE"},
+        {ERRO_ARQUIVO_DESTINO_MAIS_NOVO, "ERRO_ARQUIVO_DESTINO_MAIS_NOVO"},
+        {ERRO_ARQUIVO_ORIGEM_MAIS_ANTIGO, "ERRO_ARQUIVO_ORIGEM_MAIS_ANTIGO"},
+        {ERRO_ARQUIVO_PARAMETROS_AUSENTE, "ERRO_ARQUIVO_PARAMETROS_AUSENTE"}
+    };
+    
+    auto it = resultados.find(codigo);
+    if (it != resultados.end()) {
+        return it->second;
+    }
+    return "CODIGO_DE_ERRO_DESCONHECIDO";
+}
+

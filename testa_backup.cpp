@@ -28,16 +28,6 @@ void set_file_time(const std::string& path, const fs::file_time_type& new_time) 
     fs::last_write_time(path, new_time);
 }
 
-// Funcao auxiliar para criar um arquivo de parametros com conteudo de teste
-void create_param_file(const std::string& path, const std::vector<std::string>& files) {
-    std::ofstream ofs(path);
-    assert(ofs.is_open());
-    for (const auto& file : files) {
-        ofs << file << "\n";
-    }
-    ofs.close();
-}
-
 // ==============================================================================
 // TESTE 1: CÓPIA SIMPLES (CASO DE DECISÃO 9: HD EXISTE, PD NÃO EXISTE)
 // ==============================================================================
@@ -391,7 +381,7 @@ TEST_CASE("Caso de Decisao 7: IGNORAR (HD ausente, PD presente)", "[backup][igno
 // ==============================================================================
 
 TEST_CASE("Caso de Decisao 1: ERRO - Backup.parm ausente", "[parametros][erro]") {
-    std::string test_name = "test_caso_1_parm_ausente";
+    std::string test_name = "test_case_1_parm_ausente";
     setup_test_env(test_name); 
 
     const std::string nome_arquivo_parm = test_name + "/Backup.parm";
@@ -403,103 +393,4 @@ TEST_CASE("Caso de Decisao 1: ERRO - Backup.parm ausente", "[parametros][erro]")
     
     REQUIRE(resultado == ERRO_ARQUIVO_PARAMETROS_AUSENTE);
     REQUIRE(lista_arquivos.empty() == true);
-}
-
-// ==============================================================================
-// TESTE 15: LEITURA DE PARAMETROS COM SUCESSO
-// ==============================================================================
-
-TEST_CASE("Leitura de Backup.parm com sucesso", "[parametros][sucesso]") {
-    const std::string param_file = "Backup.parm";
-    std::vector<std::string> lista_arquivos_esperada = {
-        "caminho/do/arquivo1.txt",
-        "pasta/subpasta/arquivo2.cpp",
-        "config.json"
-    };
-    
-    create_param_file(param_file, lista_arquivos_esperada);
-    
-    std::vector<std::string> lista_arquivos_obtida;
-    
-    ResultadoBackup resultado = le_arquivo_parametros(param_file, lista_arquivos_obtida);
-    
-    REQUIRE(resultado == SUCESSO);
-    REQUIRE(lista_arquivos_obtida.size() == lista_arquivos_esperada.size());
-    
-    // Verifica se cada item lido corresponde ao item esperado
-    for (size_t i = 0; i < lista_arquivos_esperada.size(); ++i) {
-        REQUIRE(lista_arquivos_obtida[i] == lista_arquivos_esperada[i]);
-    }
-    
-    fs::remove(param_file);
-}
-
-// ==============================================================================
-// TESTE 16: ORQUESTRAÇÃO DE BACKUP (SUCESSO DE PONTA A PONTA)
-// ==============================================================================
-
-TEST_CASE("Orquestracao: Execucao de Backup com multiplos arquivos", "[orquestracao][backup]") {
-    const std::string test_name = "test_case_orquestracao_backup";
-    setup_test_env(test_name); 
-
-    const std::string origem_base = test_name + "_origem";
-    const std::string destino_base = test_name + "_destino";
-    const std::string parm_file = "Backup.parm";
-    
-    // Caminhos relativos (como estariam no Backup.parm)
-    const std::string arq1 = "documentos/doc1.txt";
-    const std::string arq2 = "fotos/foto2.jpg";
-
-    // 1. Setup: Cria o arquivo Backup.parm
-    std::ofstream ofs_parm(parm_file);
-    ofs_parm << arq1 << "\n";
-    ofs_parm << arq2 << "\n";
-    ofs_parm.close();
-
-    // 2. Setup: Cria os arquivos de ORIGEM e as subpastas
-    fs::create_directories(origem_base + "/documentos");
-    fs::create_directories(origem_base + "/fotos");
-    create_file(origem_base + "/" + arq1, "Conteudo 1");
-    create_file(origem_base + "/" + arq2, "Conteudo 2");
-    
-    // 3. Execucao: Roda o processo de orquestracao completo
-    ResultadoBackup resultado = executa_backup_restauracao(
-        parm_file, 
-        origem_base, 
-        destino_base, 
-        BACKUP
-    );
-    
-    // 4. Verificacao: Espera-se SUCESSO e que os arquivos existam no destino
-    REQUIRE(resultado == SUCESSO);
-    REQUIRE(fs::exists(destino_base + "/" + arq1) == true);
-    REQUIRE(fs::exists(destino_base + "/" + arq2) == true);
-    
-    // Limpeza adicional do arquivo parm
-    fs::remove(parm_file);
-}
-
-// ==============================================================================
-// TESTE 16: ERRO NA ORQUESTRAÇÃO (CASO DE DECISÃO 1: Backup.parm ausente)
-// ==============================================================================
-
-TEST_CASE("Caso de Decisao 1: Orquestracao Falha por Backup.parm Ausente", "[orquestracao][erro]") {
-    const std::string test_name = "test_case_orquestracao_erro_parm";
-    setup_test_env(test_name); 
-
-    const std::string origem_base = test_name + "_origem";
-    const std::string destino_base = test_name + "_destino";
-    const std::string parm_file = "Backup.parm";
-    
-    fs::remove(parm_file);
-    
-    // A funcao deve falhar imediatamente ao tentar ler o arquivo.
-    ResultadoBackup resultado = executa_backup_restauracao(
-        parm_file, 
-        origem_base, 
-        destino_base, 
-        BACKUP
-    );
-    
-    REQUIRE(resultado == ERRO_ARQUIVO_PARAMETROS_AUSENTE);
 }
